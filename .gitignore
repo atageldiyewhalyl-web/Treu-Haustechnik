@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+
+# env files
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ---- project ----
+# Local editor / assistant tooling
+.claude/
+
+# Call recording, its extracted frames and audio, and the generated brief copy
+*.mp4
+/_work/
+/Claude outputs/
+# The client brief stays on this machine: it is not part of the site
+/Treu-Haustechnik_Website-Brief.pdf

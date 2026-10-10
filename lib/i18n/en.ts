@@ -1,0 +1,432 @@
+/* English: a development aid only, so the team can read the German site. The DEV switch shows it
+   under `next dev`; production always renders German (lib/i18n/server.ts). Must match de.ts key for key. */
+import type { Copy } from '.';
+
+export const en: Copy = {
+  meta: {
+    title: 'Plumbing, Heating & Air Conditioning in Mannheim | Treu Haustechnik',
+    description: 'Master business for plumbing, heating and air conditioning in Mannheim: heating replacement, heat pumps, bathroom renovation, air conditioning and a 24/7 emergency service. Send your inquiry now.',
+  },
+  a11y: {
+    skip: 'Skip to content',
+    whatsapp: 'Open WhatsApp chat',
+    stars: '{value} out of 5 stars',
+    toForm: 'Go to the inquiry form',
+  },
+  cta: { inquiry: 'Send an inquiry', call: 'Call now', more: 'Learn more', aboutUs: 'More about us', home: 'Back to the homepage' },
+  rating: { count: '{count} Google reviews' },
+
+  trustTitle: ['Your comfort', 'in faithful hands'],
+  trust: [
+    { title: 'Master craftsman business', note: 'since {year}' },
+    { title: '24/7 emergency service', note: 'around the clock' },
+    { title: '{rating} out of 5', note: '{count} Google reviews' },
+    { title: 'Mannheim', note: 'and the surrounding area' },
+    { title: 'Homes & businesses', note: 'one point of contact' },
+  ],
+
+  home: {
+    hero: {
+      title: ['Plumbing, Heating and Air Conditioning in Mannheim', 'from the Master Business'],
+      lead: 'Heat pumps, heating replacement, bathrooms and air conditioning from one source. Emergency service 24/7.',
+      services: {
+        heizung: 'Modernisation, heat pump, gas & oil',
+        'sanitaer-bad': 'Bathroom renovation, accessible, water',
+        klima: 'Split systems, maintenance, cleaning',
+        notdienst: 'Reachable around the clock',
+      },
+    },
+    about: {
+      eyebrow: 'About Treu Haustechnik',
+      alt: 'Installer working on a pipe',
+      text: 'Treu Haustechnik is your master plumbing and heating business from {district}. A one-man operation has grown into a team that modernises heating systems, installs heat pumps and air conditioning, renovates bathrooms and is there for you around the clock in an emergency.',
+    },
+    process: {
+      eyebrow: 'How it works',
+      title: ['How we work,', 'from inquiry to handover'],
+      aside: 'Clear steps, firm agreements and one point of contact from the first message to the final walkthrough.',
+      step: 'Step {n}',
+      steps: [
+        { title: 'Send an inquiry with photos', text: 'You choose what it is about, describe it briefly and upload photos if you like. That way we know what is needed from the start.' },
+        { title: 'A quote from the master business', text: 'We get back to you, clear up open questions and prepare your quote.' },
+        { title: 'Appointment and work', text: 'Once you accept, we agree a date and carry out the work cleanly and reliably.' },
+        { title: 'Handover and walkthrough', text: 'At the end we go through the work with you and explain operation and maintenance.' },
+      ],
+      scope: ['Heating', 'Heat pump', 'Bathroom renovation', 'Air conditioning', 'Drinking water', 'Wastewater', 'Service', 'Emergency'],
+      badge: 'Explained and documented',
+      checklistTitle: ['Handover', 'checklist'],
+      checklist: ['Installation complete', 'System checked', 'Commissioned', 'Operation explained'],
+    },
+    local: {
+      eyebrow: 'Local',
+      title: ['Building services for', 'Mannheim and the region'],
+      alt: 'The Mannheim water tower',
+      paragraphs: [
+        'Mannheim is a city of contrasts: late-19th-century buildings in the Quadrate and Neckarstadt, estate houses in the Gartenstadt, new builds on the former military sites. Each of these buildings asks something different of its heating, pipework and bathroom. An off-the-shelf solution rarely fits.',
+        'In an old building, careful planning decides whether a new heating system runs efficiently: radiators, pipework and controls have to match the new heat source. That is why we look closely at the existing system before recommending one, whether heat pump, gas or oil.',
+        'The Rhine plain is one of the warmest regions in Germany. Anyone who sleeps under the roof or works in an office in summer appreciates a properly sized air conditioner. We install split systems and keep them in shape with maintenance and cleaning.',
+        'Then there is the water: in much of the region it is hard. Limescale wears on taps, pipes and appliances. The right water treatment prevents that, and we advise you on which solution is worth it for your home.',
+        'As a master business from the Gartenstadt we are there for you, around the clock in an emergency.',
+      ],
+    },
+    faq: [
+      { q: 'How do I send an inquiry?', a: 'Through the form on this page: you choose what it is about, describe it briefly, upload photos if you like and leave your contact details. We get back to you by email or phone.' },
+      { q: 'Which area do you cover?', a: 'Our business is based in {district}. We work in Mannheim and the surrounding area. If you are unsure whether we come to you, just ask.' },
+      { q: 'Why should I upload photos?', a: 'With photos of your bathroom, your heating system or the damage we can judge the situation better and prepare a more accurate quote. Photos are optional.' },
+      { q: 'Do you offer an emergency service?', a: 'Yes. For burst pipes, heating failures and other emergencies you can reach us around the clock on {phone}.' },
+      { q: 'Do you also work for commercial customers?', a: 'Yes, we work for private and commercial customers.' },
+      { q: 'Which services do you offer?', a: 'Heating (modernisation, heat pumps, gas and oil heating), plumbing and bathrooms (bathroom renovation, accessible bathrooms, drinking water, wastewater, water treatment), air conditioning (split systems, maintenance and cleaning) and the emergency service.' },
+    ],
+  },
+
+  carousel: {
+    eyebrow: 'Our services',
+    title: ['Everything for your', 'building services'],
+    aside: 'Heating, bathrooms, air conditioning and emergencies from one business, with no need to coordinate several contractors.',
+    label: 'Services',
+    cards: [
+      { title: 'Heat pump', text: 'Advice, sizing and installation from one source.' },
+      { title: 'Heating modernisation', text: 'Old system out, efficient system in.' },
+      { title: 'Bathroom renovation', text: 'From the guest WC to the complete bathroom.' },
+      { title: 'Accessible bathroom', text: 'Level access, safe and comfortable.' },
+      { title: 'Air conditioning', text: 'Installing, maintaining and cleaning split systems.' },
+      { title: 'Drinking water & wastewater', text: 'Pipes, connections, water treatment.' },
+      { title: 'Gas & oil heating', text: 'Installation, maintenance and repair.' },
+      { title: 'Emergency service', text: 'Burst pipe, heating failure, blockage: 24/7.' },
+    ],
+  },
+
+  reviews: {
+    eyebrow: 'Reviews',
+    title: ['What our', 'customers say'],
+    aside: '{rating} out of 5 stars from {count} reviews on Google, quoted word for word (German originals).',
+    label: 'Reviews',
+    all: 'See all reviews on Google',
+  },
+
+  emergency: {
+    eyebrow: 'Emergency service',
+    title: ['Fast help,', 'around the clock'],
+    aside: 'In an emergency you can reach us 24 hours a day, 7 days a week.',
+    cards: [
+      { title: 'Heating & hot water', lead: 'Heating cold?', points: ['Heating failure', 'No hot water', 'Fault on the system'] },
+      { title: 'Burst pipe & water damage', lead: 'Water leaking?', points: ['Burst pipe', 'Water damage', 'Leaking pipes'] },
+      { title: 'Pipes & drains', lead: 'Nothing draining?', points: ['Blocked pipes', 'Blocked drains', 'Backflow in bathroom or kitchen'] },
+    ],
+    more: 'More about the emergency service',
+  },
+
+  faq: {
+    eyebrow: 'FAQ',
+    title: ['Frequently asked', 'questions'],
+    aside: 'Clear answers about inquiries, the process and the emergency service.',
+    boxTitle: ['Clear answers.', 'No detours.'],
+    boxText: 'Your question is not listed? Write to us or call, we are happy to help.',
+  },
+
+  inquiry: {
+    eyebrow: 'Contact',
+    title: ['Send us your', 'inquiry'],
+    text: 'Tell us what it is about and upload photos if you like. We get back to you with a quote or a proposed appointment.',
+    chips: ['In three steps', 'Photos optional', 'Reply by email or phone'],
+    hotline: 'Emergency service 24/7',
+    email: 'Email',
+    whatsapp: 'WhatsApp',
+    write: 'Write a message',
+  },
+
+  servicePage: {
+    chips: ['Master craftsman business', 'Mannheim'],
+    bandEyebrow: 'How we work',
+    bandEyebrowUrgent: 'First aid',
+    moreEyebrow: 'More services',
+    moreTitle: ['We also take care', 'of this for you'],
+  },
+
+  services: {
+    heizung: {
+      headline: ['Heating that', 'really fits your home'],
+      intro: 'From replacing the heating in an old building to a new heat pump: as a master business we plan, install and maintain your heating system in Mannheim and the surrounding area.',
+      meta: {
+        title: 'Heating in Mannheim: modernisation, heat pump, gas & oil',
+        description: 'Heating modernisation, heat pump installation, gas and oil heating from the master business in Mannheim. Send an inquiry with photos now.',
+      },
+      listTitle: ['Our services around', 'heating'],
+      listIntro: 'Four focus areas, one point of contact: we advise you on the system that fits your building, consumption and budget.',
+      items: {
+        heizungsmodernisierung: { title: 'Heating modernisation', text: 'We replace your old system with an efficient one, match radiators and controls to it and commission everything properly.' },
+        waermepumpe: { title: 'Heat pump installation', text: 'Advice, sizing and installation of your heat pump from one source, including a walkthrough of how to operate it.' },
+        gasheizung: { title: 'Gas heating', text: 'Installation, replacement and maintenance of gas heating systems and gas boilers, done professionally and to the applicable regulations.' },
+        oelheizung: { title: 'Oil heating', text: 'Maintenance, repair and renewal of oil heating systems. If you wish, we plan the switch to a different system with you.' },
+      },
+      band: {
+        alt: 'Heating system being serviced',
+        title: ['Properly planned,', 'properly installed'],
+        text: 'A new heating system is a decision for many years. That is why we explain the options clearly before we write a quote, and show you how to operate and maintain it after installation.',
+        points: ['Advice on the right systems', 'Installation by the master business', 'Walkthrough of operation and maintenance', 'Reachable in an emergency too'],
+      },
+      faq: [
+        { q: 'Which heating systems do you install?', a: 'We install and maintain heat pumps, gas heating and oil heating, and modernise existing systems. Which system makes sense for your building is something we work out together during the consultation.' },
+        { q: 'Do you also replace heating in old buildings?', a: 'Yes, we also replace heating systems in existing and old buildings. Ideally send us photos of the existing system so we can judge the effort better.' },
+        { q: 'My heating has failed. What now?', a: 'Call us directly: our emergency service is reachable around the clock on {phone}.' },
+      ],
+    },
+    'sanitaer-bad': {
+      headline: ['Your new bathroom,', 'professionally built'],
+      intro: 'Bathroom renovation, accessible conversions and everything to do with water: we renovate bathrooms and take care of drinking water, wastewater and water treatment.',
+      meta: {
+        title: 'Bathroom renovation & plumbing in Mannheim from the master business',
+        description: 'Bathroom renovation, luxury bathrooms, accessible bathrooms, drinking water, wastewater and water treatment in Mannheim. Send an inquiry with photos of your bathroom.',
+      },
+      listTitle: ['Our services for', 'bathrooms and plumbing'],
+      listIntro: 'From the guest WC to the complete bathroom, from the drinking-water pipe to water treatment.',
+      items: {
+        badsanierung: { title: 'Bathroom renovation', text: 'Partial renovation or a completely new bathroom: we renew sanitary fittings and pipework and agree the work with you.' },
+        luxusbad: { title: 'Luxury bathrooms', text: 'High-quality fittings, level-access showers, freestanding tubs: we build the bathroom you want with care for detail.' },
+        barrierefrei: { title: 'Accessible bathrooms', text: 'Level-access showers, grab rails and easy-to-reach fittings for a bathroom that stays safe at every stage of life.' },
+        trinkwasser: { title: 'Drinking water', text: 'Installation and renewal of drinking-water pipes and fittings for clean water at every tap.' },
+        abwasser: { title: 'Wastewater', text: 'Wastewater pipes and connections properly laid, tested and repaired.' },
+        wasseraufbereitung: { title: 'Water treatment', text: 'Filter and softening systems that protect pipes and appliances from limescale. We advise you on the right solution.' },
+      },
+      band: {
+        alt: 'Modern bathroom with a level-access shower',
+        title: ['Send photos,', 'get a quote'],
+        text: 'So that we can judge your bathroom properly, simply upload a few photos with your inquiry. We then see the room, the connections and its condition and can give you a more accurate quote.',
+        points: ['Upload photos right in the inquiry form', 'All steps agreed in advance', 'Clean, documented work', 'Old pipework checked on request'],
+      },
+      faq: [
+        { q: 'How does a bathroom renovation with you work?', a: 'You send an inquiry, ideally with photos of your bathroom. We get back to you, clarify the details and prepare a quote. Once you accept, we agree the date and schedule and carry out the work.' },
+        { q: 'Do you also convert bathrooms to be accessible?', a: 'Yes. Level-access showers, grab rails and adapted sanitary fittings are part of our services.' },
+        { q: 'Do you also take care of old pipework?', a: 'Yes. On request we check existing drinking-water and wastewater pipes and renew them where necessary.' },
+      ],
+    },
+    klima: {
+      headline: ['Pleasantly cool', 'when it gets hot outside'],
+      intro: 'We install split air-conditioning systems for homes and businesses and keep them performing with regular maintenance and cleaning.',
+      meta: {
+        title: 'Air conditioning in Mannheim: installation, maintenance & cleaning',
+        description: 'Split air-conditioning systems from the master business in Mannheim: advice, installation, maintenance and cleaning for homes and businesses.',
+      },
+      listTitle: ['Our services in', 'air conditioning'],
+      listIntro: 'From the first consultation to the annual service.',
+      items: {
+        'split-klimaanlagen': { title: 'Split air-conditioning systems', text: 'Advice, planning and installation of split units for single rooms or several zones, at home or at work.' },
+        'wartung-reinigung': { title: 'Maintenance & cleaning', text: 'Regular maintenance and thorough cleaning so your system runs hygienically, quietly and efficiently.' },
+      },
+      band: {
+        alt: 'Split air-conditioning unit on a living-room wall',
+        title: ['Cooling in summer,', 'looked after all year'],
+        text: 'An air conditioner only runs economically and hygienically if it is properly sized and regularly cleaned. We take care of both.',
+        points: ['For flats, houses and businesses', 'Installation by the master business', 'Maintenance and cleaning of existing systems'],
+      },
+      faq: [
+        { q: 'Do you install air conditioning in flats too?', a: 'Yes, we install split air-conditioning systems in flats, houses and commercial premises. Feel free to send us photos of the rooms and the possible location of the outdoor unit.' },
+        { q: 'Do you also service systems you did not install?', a: 'Just send an inquiry with details of your system. We get back to you and work out how we can help.' },
+      ],
+    },
+    notdienst: {
+      headline: ['Emergency service,', 'around the clock'],
+      intro: 'Heating failed, pipe burst, no hot water? Call us. We are reachable 24 hours a day, 7 days a week.',
+      meta: {
+        title: 'Emergency plumbing & heating service Mannheim: reachable 24/7',
+        description: 'Heating failure, burst pipe, water damage or a blockage? The Treu Haustechnik emergency service in Mannheim is reachable around the clock: {phone}.',
+      },
+      listTitle: ['Where our emergency service', 'helps right away'],
+      listIntro: 'In an emergency every minute counts. The fastest way to reach us is by phone.',
+      items: {
+        heizungsausfall: { title: 'Heating failure', text: 'The heating stays cold or shows a fault? We find the fault and get the system running again.' },
+        wasserschaden: { title: 'Water damage', text: 'Water is leaking and you do not know where from? We find the cause and stop the damage.' },
+        rohrbruch: { title: 'Burst pipe', text: 'If a pipe bursts, close the main stopcock and call us. We repair the pipe properly.' },
+        'kein-warmwasser': { title: 'No hot water', text: 'Cold water from every tap? We check the hot-water system and the heating and fix the fault.' },
+        verstopfung: { title: 'Blocked pipes and drains', text: 'When nothing drains any more, we clear pipes and drains again.' },
+      },
+      band: {
+        alt: 'Repair on a water pipe under the sink',
+        title: ['What you can do', 'until we arrive'],
+        text: 'A few simple steps help to keep the damage small until our emergency service is with you.',
+        points: ['If water is leaking, close the main stopcock', 'Switch off the power in affected rooms if water gets near electrics', 'Photograph the damage, for example for your insurance', 'Call us: {phone}'],
+      },
+      faq: [
+        { q: 'When can the emergency service be reached?', a: 'Around the clock, including nights, weekends and public holidays, on {phone}.' },
+        { q: 'Can I also use the form in an emergency?', a: 'In an emergency please call, that is fastest. The inquiry form is meant for everything that does not need doing immediately.' },
+      ],
+    },
+  },
+
+  about: {
+    meta: {
+      title: 'About us: master business from Mannheim-Gartenstadt',
+      description: 'From a one-man operation to a team of experts: get to know Treu Haustechnik, your master plumbing and heating business in Mannheim.',
+    },
+    hero: {
+      chips: ['About us', 'Master craftsman business since {year}'],
+      title: ['From a one-man operation', 'to a team of experts'],
+      lead: 'Dedicated solutions for your home: learn more about our story and our commitment to quality and service.',
+    },
+    story: {
+      eyebrow: 'Our story',
+      title: ['Grown with', 'every job'],
+      alt: 'Installer at work',
+      text: 'Our story began with a one-man operation offering dedicated solutions. Since then we have grown into a team of experts offering a broader range of services at affordable prices. Whether repair or replacement: we make sure every task is carried out to the highest quality.',
+      owner: 'The business is run by {owner}, master plumber and heating engineer.',
+    },
+    mission: {
+      eyebrow: 'Our mission',
+      title: ['Reliability, quality and', 'satisfied customers'],
+      aside: 'We want to exceed your expectations and give you the highest level of comfort and safety in your home or business.',
+      values: [
+        { title: 'Quality first', text: 'The highest standards in everything we do.' },
+        { title: 'Integrity', text: 'Honest, responsible and dependable.' },
+        { title: 'Customer satisfaction', text: 'Our top goal on every job.' },
+      ],
+    },
+    why: {
+      eyebrow: 'Why us?',
+      title: ['The extra step', 'for you'],
+      aside: 'We show our appreciation by going the extra step.',
+      reasons: [
+        { title: 'Quality guarantee', text: 'Your satisfaction comes first with us.' },
+        { title: 'Skilled staff', text: 'Experienced professionals for reliable results.' },
+        { title: 'Clear communication', text: 'We always keep you up to date.' },
+        { title: 'Fast help', text: 'We are on site quickly to solve problems.' },
+        { title: 'Fair and transparent', text: 'Affordable prices and dependable agreements.' },
+        { title: 'Wide range of services', text: 'From installation to maintenance, everything for your home or business.' },
+      ],
+    },
+  },
+
+  contact: {
+    meta: {
+      title: 'Contact & inquiry',
+      description: 'Send your inquiry to Treu Haustechnik in Mannheim: choose what it is about, describe it, upload photos. Emergency service around the clock on {phone}.',
+    },
+    eyebrow: 'Contact',
+    title: ['We are here for you,', 'write or call us'],
+    lead: 'For questions, appointments and quotes the inquiry form is the best way. In an emergency please call us directly.',
+    ways: { call: 'Call (emergency service 24/7)', whatsapp: 'WhatsApp', email: 'Email', address: 'Address' },
+  },
+
+  notFound: {
+    eyebrow: 'Error 404',
+    title: ['This page', 'does not exist'],
+    lead: 'It may have been moved. You will find all our services on the homepage.',
+  },
+
+  blog: {
+    eyebrow: 'Guide',
+    title: ['Know-how from the', 'master business'],
+    aside: 'Answers to the questions customers in Mannheim ask us most often.',
+    all: 'All articles',
+    read: 'Read on',
+    minutes: '{n} min read',
+    by: 'By {name}',
+    takeaways: 'The essentials in brief',
+    related: ['More', 'articles'],
+    service: 'To the service: {name}',
+    crumbs: 'You are here',
+    home: 'Home',
+    ctaTitle: 'Do you have a question about your project?',
+    ctaText: 'Tell us briefly what it is about. We get back to you with an assessment or a proposed appointment.',
+    index: {
+      title: ['A guide to', 'heating, bathrooms & air conditioning'],
+      lead: 'Practical knowledge from the master business: explained clearly, without jargon and with an eye on houses in Mannheim and the region.',
+      meta: {
+        title: 'Guide: heating, bathrooms & air conditioning in Mannheim',
+        description: 'A guide from the master business in Mannheim: heat pumps in older houses, heating failures, bathroom renovation, hard water and air conditioning explained clearly.',
+      },
+    },
+  },
+
+  footer: {
+    text: 'Your master plumbing and heating business in Mannheim: heating, bathrooms, air conditioning and an emergency service around the clock.',
+    services: 'Services',
+    contact: 'Contact',
+    emergency: 'Emergency service',
+    emergencyNote: 'Heating failure, burst pipe or water damage? We are reachable around the clock.',
+    rights: 'All rights reserved.',
+    imprint: 'Legal notice',
+    privacy: 'Privacy',
+  },
+
+  client: {
+    names: { heizung: 'Heating', 'sanitaer-bad': 'Plumbing & bathrooms', klima: 'Air conditioning', notdienst: 'Emergency service' },
+    nav: {
+      home: 'Home', services: 'Services', guide: 'Guide', about: 'About us', contact: 'Contact',
+      hotline: 'Emergency 24/7', inquiry: 'Send an inquiry', emergency: 'Emergency {phone}',
+      logo: '{name}: to the homepage', main: 'Main navigation', mobile: 'Mobile navigation', open: 'Open menu', close: 'Close menu',
+    },
+    carousel: { prev: '{label}: previous', next: '{label}: next' },
+    map: {
+      load: 'Load map', route: 'Get directions', title: 'Map: {address}',
+      note: 'Loading the map sends data to Google. More about this in the', privacy: 'privacy policy',
+    },
+    consent: {
+      title: 'Cookies & external content',
+      text: 'This website uses no analytics or advertising cookies. We only ask for your consent for the Google Maps map: loading it sends data such as your IP address to Google, and Google may set cookies. You can change your choice at any time under "Cookie settings" at the bottom of the page.',
+      accept: 'Accept', decline: 'Decline', privacy: 'Privacy policy', imprint: 'Legal notice', settings: 'Cookie settings',
+    },
+    form: {
+      steps: ['Request', 'Details', 'Contact'],
+      progress: 'Progress',
+      count: 'Step {n} of {total}',
+      reasonTitle: 'What is it about?',
+      reasons: {
+        badsanierung: { label: 'Bathroom renovation', hint: 'New bathroom, conversion, accessible' },
+        heizungsaustausch: { label: 'Heating replacement', hint: 'Modernisation, gas, oil' },
+        waermepumpe: { label: 'Heat pump', hint: 'Advice and installation' },
+        klima: { label: 'Air conditioning', hint: 'Split systems, maintenance, cleaning' },
+        service: { label: 'Service and repair', hint: 'Maintenance, fault, repair' },
+        sonstige: { label: 'Other', hint: 'Anything else around the house' },
+      },
+      detailsTitle: 'Describe what you need',
+      description: 'Description',
+      descriptionPlaceholder: 'What should be done? How long has the problem existed? Anything special to know?',
+      photos: 'Photos',
+      photosNote: 'optional, up to {max} photos',
+      photosHint: 'Photos of your bathroom, your heating system or the damage help us prepare an accurate quote.',
+      addPhotos: 'Add photos',
+      preparing: 'Preparing …',
+      remove: 'Remove {name}',
+      contactTitle: 'How can we reach you?',
+      name: 'First and last name',
+      phone: 'Phone',
+      email: 'Email',
+      street: 'Street and house number',
+      zip: 'Postcode',
+      town: 'Town',
+      optional: 'optional',
+      contactHint: 'Phone or email: we need at least one of them to reply to you.',
+      consentBefore: 'I agree to the',
+      consentLink: 'privacy policy',
+      consentAfter: '.',
+      back: 'Back',
+      next: 'Next',
+      send: 'Send inquiry',
+      sending: 'Sending …',
+      errors: {
+        reason: 'Please choose what it is about.',
+        name: 'Please enter your first and last name.',
+        phone: 'Please check the phone number.',
+        email: 'Please check the email address.',
+        contact: 'Please enter a phone number or an email address so we can reach you.',
+        consent: 'Please agree to the privacy policy.',
+        tooMany: 'You can upload up to {max} photos.',
+        notImage: 'Please upload image files only.',
+        tooLarge: 'The photos are too large together. Please choose fewer or smaller images.',
+        failed: 'The inquiry could not be sent. Please try again or call us.',
+        offline: 'No connection. Please check your internet connection and try again.',
+      },
+      done: {
+        title: 'Thank you, {name}!',
+        text: 'We have received your inquiry. We will get back to you as soon as possible {how}.',
+        byBoth: 'by email or phone',
+        byEmail: 'by email',
+        byPhone: 'by phone',
+        urgent: 'In an emergency you can reach us around the clock on',
+        preview: 'Test mode: email sending is not set up yet (RESEND_API_KEY is missing). Nothing was sent.',
+        again: 'Send another inquiry',
+      },
+    },
+    dev: { label: 'Switch language (development)' },
+  },
+};
