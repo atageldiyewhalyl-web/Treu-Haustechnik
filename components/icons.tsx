@@ -56,7 +56,7 @@ const MOTION: Partial<Record<IconName, string>> = {
   glass: 'sway', filter: 'drip', fuel: 'wiggle', accessibility: 'sway', dots: 'pulse',
 };
 
-/* Two-tone drawings for the service badges on the hero's fan cards and for the trust facts: `.i2` strokes and `.i2f` fills
+/* Two-tone drawings for the hero's fan cards, the trust facts and the sub-service cards: `.i2` strokes and `.i2f` fills
    take the accent colour (--icon-2), and the `.mv-*` parts move on their own (see `.duo` in globals.css).
    `motion` moves the whole icon on top of that. */
 const DUO: Partial<Record<IconName, { art: ReactNode; motion?: string }>> = {
@@ -77,6 +77,86 @@ const DUO: Partial<Record<IconName, { art: ReactNode; motion?: string }>> = {
     art: <>
       <path d="M2 12h20" /><path d="M12 2v20" />
       <g className="i2 mv-breathe"><path d="m20 16-4-4 4-4" /><path d="m4 8 4 4-4 4" /><path d="m16 4-4 4-4-4" /><path d="m8 20 4-4 4 4" /></g>
+    </>,
+  },
+  // Sub-services (service pages): the dark part is the thing itself, the accent is what it does
+  radiator: {
+    art: <>
+      <rect width="16" height="11" x="4" y="7" rx="1.5" /><path d="M8 7v11" /><path d="M12 7v11" /><path d="M16 7v11" /><path d="M6 18v2.5" /><path d="M18 18v2.5" />
+      <g className="i2"><path className="mv-rise" d="M8 2.5c.7.6.7 1.2 0 1.8" /><path className="mv-rise" d="M12 2.5c.7.6.7 1.2 0 1.8" /><path className="mv-rise" d="M16 2.5c.7.6.7 1.2 0 1.8" /></g>
+    </>,
+  },
+  fan: {
+    art: <>
+      <path className="mv-spin" d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z" />
+      <circle className="i2f" cx="12" cy="12" r="1.7" />
+    </>,
+  },
+  fuel: {
+    art: <>
+      <path d="M3 22h12" /><path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18" />
+      <path className="i2" d="M4 9h10" />
+      <path className="i2 mv-bob" d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 4 0V9.83a2 2 0 0 0-.59-1.42L18 5" />
+    </>,
+  },
+  sparkles: {
+    art: <>
+      <path className="mv-breathe" d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
+      <g className="i2 mv-blink"><path d="M20 3v4" /><path d="M22 5h-4" /></g>
+      <g className="i2 mv-blink mv-late"><path d="M4 17v3" /><path d="M5.5 18.5h-3" /></g>
+    </>,
+  },
+  accessibility: {
+    art: <>
+      <circle cx="16" cy="4" r="1" /><path d="m18 19 1-7-6 1" /><path d="m5 8 3-3 5.5 3-2.36 3.5" />
+      <g className="i2 mv-wheel"><path d="M4.24 14.5a5 5 0 0 0 6.88 6" /><path d="M13.76 17.5a5 5 0 0 0-6.88-6" /></g>
+    </>,
+  },
+  glass: {
+    art: <>
+      <path d="M15.2 22H8.8a2 2 0 0 1-2-1.79L5 3h14l-1.81 17.21A2 2 0 0 1 15.2 22Z" />
+      <path className="i2 mv-wave" d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0" />
+    </>,
+  },
+  waves: {
+    art: <>
+      <path className="mv-wave" d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path className="i2 mv-wave mv-late" d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path className="mv-wave" d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+    </>,
+  },
+  filter: {
+    art: <>
+      <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+      <path className="i2" d="M7 6.5h10" />
+      <circle className="i2f mv-drop" cx="12" cy="13.5" r="1.1" />
+    </>,
+  },
+  airvent: {
+    art: <>
+      <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><path d="M6 8h12" />
+      <path className="i2 mv-flow" d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12" />
+      <path className="i2 mv-flow mv-late" d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
+    </>,
+  },
+  thermometer: {
+    art: <>
+      <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+      <circle className="i2f" cx="12" cy="18" r="1.9" />
+      <path className="i2 mv-level" d="M12 16.5V7" />
+    </>,
+  },
+  droplets: {
+    art: <>
+      <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
+      <path className="i2 mv-bob" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
+    </>,
+  },
+  droplet: {
+    motion: 'drip',
+    art: <>
+      <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+      <path className="i2" d="M8.4 15.2a3.6 3.6 0 0 0 3.6 3.6" />
     </>,
   },
   // Trust facts: the medal's ribbon swings, the clock's hands turn, the pin hops, the two people bob in turn

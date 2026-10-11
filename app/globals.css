@@ -200,6 +200,16 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .mv-hop { animation: duo-hop 2s ease-in-out infinite; }
   .mv-bob { animation: duo-bob 2.4s ease-in-out infinite; }
   .mv-bob--late { animation-delay: -1.2s; }
+  .mv-spin { transform-box: view-box; transform-origin: 50% 50%; animation: ani-spin 5s linear infinite; }
+  .mv-wheel { transform-box: view-box; transform-origin: 37.5% 66.67%; animation: ani-spin 4.5s linear infinite; }
+  .mv-rise { animation: duo-rise 2.2s ease-out infinite; }
+  .mv-rise:nth-child(2) { animation-delay: -.7s; }
+  .mv-rise:nth-child(3) { animation-delay: -1.4s; }
+  .mv-wave { animation: duo-wave 2.6s ease-in-out infinite; }
+  .mv-flow { animation: duo-flow 2s ease-in-out infinite; }
+  .mv-drop { animation: duo-drop 1.8s ease-in infinite; }
+  .mv-level { transform-box: fill-box; transform-origin: 50% 100%; animation: duo-level 3s ease-in-out infinite; }
+  .mv-late { animation-delay: -1.1s; }
 }
 /* Two-tone icons (DUO in components/icons.tsx): accent strokes and fills take --icon-2. */
 .duo { overflow: visible; }
@@ -220,6 +230,11 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 @keyframes duo-swing { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
 @keyframes duo-hop { 0%, 52%, 100% { transform: translateY(0); } 22% { transform: translateY(-2.6px); } 38% { transform: translateY(0); } 45% { transform: translateY(-1px); } }
 @keyframes duo-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1.4px); } }
+@keyframes duo-rise { 0% { opacity: 0; transform: translateY(1.6px); } 35% { opacity: 1; } 100% { opacity: 0; transform: translateY(-2px); } }
+@keyframes duo-wave { 0%, 100% { transform: translateX(-1px); } 50% { transform: translateX(1px); } }
+@keyframes duo-flow { 0%, 100% { opacity: .35; transform: translateY(-1px); } 50% { opacity: 1; transform: translateY(.6px); } }
+@keyframes duo-drop { 0% { opacity: 0; transform: translateY(-1px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(5px); } }
+@keyframes duo-level { 0%, 100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
 
 
 /* ---------- Header ---------- */
@@ -638,7 +653,7 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 
 
 /* ---------- Service pages ---------- */
-.sub-grid { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); gap: var(--gap); }
+.sub-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
 .sub-card { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px; border-radius: var(--r-card); background: var(--bg-soft); scroll-margin-top: 96px; transition: background .3s; }
 .section--soft .sub-card { background: #fff; }
 .sub-card:target { background: var(--orange-soft); }
@@ -729,6 +744,116 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 
 
 /* ---------- WhatsApp bubble ---------- */
+/* ---------- Service page: the sub-services as a bento (app/[service]/page.tsx) ----------
+   Cards with a drawn scene on top and the wording centred below, beside a column with the way to an
+   inquiry and the business's trust facts. */
+.offers { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--gap); }
+.offers__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: var(--gap); }
+.offers__grid > li:last-child:nth-child(odd) { grid-column: 1 / -1; }   /* an odd last card takes the whole row */
+.offers--few .offers__grid { grid-template-columns: 1fr; }               /* one or two cards: stacked, full width */
+.offer, .offers__way { border-radius: var(--r-panel); background: #fff; box-shadow: 0 0 0 1px var(--line), 0 12px 32px rgb(31 26 22 / .05); }
+.offer { display: flex; flex-direction: column; overflow: hidden; text-align: center; scroll-margin-top: 96px; }
+.offer:target { box-shadow: 0 0 0 2px var(--orange), 0 12px 32px rgb(31 26 22 / .05); }
+.offer__text { display: grid; justify-items: center; gap: 8px; padding: 0 clamp(18px, 2vw, 28px) clamp(22px, 2.4vw, 30px); }
+.offer h3 { font: 600 clamp(1.15rem, 1.5vw, 1.35rem)/1.2 var(--font-display); letter-spacing: -.02em; text-wrap: balance; }
+.offer p { max-width: 38ch; font-size: .94rem; line-height: 1.5; color: var(--ink-2); text-wrap: pretty; }
+
+/* The scene: the card's own icon, large and in two tones, on a faint dot grid that fades out downwards */
+.art { position: relative; flex: 1; display: grid; place-items: center; min-height: clamp(170px, 15vw, 210px); isolation: isolate; overflow: hidden; }
+.art::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(rgb(31 26 22 / .11) 1px, transparent 1.4px) 50% 0 / 14px 14px;
+  mask-image: linear-gradient(180deg, #000 25%, transparent 100%);
+}
+.art__main { display: grid; place-items: center; color: var(--dark); --icon-2: var(--orange); font-size: clamp(3.4rem, 5.2vw, 4.6rem); }
+.art__main svg { stroke-width: 1.35; }   /* drawn large, so a finer line */
+.art__sat { position: absolute; display: grid; place-items: center; color: var(--orange); }
+/* scatter: the neighbouring sub-services' icons float around it */
+.art--scatter .art__sat:nth-child(1) { left: 17%; top: 20%; font-size: 1.5rem; rotate: -14deg; }
+.art--scatter .art__sat:nth-child(2) { right: 16%; top: 16%; font-size: 1.9rem; rotate: 12deg; }
+.art--scatter .art__sat:nth-child(3) { left: 21%; bottom: 20%; font-size: 1.9rem; rotate: 10deg; }
+.art--scatter .art__sat:nth-child(4) { right: 20%; bottom: 24%; font-size: 1.4rem; rotate: -8deg; }
+/* row: the icon repeats to both sides, smaller and fainter each time */
+.art--row .art__sat { top: 50%; translate: -50% -50%; }
+.art--row .art__sat:nth-child(1) { left: 14%; font-size: 1.15rem; opacity: .32; }
+.art--row .art__sat:nth-child(2) { left: 29%; font-size: 1.8rem; opacity: .7; }
+.art--row .art__sat:nth-child(3) { left: 71%; font-size: 1.8rem; opacity: .7; }
+.art--row .art__sat:nth-child(4) { left: 86%; font-size: 1.15rem; opacity: .32; }
+/* rings: two neighbours circle it on a dashed ring */
+.art__orbit { position: absolute; width: clamp(104px, 9.4vw, 126px); aspect-ratio: 1; border: 1.5px dashed rgb(var(--orange-rgb) / .55); border-radius: 50%; }
+.art__orbit::after { content: ""; position: absolute; inset: -22%; border: 1px solid rgb(var(--orange-rgb) / .2); border-radius: 50%; }
+.art__orbit .art__sat { width: 38px; height: 38px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px rgb(var(--orange-rgb) / .35); color: var(--orange-ink); font-size: 1.15rem; }
+.art__orbit .art__sat:nth-child(1) { left: 50%; top: 0; translate: -50% -50%; }
+.art__orbit .art__sat:nth-child(2) { left: 50%; bottom: 0; translate: -50% 50%; }
+/* tree: the neighbours hang below the icon like an organisation chart */
+.art--tree { grid-template-rows: auto auto; align-content: center; justify-items: center; }
+.art--tree .art__main { font-size: clamp(2.8rem, 4vw, 3.5rem); }
+.art__branch { --node: 38px; --rise: 26px; --wire: 1.5px solid rgb(var(--orange-rgb) / .55); position: relative; display: flex; gap: clamp(10px, 1.4vw, 20px); padding-top: var(--rise); }
+.art__branch::before { content: ""; position: absolute; top: calc(var(--rise) / 2); left: calc(var(--node) / 2); right: calc(var(--node) / 2); height: calc(var(--rise) / 2); border: var(--wire); border-bottom: 0; border-radius: 10px 10px 0 0; }
+.art__branch::after { content: ""; position: absolute; top: 0; left: 50%; height: calc(var(--rise) / 2); border-left: var(--wire); }
+.art__branch .art__sat { position: relative; width: var(--node); height: var(--node); border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px rgb(var(--orange-rgb) / .35); color: var(--orange-ink); font-size: 1.15rem; }
+.art__branch .art__sat:not(:first-child, :last-child)::before { content: ""; position: absolute; left: 50%; bottom: 100%; height: calc(var(--rise) / 2); border-left: var(--wire); }
+/* frame: corner marks around the icon, with a line that scans up and down */
+.art__frame {
+  --c: rgb(var(--orange-rgb) / .85); --l: 22px; --t: 2px; position: absolute; width: clamp(118px, 11vw, 148px); aspect-ratio: 1;
+  background:
+    linear-gradient(var(--c) 0 0) top left / var(--l) var(--t), linear-gradient(var(--c) 0 0) top left / var(--t) var(--l),
+    linear-gradient(var(--c) 0 0) top right / var(--l) var(--t), linear-gradient(var(--c) 0 0) top right / var(--t) var(--l),
+    linear-gradient(var(--c) 0 0) bottom left / var(--l) var(--t), linear-gradient(var(--c) 0 0) bottom left / var(--t) var(--l),
+    linear-gradient(var(--c) 0 0) bottom right / var(--l) var(--t), linear-gradient(var(--c) 0 0) bottom right / var(--t) var(--l);
+  background-repeat: no-repeat;
+}
+.art__frame::after { content: ""; position: absolute; left: 8%; right: 8%; top: calc(50% - 1px); height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgb(var(--orange-rgb) / 0), var(--orange), rgb(var(--orange-rgb) / 0)); }
+/* ripple: circles spread out from the icon */
+.art__ripple { position: absolute; width: clamp(84px, 7.6vw, 100px); aspect-ratio: 1; border: 1.5px solid rgb(var(--orange-rgb) / .6); border-radius: 50%; }
+.art__ripple:nth-child(1) { scale: 1.1; opacity: .7; }
+.art__ripple:nth-child(2) { scale: 1.55; opacity: .42; }
+.art__ripple:nth-child(3) { scale: 2; opacity: .22; }
+@media (prefers-reduced-motion: no-preference) {
+  .art__frame::after { animation: art-scan 3.4s ease-in-out infinite; }
+  .art__ripple { scale: 1; opacity: 0; animation: art-ripple 3.6s ease-out infinite; }
+  .art__ripple:nth-child(2) { scale: 1; opacity: 0; animation-delay: -1.2s; }
+  .art__ripple:nth-child(3) { scale: 1; opacity: 0; animation-delay: -2.4s; }
+  .art--scatter .art__sat, .art--row .art__sat { animation: art-float 4.6s ease-in-out infinite; }
+  .art__sat:nth-child(2) { animation-delay: -1.2s; }
+  .art__sat:nth-child(3) { animation-delay: -2.4s; }
+  .art__sat:nth-child(4) { animation-delay: -3.4s; }
+  .art__orbit { animation: ani-spin 28s linear infinite; }
+  .art__orbit .art__sat { animation: ani-spin 28s linear infinite reverse; }
+}
+@keyframes art-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes art-scan { 0%, 100% { transform: translateY(-46px); opacity: .25; } 50% { transform: translateY(46px); opacity: 1; } }
+@keyframes art-ripple { 0% { transform: scale(.75); opacity: 0; } 18% { opacity: .85; } 100% { transform: scale(2.15); opacity: 0; } }
+
+/* The column beside the cards */
+.offers__aside { display: grid; grid-template-rows: 1fr auto; gap: var(--gap); }
+.offers--long .offers__aside { position: sticky; top: 96px; align-self: start; }   /* three rows of cards: it stays in view */
+.offers__way { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: clamp(18px, 2vw, 26px); text-align: center; }
+/* the steps (or, on the emergency page, the cases) as speech bubbles from alternating sides */
+.offers__steps { flex: 1; display: grid; align-content: center; gap: 12px; width: 100%; margin-bottom: 14px; }
+.offers__steps li { display: flex; align-items: center; gap: 10px; max-width: 92%; text-align: left; }
+.offers__steps li:nth-child(odd) { flex-direction: row-reverse; justify-self: end; }
+.offers__steps b { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--dark); color: var(--orange); font: 600 .82rem/1 var(--font-display); flex: none; }
+.offers__steps span { padding: 10px 14px; border-radius: 14px; background: var(--bg-soft); font: 500 .9rem/1.3 var(--font-body); }
+.offers__steps li:nth-child(even) span { background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.offers__way h3 { font: 600 clamp(1.15rem, 1.5vw, 1.35rem)/1.2 var(--font-display); letter-spacing: -.02em; }
+.offers__way > p { max-width: 36ch; font-size: .92rem; line-height: 1.5; color: var(--ink-2); }
+.offers__way .btn { margin-top: 8px; }
+.offers__trust { padding: clamp(18px, 2vw, 26px); border-radius: var(--r-panel); background: var(--orange); color: var(--dark); text-align: center; }
+.offers__trust h3 { margin-bottom: 14px; font: 600 1.2rem/1.2 var(--font-display); letter-spacing: -.015em; }
+.offers__trust ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.offers__trust li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: #fff; font: 500 .86rem/1.1 var(--font-body); white-space: nowrap; }
+.offers__trust li i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--dark); color: var(--orange); font-size: .72rem; }
+.offers__trust li i svg { stroke-width: 3; }
+.offers__trust li i.is-plain { background: none; font-size: 1.05rem; }
+@media (max-width: 1040px) {
+  .offers { grid-template-columns: 1fr; }
+  .offers__aside, .offers--long .offers__aside { position: static; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); grid-template-rows: none; }
+}
+@media (max-width: 700px) {
+  .offers__grid, .offers__aside, .offers--long .offers__aside { grid-template-columns: 1fr; }
+}
+
 /* ---------- Ratgeber (components/blog.tsx, app/ratgeber) ---------- */
 .posts { display: grid; gap: var(--gap); }
 .posts--index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
