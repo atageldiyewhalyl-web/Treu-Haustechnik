@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { AutoCarousel } from '@/components/auto-carousel';
 import { BlogTeaser } from '@/components/blog';
 import { Cta, Link, TextLink } from '@/components/cta';
 import { GoogleG, Icon, Stars } from '@/components/icons';
@@ -24,20 +25,20 @@ export default async function HomePage() {
   return (
     <main id="main">
       <Hero image={`${IMG}/hero-installer-wide.jpg`} focus="0% 40%" focusSm="47% 40%" lift="9%" title={hero.title} lead={hero.lead} actions={<MainActions />}>
-        {/* The four services as a fan of photo cards, rising from the hero's bottom edge */}
-        <ul className="fan">
+        {/* The four services as photo cards: a fan rising from the hero's bottom edge, on phones a row that moves on by itself */}
+        <AutoCarousel className="fan">
           {SERVICES.map(({ slug, icon, card }) => (
             <li key={slug}>
               <Link href={`/${slug}`} className="fan__card">
                 <span className="fan__face">
-                  <Image src={card} alt="" fill sizes="(max-width: 700px) 30vw, 380px" />
+                  <Image src={card} alt="" fill sizes="(max-width: 760px) 62vw, 380px" />
                   <span className="fan__icon"><Icon name={icon} animated duo /></span>
                   <span className="fan__text"><b>{client.names[slug]}</b><small>{hero.services[slug]}</small></span>
                 </span>
               </Link>
             </li>
           ))}
-        </ul>
+        </AutoCarousel>
       </Hero>
 
       <TrustStrip />

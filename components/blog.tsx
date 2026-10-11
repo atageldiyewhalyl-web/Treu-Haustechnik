@@ -37,7 +37,7 @@ export async function BlogTeaser() {
         <SectionHead eyebrow={blog.eyebrow} title={blog.title} aside={blog.aside}>
           <TextLink href="/ratgeber">{blog.all}</TextLink>
         </SectionHead>
-        <ul className="posts posts--home">
+        <ul className="posts posts--home" data-lenis-prevent-horizontal>
           {posts.map((post, i) => <PostCard key={post.slug} post={post} lead={i === 0} index={i} />)}
         </ul>
       </div>

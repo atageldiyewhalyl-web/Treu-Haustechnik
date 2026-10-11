@@ -395,7 +395,21 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 .fan__text { position: absolute; top: clamp(44px, 5.8vw, 90px); left: clamp(8px, 1.2vw, 20px); right: clamp(8px, 1.2vw, 20px); }
 .fan__text b { display: block; font: 600 clamp(.72rem, 1.6vw, 1.45rem)/1.2 var(--font-display); letter-spacing: -.01em; }
 .fan__text small { display: block; margin-top: 6px; font-size: clamp(.76rem, 1vw, .96rem); line-height: 1.35; color: rgb(255 255 255 / .9); }
-@media (max-width: 760px) { .fan__text small { display: none; } }
+/* Phones: the cards stand upright in one row that scrolls sideways and moves on by itself
+   (components/auto-carousel.tsx). The row runs from screen edge to screen edge. */
+@media (max-width: 760px) {
+  .hero__below { display: block; width: 100%; }
+  .fan { justify-content: flex-start; gap: 12px; height: auto; padding: 6px var(--gutter) 50px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+  .fan::-webkit-scrollbar { display: none; }
+  .fan li:nth-child(n) { --tilt: 0deg; --drop: 0px; flex: none; width: min(62vw, 250px); margin: 0; scroll-snap-align: start; }
+  .fan__card { aspect-ratio: 4 / 4.7; }
+  .fan li:hover .fan__face, .fan li:focus-within .fan__face { transform: none; }
+  .fan__face { border-radius: 16px; box-shadow: 0 12px 28px rgb(22 17 13 / .34); }
+  .fan__icon { top: 14px; left: 14px; width: 44px; height: 44px; font-size: 1.4rem; }
+  .fan__text { top: 70px; left: 14px; right: 14px; }
+  .fan__text b { font-size: 1.15rem; }
+  .fan__text small { font-size: .84rem; }
+}
 
 
 /* ---------- Trust strip ---------- */
@@ -590,7 +604,7 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 .reason.is-on { border-color: var(--orange); background: var(--orange-soft); }
 /* a photo of the thing the choice is about */
 .reason__img { width: clamp(88px, 9.5vw, 124px); height: auto; aspect-ratio: 4 / 3; border-radius: 10px; object-fit: cover; }
-.reason__text b { display: block; font: 600 .9rem/1.25 var(--font-display); }
+.reason__text b { display: block; font: 600 .9rem/1.25 var(--font-display); hyphens: auto; overflow-wrap: break-word; }
 .reason__text small { display: block; margin-top: 3px; font-size: .74rem; line-height: 1.35; color: var(--ink-2); }
 @media (max-width: 620px) { .reasons { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
@@ -942,6 +956,44 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
   .review { width: min(84vw, 330px); }
   .iform__steps li span:last-child { display: none; }
   .iform__steps .is-current span:last-child { display: inline; }
+
+  /* small print stays readable: nothing under 12px */
+  .eyebrow { font-size: .75rem; }
+  .chips li, .chip, .post__meta b { font-size: .78rem; }
+  .review__who small, .reason__text small, .map__note, .checklist li { font-size: .8rem; }
+  .ftr__hotline small, .checklist__rating, .inquiry__direct small { font-size: .75rem; }
+
+  /* text links get a taller touch area */
+  .ftr__links { gap: 0; }
+  .ftr__links a { display: block; padding-block: 9px; }
+  .ftr__contact { gap: 0; }
+  .ftr__contact li { align-items: center; }
+  .ftr__contact svg { margin-top: 0; }
+  .ftr__contact a { padding-block: 10px; }
+  .ftr__bottom ul { gap: 0 22px; }
+  .ftr__bottom a, .ftr__bottom button { display: block; padding-block: 11px; }
+  .inquiry__direct a { display: inline-block; padding-block: 5px; }
+  .crumbs { gap: 0 8px; align-items: center; }
+  .crumbs a { padding-block: 10px; }
+  .social { gap: 2px; margin-left: -11px; }
+  .social a { display: grid; place-items: center; width: 44px; height: 44px; }
+
+  /* a long button label breaks onto a second line instead of running off the screen */
+  .btn { max-width: 100%; padding-block: 10px; line-height: 1.2; white-space: normal; }
+}
+
+/* Phones: the homepage's Ratgeber cards stand in one row that is swiped sideways, like the services and
+   the reviews above them, so the page does not grow by five full cards */
+@media (max-width: 620px) {
+  .posts--home {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(80vw, 320px); margin-inline: calc(var(--gutter) * -1); padding: 4px var(--gutter) 18px;
+    overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none;
+  }
+  .posts--home::-webkit-scrollbar { display: none; }
+  .posts--home .post { scroll-snap-align: start; }
+  .posts--home .post--lead { grid-column: auto; }
+  .posts--home .post .post__img { flex: none; min-height: 0; aspect-ratio: 16 / 10; }
+  .posts--home .post--lead .post__title { font-size: clamp(1.1rem, 1.5vw, 1.3rem); line-height: 1.2; }
 }
 
 @media (prefers-reduced-motion: reduce) {
