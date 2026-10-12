@@ -94,7 +94,7 @@ export const itemCopy = (copy: Copy, slug: ServiceSlug, id: string) =>
 /** The image cards of the homepage carousel: the most asked-for services, each leading to its group's page.
     Same order as `carousel.cards` in the copy. */
 export const SERVICE_CARDS: { image: string; group: ServiceSlug; anchor?: string; icon: IconName }[] = [
-  { image: `${IMG}/svc-waermepumpe.jpg`, group: 'heizung', anchor: 'waermepumpe', icon: 'fan' },
+  { image: `${IMG}/svc-waermepumpe-indoor.png`, group: 'heizung', anchor: 'waermepumpe', icon: 'fan' },
   { image: `${IMG}/svc-heizung.jpg`, group: 'heizung', anchor: 'heizungsmodernisierung', icon: 'radiator' },
   { image: `${IMG}/svc-bad.jpg`, group: 'sanitaer-bad', anchor: 'badsanierung', icon: 'bath' },
   { image: `${IMG}/svc-barrierefrei.jpg`, group: 'sanitaer-bad', anchor: 'barrierefrei', icon: 'accessibility' },

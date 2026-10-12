@@ -14,7 +14,7 @@ import { cx } from '@/lib/ui';
 
 const FIELDS = { name: '', phone: '', email: '', street: '', zip: '', town: '' };
 type Field = keyof typeof FIELDS;
-type ErrorKey = Field | 'reason' | 'contact' | 'consent' | 'photos' | 'form';
+type ErrorKey = Field | 'reason' | 'consent' | 'photos' | 'form';
 type Errors = Partial<Record<ErrorKey, string>>;
 
 interface Photo { id: string; file: File; url: string }
@@ -71,9 +71,7 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
   const go = (next: number) => { moved.current = true; setErrors({}); setStep(next); };
   const set = (field: Field) => (event: ChangeEvent<HTMLInputElement>) => {
     setFields((prev) => ({ ...prev, [field]: event.target.value }));
-    // Typing a phone number or an email address also settles the "one of the two" message
-    const reachable = field === 'phone' || field === 'email';
-    if (errors[field] || (reachable && errors.contact)) setErrors((prev) => ({ ...prev, [field]: undefined, ...(reachable && { contact: undefined }) }));
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
   async function addPhotos(event: ChangeEvent<HTMLInputElement>) {
@@ -109,10 +107,15 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
     const found: Errors = {};
     const phone = fields.phone.trim();
     const email = fields.email.trim();
+    const street = fields.street.trim();
+    const zip = fields.zip.trim();
+    const town = fields.town.trim();
     if (fields.name.trim().length < 2) found.name = t.errors.name;
-    if (phone && !isPhone(phone)) found.phone = t.errors.phone;
-    if (email && !EMAIL_PATTERN.test(email)) found.email = t.errors.email;
-    if (!phone && !email) found.contact = t.errors.contact;
+    if (!phone || !isPhone(phone)) found.phone = t.errors.phone;
+    if (!email || !EMAIL_PATTERN.test(email)) found.email = t.errors.email;
+    if (!street) found.street = t.errors.street;
+    if (!/^\d{5}$/.test(zip)) found.zip = t.errors.zip;
+    if (!town) found.town = t.errors.town;
     if (!consent) found.consent = t.errors.consent;
     return found;
   }
@@ -178,7 +181,7 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
   );
 
   if (status === 'done') {
-    const how = fields.email.trim() && fields.phone.trim() ? t.done.byBoth : fields.email.trim() ? t.done.byEmail : t.done.byPhone;
+    const how = t.done.byBoth;
     return (
       <div ref={root} className="iform" role="status">
         {letterhead}
@@ -195,8 +198,6 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
   }
 
   const sending = status === 'sending';
-  const optional = <small> {t.optional}</small>;
-
   return (
     <div ref={root} className="iform">
       {letterhead}
@@ -272,14 +273,11 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
             <h3 ref={heading} tabIndex={-1}>{t.contactTitle}</h3>
             <div className="iform__grid">
               <TextField label={<>{t.name}<span className="req"> *</span></>} required name="name" autoComplete="name" value={fields.name} onChange={set('name')} error={errors.name} wide />
-              <TextField label={t.phone} name="phone" type="tel" autoComplete="tel" inputMode="tel" value={fields.phone} onChange={set('phone')} error={errors.phone} />
-              <TextField label={t.email} name="email" type="email" autoComplete="email" inputMode="email" value={fields.email} onChange={set('email')} error={errors.email} />
-              {errors.contact
-                ? <p className="iform__error iform__wide" role="alert">{errors.contact}</p>
-                : <p className="iform__hint iform__wide">{t.contactHint}</p>}
-              <TextField label={<>{t.street}{optional}</>} name="street" autoComplete="street-address" value={fields.street} onChange={set('street')} wide />
-              <TextField label={<>{t.zip}{optional}</>} name="zip" autoComplete="postal-code" inputMode="numeric" value={fields.zip} onChange={set('zip')} />
-              <TextField label={<>{t.town}{optional}</>} name="town" autoComplete="address-level2" value={fields.town} onChange={set('town')} />
+              <TextField label={<>{t.phone}<span className="req"> *</span></>} required name="phone" type="tel" autoComplete="tel" inputMode="tel" value={fields.phone} onChange={set('phone')} error={errors.phone} />
+              <TextField label={<>{t.email}<span className="req"> *</span></>} required name="email" type="email" autoComplete="email" inputMode="email" value={fields.email} onChange={set('email')} error={errors.email} />
+              <TextField label={<>{t.street}<span className="req"> *</span></>} required name="street" autoComplete="street-address" value={fields.street} onChange={set('street')} error={errors.street} wide />
+              <TextField label={<>{t.zip}<span className="req"> *</span></>} required name="zip" autoComplete="postal-code" inputMode="numeric" value={fields.zip} onChange={set('zip')} error={errors.zip} />
+              <TextField label={<>{t.town}<span className="req"> *</span></>} required name="town" autoComplete="address-level2" value={fields.town} onChange={set('town')} error={errors.town} />
             </div>
 
             <label className={cx('consent', errors.consent && 'has-error')}>

@@ -1,14 +1,11 @@
 import Image from 'next/image';
 import { AutoCarousel } from '@/components/auto-carousel';
 import { BlogTeaser } from '@/components/blog';
-import { Mark } from '@/components/brand';
 import { Cta, Link, TextLink } from '@/components/cta';
-import { GoogleG, Icon, Stars } from '@/components/icons';
+import { Icon } from '@/components/icons';
 import { ProcessSteps } from '@/components/process';
-import { Emergency, FaqSection, Hero, Inquiry, MainActions, Reviews, SectionHead, ServicesCarousel, TrustStrip } from '@/components/sections';
-import { fill } from '@/lib/i18n';
+import { Accent, Emergency, FaqSection, Hero, Inquiry, MainActions, Reviews, ServicesCarousel, TrustStrip } from '@/components/sections';
 import { facts, getCopy } from '@/lib/i18n/server';
-import { REVIEW_SUMMARY } from '@/lib/reviews';
 import { SERVICES } from '@/lib/services';
 import { INQUIRY_ANCHOR } from '@/lib/site';
 
@@ -23,7 +20,7 @@ const STEP_PHOTOS = [
 ];
 
 export default async function HomePage() {
-  const { home, cta, a11y, client } = await getCopy();
+  const { home, cta, client } = await getCopy();
   const { hero, about, process } = home;
 
   return (
@@ -66,21 +63,14 @@ export default async function HomePage() {
 
       <section className="section section--soft" id="ablauf">
         <div className="wrap">
-          <SectionHead eyebrow={process.eyebrow} title={process.title} aside={process.aside}>
-            <a className="round-btn round-btn--dark" href={INQUIRY_ANCHOR} aria-label={a11y.toForm}><Icon name="down" /></a>
-          </SectionHead>
+          <div className="process-head" data-reveal>
+            <p className="eyebrow">{process.eyebrow}</p>
+            <h2 className="h2"><Accent parts={process.title} /></h2>
+          </div>
 
           <ProcessSteps
-            steps={process.steps.map(({ title, text }, i) => ({ title, text, label: fill(process.step, { n: `0${i + 1}` }), ...STEP_PHOTOS[i] }))}
-            extra={
-              <div className="checklist">
-                <span className="checklist__rating"><GoogleG /><Stars /><b>{REVIEW_SUMMARY.rating}</b></span>
-                <Mark className="checklist__logo" />
-                <p className="checklist__title">{process.checklistTitle[0]}<em>{process.checklistTitle[1]}</em></p>
-                <ul>{process.checklist.map((item) => <li key={item}><span><Icon name="check" /></span>{item}</li>)}</ul>
-                <span className="checklist__seal"><Icon name="shield" /></span>
-              </div>
-            }
+            steps={process.steps.map(({ title, text }, i) => ({ title, text, label: String(i + 1).padStart(2, '0'), ...STEP_PHOTOS[i] }))}
+            note={process.aside}
           >
             <Cta href={INQUIRY_ANCHOR}>{cta.inquiry}</Cta>
           </ProcessSteps>

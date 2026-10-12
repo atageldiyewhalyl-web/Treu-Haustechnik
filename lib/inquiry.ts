@@ -8,7 +8,7 @@ const IMG = '/assets/img';
 export const REASONS = [
   { key: 'badsanierung', label: 'Badsanierung', image: `${IMG}/svc-bad.jpg`, focus: '50% 78%' },
   { key: 'heizungsaustausch', label: 'Heizungsaustausch', image: `${IMG}/svc-heizung.jpg`, focus: '50% 62%' },
-  { key: 'waermepumpe', label: 'Wärmepumpe', image: `${IMG}/svc-waermepumpe.jpg`, focus: '50% 70%' },
+  { key: 'waermepumpe', label: 'Wärmepumpe', image: `${IMG}/svc-waermepumpe-indoor.png`, focus: '68% 50%' },
   { key: 'klima', label: 'Klima', image: `${IMG}/hero-klima.jpg`, focus: '70% 20%' },
   { key: 'service', label: 'Service und Reparatur', image: `${IMG}/svc-wartung.jpg`, focus: '50% 40%' },
   { key: 'sonstige', label: 'Sonstige', image: `${IMG}/footer.jpg`, focus: '50% 50%' },

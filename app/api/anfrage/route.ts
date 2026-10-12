@@ -30,15 +30,20 @@ export async function POST(request: Request) {
   const name = read('name', 120);
   const phone = read('phone', 40);
   const email = read('email', 160);
-  const address = [read('street', 160), [read('zip', 12), read('town', 100)].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+  const street = read('street', 160);
+  const zip = read('zip', 12);
+  const town = read('town', 100);
+  const address = `${street}, ${zip} ${town}`;
   const description = read('description', 4000);
 
   const fields: Record<string, string> = {};
   if (!isReason(reason)) fields.reason = 'Bitte wählen Sie aus, worum es geht.';
   if (name.length < 2) fields.name = 'Bitte geben Sie Ihren Vor- und Nachnamen an.';
-  if (phone && !isPhone(phone)) fields.phone = 'Bitte prüfen Sie die Telefonnummer.';
-  if (email && !EMAIL_PATTERN.test(email)) fields.email = 'Bitte prüfen Sie die E-Mail-Adresse.';
-  if (!phone && !email) fields.contact = 'Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse an.';
+  if (!phone || !isPhone(phone)) fields.phone = 'Bitte geben Sie eine gültige Telefonnummer an.';
+  if (!email || !EMAIL_PATTERN.test(email)) fields.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
+  if (!street) fields.street = 'Bitte geben Sie Straße und Hausnummer an.';
+  if (!/^\d{5}$/.test(zip)) fields.zip = 'Bitte geben Sie eine gültige fünfstellige PLZ an.';
+  if (!town) fields.town = 'Bitte geben Sie Ihren Ort an.';
   if (read('consent', 5) !== 'yes') fields.consent = 'Bitte stimmen Sie der Datenschutzerklärung zu.';
 
   const photos = form.getAll('photos').filter((entry): entry is File => entry instanceof File && entry.size > 0);
@@ -51,9 +56,9 @@ export async function POST(request: Request) {
   const rows: [string, string][] = [
     ['Grund der Anfrage', reasonLabel(reason)],
     ['Name', name],
-    ['Telefon', phone || '–'],
-    ['E-Mail', email || '–'],
-    ['Anschrift', address || '–'],
+    ['Telefon', phone],
+    ['E-Mail', email],
+    ['Anschrift', address],
     ['Beschreibung', description || '–'],
     ['Bilder', photos.length ? `${photos.length} im Anhang` : 'keine'],
   ];
@@ -72,7 +77,7 @@ export async function POST(request: Request) {
   const { error } = await new Resend(apiKey).emails.send({
     from: process.env.INQUIRY_FROM ?? `${SITE.name} Website <anfrage@treu-haustechnik.de>`,
     to: process.env.INQUIRY_TO ?? SITE.email,
-    replyTo: email || undefined,
+    replyTo: email,
     subject: `Anfrage: ${reasonLabel(reason)} – ${name}`,
     text: rows.map(([label, value]) => `${label}: ${value}`).join('\n'),
     html: `<table cellpadding="8" style="border-collapse:collapse;font:15px/1.5 Arial,sans-serif;color:#1f1a16">${rows

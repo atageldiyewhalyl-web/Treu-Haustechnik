@@ -30,7 +30,7 @@ export default function PrivacyPage() {
         <p>Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Daten (zum Beispiel IP-Adresse, Datum und Uhrzeit des Abrufs, aufgerufene Seite, Browsertyp), um die Website auszuliefern und ihren sicheren Betrieb zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
 
         <h2>3. Anfrageformular</h2>
-        <p>Wenn Sie uns über das Anfrageformular schreiben, verarbeiten wir die von Ihnen eingegebenen Angaben (Name, Grund der Anfrage, Telefonnummer und/oder E-Mail-Adresse, optional Anschrift, Beschreibung und Fotos), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf einen Vertrag gerichtet ist, im Übrigen Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.</p>
+        <p>Wenn Sie uns über das Anfrageformular schreiben, verarbeiten wir die von Ihnen eingegebenen Angaben (Name, Grund der Anfrage, Telefonnummer, E-Mail-Adresse und Anschrift sowie gegebenenfalls Beschreibung und Fotos), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf einen Vertrag gerichtet ist, im Übrigen Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.</p>
         <p>Die Angaben werden nicht in einer Datenbank der Website gespeichert, sondern per E-Mail an uns übermittelt. Für den Versand nutzen wir den Dienst Resend (Resend, Inc., USA) als Auftragsverarbeiter. Die Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung widerrufen oder der Zweck der Speicherung entfällt; gesetzliche Aufbewahrungsfristen bleiben unberührt.</p>
 
         <h2>4. Kontakt per E-Mail, Telefon oder WhatsApp</h2>

@@ -105,8 +105,8 @@ export async function TrustStrip() {
   );
 }
 
-/* A carousel that moves on by itself shows its cards twice in a row, so it can run on without an end
-   (components/carousel.tsx). The second set is a picture of the first: screen readers and the keyboard skip it. */
+/* Review cards retain the older doubled-track loop. Service cards render once and are recycled in place
+   by components/carousel.tsx, so the service strip stays endless without a second visible set. */
 const twice = <T,>(items: readonly T[]) => [...items, ...items].map((item, n) => ({ item, i: n % items.length, clone: n >= items.length }));
 const reveal = (i: number) => ({ 'data-reveal': true, style: idx(Math.min(i, 4)) });
 const CLONE = { 'data-clone': true, 'aria-hidden': true } as const;
@@ -122,15 +122,15 @@ export async function ServicesCarousel() {
           </SectionHead>
         </div>
         <CarouselTrack className="track--services">
-          {twice(SERVICE_CARDS).map(({ item: { image, group, anchor, icon }, i, clone }) => (
-            <li key={`${image}${clone}`} className="svc-card" {...(clone ? CLONE : reveal(i))}>
+          {SERVICE_CARDS.map(({ image, group, anchor, icon }, i) => (
+            <li key={image} className="svc-card" {...reveal(i)}>
               <Image src={image} alt="" fill sizes="(max-width: 700px) 78vw, 384px" />
               <span className="chip">{client.names[group]}</span>
               <span className="svc-card__icon"><Icon name={icon} animated /></span>
               <div className="svc-card__body">
                 <h3>{carousel.cards[i].title}</h3>
                 <p>{carousel.cards[i].text}</p>
-                <Cta href={`/${group}${anchor ? `#${anchor}` : ''}`} variant="light" tabIndex={clone ? -1 : undefined}>{cta.more}</Cta>
+                <Cta href={`/${group}${anchor ? `#${anchor}` : ''}`} variant="light">{cta.more}</Cta>
               </div>
             </li>
           ))}
