@@ -1,7 +1,7 @@
 'use client';
 /* The inquiry form, in three steps: what it is about, the details with optional photos, and how to
-   reach the customer. Nothing is stored: app/api/anfrage/route.ts emails it to the owner.
-   A service page starts it with its own category already chosen (`preselect`). */
+   reach the customer. app/api/anfrage/route.ts hands valid submissions to the durable Supabase +
+   Resend workflow. A service page starts it with its own category already chosen (`preselect`). */
 import Image from 'next/image';
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type InputHTMLAttributes, type ReactNode } from 'react';
 import { Mark } from '@/components/brand';
@@ -136,6 +136,8 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
     const body = new FormData(event.currentTarget);   // carries the hidden spam trap
     body.set('reason', reason);
     body.set('description', description);
+    body.set('language', document.documentElement.lang || 'de');
+    body.set('pageUrl', window.location.href);
     for (const [key, value] of Object.entries(fields)) body.set(key, value);
     body.set('consent', 'yes');
     body.delete('photos');

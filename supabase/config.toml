@@ -1,0 +1,11 @@
+project_id = "Treu-Haustechnik"
+
+[db]
+major_version = 17
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+[functions.treu-anfrage]
+verify_jwt = false
