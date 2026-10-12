@@ -56,7 +56,7 @@ const MOTION: Partial<Record<IconName, string>> = {
   glass: 'sway', filter: 'drip', fuel: 'wiggle', accessibility: 'sway', dots: 'pulse',
 };
 
-/* Two-tone drawings for the hero's fan cards, the trust facts and the sub-service cards: `.i2` strokes and `.i2f` fills
+/* Two-tone drawings for the hero's fan cards, the trust facts, the sub-service cards and the free-standing icons (`.glyph`): `.i2` strokes and `.i2f` fills
    take the accent colour (--icon-2), and the `.mv-*` parts move on their own (see `.duo` in globals.css).
    `motion` moves the whole icon on top of that. */
 const DUO: Partial<Record<IconName, { art: ReactNode; motion?: string }>> = {
@@ -190,6 +190,26 @@ const DUO: Partial<Record<IconName, { art: ReactNode; motion?: string }>> = {
     art: <>
       <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
       <g className="i2 mv-blink" strokeWidth="2.1"><path d="M12 9v4" /><path d="M12 17h.01" /></g>
+    </>,
+  },
+  // Ways to reach us and the values: the phone rings, the letter's flap and the shield's tick carry the accent
+  phone: {
+    motion: 'ring',
+    art: <>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      <path className="i2 mv-blink" d="M15.05 5A5 5 0 0 1 19 8.95" /><path className="i2 mv-blink mv-late" d="M15.05 1A9 9 0 0 1 23 8.94" />
+    </>,
+  },
+  mail: {
+    art: <>
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path className="i2" d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </>,
+  },
+  shield: {
+    art: <>
+      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+      <path className="i2 mv-blink" d="m9 12 2 2 4-4" />
     </>,
   },
 };

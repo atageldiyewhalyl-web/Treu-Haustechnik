@@ -1,6 +1,7 @@
 /* The page sections shared between the homepage and the inner pages. Wording: lib/i18n. */
 import Image from 'next/image';
 import type { CSSProperties, ReactNode } from 'react';
+import { Mark } from '@/components/brand';
 import { Carousel, CarouselButtons, CarouselTrack } from '@/components/carousel';
 import { Cta, Link, TextLink } from '@/components/cta';
 import { Faq, type FaqItem } from '@/components/faq';
@@ -104,26 +105,32 @@ export async function TrustStrip() {
   );
 }
 
+/* A carousel that moves on by itself shows its cards twice in a row, so it can run on without an end
+   (components/carousel.tsx). The second set is a picture of the first: screen readers and the keyboard skip it. */
+const twice = <T,>(items: readonly T[]) => [...items, ...items].map((item, n) => ({ item, i: n % items.length, clone: n >= items.length }));
+const reveal = (i: number) => ({ 'data-reveal': true, style: idx(Math.min(i, 4)) });
+const CLONE = { 'data-clone': true, 'aria-hidden': true } as const;
+
 export async function ServicesCarousel() {
   const { carousel, cta, client } = await getCopy();
   return (
     <section className="section" id="leistungen">
-      <Carousel>
+      <Carousel auto>
         <div className="wrap">
           <SectionHead eyebrow={carousel.eyebrow} title={carousel.title} aside={carousel.aside}>
             <CarouselButtons label={carousel.label} />
           </SectionHead>
         </div>
         <CarouselTrack className="track--services">
-          {SERVICE_CARDS.map(({ image, group, anchor, icon }, i) => (
-            <li key={image} className="svc-card" data-reveal style={idx(Math.min(i, 4))}>
+          {twice(SERVICE_CARDS).map(({ item: { image, group, anchor, icon }, i, clone }) => (
+            <li key={`${image}${clone}`} className="svc-card" {...(clone ? CLONE : reveal(i))}>
               <Image src={image} alt="" fill sizes="(max-width: 700px) 78vw, 384px" />
               <span className="chip">{client.names[group]}</span>
               <span className="svc-card__icon"><Icon name={icon} animated /></span>
               <div className="svc-card__body">
                 <h3>{carousel.cards[i].title}</h3>
                 <p>{carousel.cards[i].text}</p>
-                <Cta href={`/${group}${anchor ? `#${anchor}` : ''}`} variant="light">{cta.more}</Cta>
+                <Cta href={`/${group}${anchor ? `#${anchor}` : ''}`} variant="light" tabIndex={clone ? -1 : undefined}>{cta.more}</Cta>
               </div>
             </li>
           ))}
@@ -138,15 +145,15 @@ export async function Reviews({ soft }: { soft?: boolean }) {
   const { reviews } = await getCopy();
   return (
     <section className={cx('section', soft && 'section--soft')} id="bewertungen">
-      <Carousel>
+      <Carousel auto>
         <div className="wrap">
           <SectionHead eyebrow={reviews.eyebrow} title={reviews.title} aside={facts(reviews.aside)}>
             <CarouselButtons label={reviews.label} />
           </SectionHead>
         </div>
         <CarouselTrack className="track--reviews">
-          {REVIEWS.map(({ name, when, stars, text, photo }, i) => (
-            <li key={name} className="review" data-reveal style={idx(Math.min(i, 4))} lang="de">
+          {twice(REVIEWS).map(({ item: { name, when, stars, text, photo }, i, clone }) => (
+            <li key={`${name}${clone}`} className="review" lang="de" {...(clone ? CLONE : reveal(i))}>
               <div className="review__head">
                 {photo
                   ? <Image className="review__avatar" src={photo} alt="" width={40} height={40} />
@@ -222,7 +229,7 @@ export async function FaqSection({ items, soft }: { items: FaqItem[]; soft?: boo
         <SectionHead eyebrow={faq.eyebrow} title={faq.title} aside={faq.aside} />
         <div className="faq-layout">
           <aside className="faq-aside" data-reveal>
-            <span className="faq-aside__mark"><Image src="/assets/brand/mark.png" alt="" width={441} height={205} /></span>
+            <span className="faq-aside__mark"><Mark /></span>
             <p className="faq-aside__title"><Accent parts={faq.boxTitle} /></p>
             <p>{faq.boxText}</p>
             <Cta href={INQUIRY_ANCHOR}>{cta.inquiry}</Cta>
@@ -239,22 +246,26 @@ export async function FaqSection({ items, soft }: { items: FaqItem[]; soft?: boo
 export async function Inquiry({ preselect, map, direct = true }: { preselect?: ReasonKey; map?: boolean; direct?: boolean }) {
   const { inquiry } = await getCopy();
   return (
-    <section className="section inquiry" id="anfrage">
-      <div className="wrap inquiry__grid">
-        <div className="inquiry__intro" data-reveal>
-          <p className="eyebrow">{inquiry.eyebrow}</p>
-          <h2 className="h2"><Accent parts={inquiry.title} /></h2>
-          <p>{inquiry.text}</p>
-          {direct && (
-            <ul className="inquiry__direct">
-              <li><Icon name="phone" /><span><small>{inquiry.hotline}</small><a href={SITE.phoneHref}>{SITE.phone}</a></span></li>
-              <li><Icon name="mail" /><span><small>{inquiry.email}</small><a href={`mailto:${SITE.email}`}>{SITE.email}</a></span></li>
-              <li><Icon name="whatsapp" /><span><small>{inquiry.whatsapp}</small><Link href={SITE.whatsapp}>{inquiry.write}</Link></span></li>
-            </ul>
-          )}
-        </div>
-        <div className="inquiry__form" data-reveal>
-          <InquiryForm preselect={preselect} />
+    <section className="section inquiry">
+      <div className="wrap">
+        {/* The page's main call to action: the brand colour as a panel, the form as a white sheet on it */}
+        <div className="inquiry__panel" id="anfrage">
+          <Mark className="inquiry__mark" />
+          <div className="inquiry__intro" data-reveal>
+            <p className="eyebrow">{inquiry.eyebrow}</p>
+            <h2 className="h2"><Accent parts={inquiry.title} /></h2>
+            <p>{inquiry.text}</p>
+            {direct && (
+              <ul className="inquiry__direct">
+                <li><Icon name="phone" /><span><small>{inquiry.hotline}</small><a href={SITE.phoneHref}>{SITE.phone}</a></span></li>
+                <li><Icon name="mail" /><span><small>{inquiry.email}</small><a href={`mailto:${SITE.email}`}>{SITE.email}</a></span></li>
+                <li><Icon name="whatsapp" /><span><small>{inquiry.whatsapp}</small><Link href={SITE.whatsapp}>{inquiry.write}</Link></span></li>
+              </ul>
+            )}
+          </div>
+          <div className="inquiry__form" data-reveal>
+            <InquiryForm preselect={preselect} />
+          </div>
         </div>
         {map && <div className="inquiry__map" data-reveal><MapEmbed /></div>}
       </div>

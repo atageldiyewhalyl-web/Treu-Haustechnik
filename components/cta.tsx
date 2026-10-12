@@ -9,7 +9,7 @@ import { cx } from '@/lib/ui';
 type Variant = 'accent' | 'dark' | 'light' | 'soft' | 'outline' | 'ghost';
 
 /** Routes go through the router; anchors, phone numbers and outside addresses are plain links. */
-export function Link({ href, ...props }: { href: string; className?: string; children: ReactNode; 'aria-label'?: string; onClick?: () => void }) {
+export function Link({ href, ...props }: { href: string; className?: string; children: ReactNode; 'aria-label'?: string; tabIndex?: number; onClick?: () => void }) {
   if (href.startsWith('/') && !href.startsWith('/#')) return <NextLink href={href} {...props} />;
   const outside = /^https?:/.test(href);
   return <a href={href} {...(outside && { target: '_blank', rel: 'noopener' })} {...props} />;
@@ -18,9 +18,9 @@ export function Link({ href, ...props }: { href: string; className?: string; chi
 /** The icon a button gets when none is named: a phone for calls, a paper plane for the inquiry form, an arrow otherwise. */
 const iconFor = (href: string): IconName => (href.startsWith('tel:') ? 'phone' : href.endsWith(INQUIRY_ANCHOR) ? 'send' : 'arrow');
 
-export function Cta({ href, children, variant = 'accent', icon = iconFor(href), className }: { href: string; children: ReactNode; variant?: Variant; icon?: IconName; className?: string }) {
+export function Cta({ href, children, variant = 'accent', icon = iconFor(href), className, tabIndex }: { href: string; children: ReactNode; variant?: Variant; icon?: IconName; className?: string; tabIndex?: number }) {
   return (
-    <Link href={href} className={cx('btn', `btn--${variant}`, className)}>
+    <Link href={href} className={cx('btn', `btn--${variant}`, className)} tabIndex={tabIndex}>
       <span className="btn__icon"><Icon name={icon} /></span>
       <span>{children}</span>
     </Link>

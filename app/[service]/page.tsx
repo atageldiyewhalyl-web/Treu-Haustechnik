@@ -76,7 +76,7 @@ export default async function ServicePage(props: PageProps<'/[service]'>) {
         <div className="wrap">
           <SectionHead eyebrow={name} title={text.listTitle} aside={text.listIntro} />
           <div className={cx('offers', count < 3 && 'offers--few', count > 4 && 'offers--long')}>
-            <ul className="offers__grid">
+            <ul className="offers__grid" data-lenis-prevent-horizontal>
               {service.items.map(({ id, icon }, i) => {
                 const item = itemCopy(copy, service.slug, id);
                 // the other sub-services' icons surround this card's own (general ones fill up a short list)
@@ -144,8 +144,8 @@ export default async function ServicePage(props: PageProps<'/[service]'>) {
             {others.map(({ slug, icon }, i) => (
               <li key={slug} data-reveal style={idx(i)}>
                 <Link className="more-card" href={`/${slug}`}>
-                  <span className="sub-card__icon"><Icon name={icon} animated /></span>
-                  <span className="more-card__text"><b>{client.names[slug]}</b><small>{copy.services[slug].intro}</small></span>
+                  <span className="glyph"><Icon name={icon} animated duo /></span>
+                  <span className="more-card__text"><b>{client.names[slug]}</b><small>{copy.home.hero.services[slug]}</small></span>
                   <span className="arrow-badge"><Icon name="arrow" /></span>
                 </Link>
               </li>

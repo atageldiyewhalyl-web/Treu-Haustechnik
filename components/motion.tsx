@@ -10,9 +10,9 @@ export function Motion() {
 
   useEffect(() => {
     document.documentElement.classList.add('is-ready');
-    const items = document.querySelectorAll('[data-reveal]:not(.is-in)');
+    const pending = () => document.querySelectorAll('[data-reveal]:not(.is-in)');
     if (!('IntersectionObserver' in window) || prefersReducedMotion()) {
-      items.forEach((item) => item.classList.add('is-in'));
+      pending().forEach((item) => item.classList.add('is-in'));
       return;
     }
     const observer = new IntersectionObserver((entries) => {
@@ -22,8 +22,15 @@ export function Motion() {
         observer.unobserve(entry.target);
       }
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
+    const watch = () => pending().forEach((item) => observer.observe(item));
+    watch();
+    // items that are rendered anew later (the dev language switch re-keys translated lists) would stay hidden otherwise
+    const added = new MutationObserver(watch);
+    added.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      observer.disconnect();
+      added.disconnect();
+    };
   }, [pathname]);
 
   return null;

@@ -1,17 +1,18 @@
 /* The inquiry form's categories and rules, shared by the form (components/inquiry-form.tsx)
    and the route that emails it (app/api/anfrage/route.ts). Categories are the client's own list. */
-const IMG = '/assets/img/form';
+const IMG = '/assets/img';
 
 /** `label` is the German name the owner reads in the email; the form shows the wording from lib/i18n.
-    `image` is a photo of the thing the choice is about (400 × 300, sources in public/assets/img/SOURCES.md). */
+    `image` fills the choice's tile: a photo of the work it stands for, shared with the service cards
+    (sources in public/assets/img/SOURCES.md). `focus` is the part of it to keep in view (CSS object-position). */
 export const REASONS = [
-  { key: 'badsanierung', label: 'Badsanierung', image: `${IMG}/bad.jpg` },
-  { key: 'heizungsaustausch', label: 'Heizungsaustausch', image: `${IMG}/heizung.jpg` },
-  { key: 'waermepumpe', label: 'Wärmepumpe', image: `${IMG}/waermepumpe.jpg` },
-  { key: 'klima', label: 'Klima', image: `${IMG}/klima.jpg` },
-  { key: 'service', label: 'Service und Reparatur', image: `${IMG}/service.jpg` },
-  { key: 'sonstige', label: 'Sonstige', image: `${IMG}/sonstige.jpg` },
-] as const satisfies readonly { key: string; label: string; image: string }[];
+  { key: 'badsanierung', label: 'Badsanierung', image: `${IMG}/svc-bad.jpg`, focus: '50% 78%' },
+  { key: 'heizungsaustausch', label: 'Heizungsaustausch', image: `${IMG}/svc-heizung.jpg`, focus: '50% 62%' },
+  { key: 'waermepumpe', label: 'Wärmepumpe', image: `${IMG}/svc-waermepumpe.jpg`, focus: '50% 70%' },
+  { key: 'klima', label: 'Klima', image: `${IMG}/hero-klima.jpg`, focus: '70% 20%' },
+  { key: 'service', label: 'Service und Reparatur', image: `${IMG}/svc-wartung.jpg`, focus: '50% 40%' },
+  { key: 'sonstige', label: 'Sonstige', image: `${IMG}/footer.jpg`, focus: '50% 50%' },
+] as const satisfies readonly { key: string; label: string; image: string; focus: string }[];
 
 export type ReasonKey = (typeof REASONS)[number]['key'];
 

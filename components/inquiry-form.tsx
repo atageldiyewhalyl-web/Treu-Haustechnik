@@ -4,6 +4,7 @@
    A service page starts it with its own category already chosen (`preselect`). */
 import Image from 'next/image';
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type InputHTMLAttributes, type ReactNode } from 'react';
+import { Mark } from '@/components/brand';
 import { useCopy } from '@/components/i18n';
 import { Icon } from '@/components/icons';
 import { fill } from '@/lib/i18n';
@@ -167,16 +168,28 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
     go(0);
   }
 
+  // The form's letterhead: who the inquiry goes to, and how far along it is
+  const letterhead = (
+    <div className="iform__head">
+      <Mark />
+      <b>{fill(t.title, { name: SITE.name })}</b>
+      {status !== 'done' && <span>{fill(t.count, { n: step + 1, total: t.steps.length })}</span>}
+    </div>
+  );
+
   if (status === 'done') {
     const how = fields.email.trim() && fields.phone.trim() ? t.done.byBoth : fields.email.trim() ? t.done.byEmail : t.done.byPhone;
     return (
-      <div ref={root} className="iform iform--done" role="status">
-        <span className="iform__done-icon"><Icon name="check" /></span>
-        <h3 ref={heading} tabIndex={-1}>{fill(t.done.title, { name: fields.name.trim().split(/\s+/)[0] })}</h3>
-        <p>{fill(t.done.text, { how })}</p>
-        <p className="iform__hint">{t.done.urgent} <a href={SITE.phoneHref}>{SITE.phone}</a>.</p>
-        {preview && <p className="iform__preview">{t.done.preview}</p>}
-        <button className="btn btn--dark" type="button" onClick={reset}><span className="btn__icon"><Icon name="send" /></span><span>{t.done.again}</span></button>
+      <div ref={root} className="iform" role="status">
+        {letterhead}
+        <div className="iform__body iform__body--done">
+          <span className="iform__done-icon"><Icon name="check" /></span>
+          <h3 ref={heading} tabIndex={-1}>{fill(t.done.title, { name: fields.name.trim().split(/\s+/)[0] })}</h3>
+          <p>{fill(t.done.text, { how })}</p>
+          <p className="iform__hint">{t.done.urgent} <a href={SITE.phoneHref}>{SITE.phone}</a>.</p>
+          {preview && <p className="iform__preview">{t.done.preview}</p>}
+          <button className="btn btn--dark" type="button" onClick={reset}><span className="btn__icon"><Icon name="send" /></span><span>{t.done.again}</span></button>
+        </div>
       </div>
     );
   }
@@ -186,7 +199,8 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
 
   return (
     <div ref={root} className="iform">
-      <form onSubmit={submit} noValidate>
+      {letterhead}
+      <form className="iform__body" onSubmit={submit} noValidate>
         <ol className="iform__steps" aria-label={t.progress}>
           {t.steps.map((label, i) => (
             <li key={label} className={cx(i === step && 'is-current', i < step && 'is-done')} aria-current={i === step ? 'step' : undefined}>
@@ -205,10 +219,11 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
           <fieldset className="iform__panel">
             <legend><h3 ref={heading} tabIndex={-1}>{t.reasonTitle} <span className="req">*</span></h3></legend>
             <div className="reasons" role="radiogroup" aria-required="true">
-              {REASONS.map(({ key, image }) => (
+              {REASONS.map(({ key, image, focus }) => (
                 <label key={key} className={cx('reason', reason === key && 'is-on')}>
                   <input type="radio" name="reason" value={key} checked={reason === key} onChange={() => { setReason(key); setErrors({}); }} />
-                  <Image className="reason__img" src={image} alt="" width={400} height={300} sizes="130px" />
+                  <Image className="reason__img" src={image} alt="" fill sizes="(max-width: 620px) 46vw, 260px" style={{ objectPosition: focus }} />
+                  <span className="reason__check" aria-hidden="true"><Icon name="check" /></span>
                   <span className="reason__text"><b>{t.reasons[key].label}</b><small>{t.reasons[key].hint}</small></span>
                 </label>
               ))}
@@ -282,7 +297,6 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
             <span className="btn__icon"><Icon name={step < 2 ? 'right' : 'send'} /></span>
             <span>{step < 2 ? t.next : sending ? t.sending : t.send}</span>
           </button>
-          <p className="iform__count">{fill(t.count, { n: step + 1, total: t.steps.length })}</p>
         </div>
       </form>
     </div>

@@ -39,7 +39,7 @@ export default async function AboutPage() {
           <ul className="sub-grid">
             {mission.values.map(({ title, text }, i) => (
               <li key={title} className="sub-card" data-reveal style={idx(i)}>
-                <span className="sub-card__icon"><Icon name={VALUE_ICONS[i]} /></span>
+                <span className="glyph"><Icon name={VALUE_ICONS[i]} animated duo /></span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </li>

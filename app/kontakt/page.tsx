@@ -4,7 +4,7 @@ import { Icon, type IconName } from '@/components/icons';
 import { Accent, Inquiry } from '@/components/sections';
 import { facts, getCopy } from '@/lib/i18n/server';
 import { SITE } from '@/lib/site';
-import { idx } from '@/lib/ui';
+import { cx, idx } from '@/lib/ui';
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = (await getCopy()).contact;
@@ -32,7 +32,7 @@ export default async function ContactPage() {
         {ways.map(({ icon, label, value, href }, i) => (
           <li key={label} data-reveal style={idx(i)}>
             <Link href={href} className="way">
-              <span className="sub-card__icon"><Icon name={icon} /></span>
+              <span className={cx('glyph', icon === 'whatsapp' && 'glyph--wa')}><Icon name={icon} animated duo /></span>
               <span className="way__text"><small>{label}</small><b>{value}</b></span>
               <span className="arrow-badge"><Icon name="arrow" /></span>
             </Link>

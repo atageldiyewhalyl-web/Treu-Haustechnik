@@ -1,5 +1,6 @@
 /* The dark footer panel. */
 import Image from 'next/image';
+import { Mark } from '@/components/brand';
 import { ConsentLink } from '@/components/consent';
 import { Link } from '@/components/cta';
 import { Icon } from '@/components/icons';
@@ -14,6 +15,7 @@ export async function SiteFooter() {
   return (
     <footer className="ftr panel">
       <Image className="ftr__bg" src="/assets/img/footer.jpg" alt="" fill sizes="100vw" />
+      <Mark className="ftr__mark" />
       <div className="ftr__inner wrap">
         <div className="ftr__grid">
           <div className="ftr__brand">

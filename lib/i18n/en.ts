@@ -366,6 +366,7 @@ export const en: Copy = {
       accept: 'Accept', decline: 'Decline', privacy: 'Privacy policy', imprint: 'Legal notice', settings: 'Cookie settings',
     },
     form: {
+      title: 'Your inquiry to {name}',
       steps: ['Request', 'Details', 'Contact'],
       progress: 'Progress',
       count: 'Step {n} of {total}',

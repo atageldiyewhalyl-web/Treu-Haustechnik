@@ -370,6 +370,7 @@ export const de = {
       accept: 'Akzeptieren', decline: 'Ablehnen', privacy: 'Datenschutzerklärung', imprint: 'Impressum', settings: 'Cookie-Einstellungen',
     },
     form: {
+      title: 'Ihre Anfrage an {name}',
       steps: ['Anliegen', 'Details', 'Kontakt'],
       progress: 'Fortschritt',
       count: 'Schritt {n} von {total}',
