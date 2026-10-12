@@ -22,5 +22,12 @@ export const SITE = {
   mapsEmbed: `https://www.google.com/maps?q=${ADDRESS_QUERY}&z=15&output=embed`,
 } as const;
 
+/** Agency credit in the footer, in English on every language version. */
+export const CREDIT = {
+  label: 'Site made by',
+  name: 'nüll.',
+  url: 'https://xn--nll-hoa.com/',
+} as const;
+
 /** The site-wide "Anfrage stellen" target: the inquiry form at the end of the current page. */
 export const INQUIRY_ANCHOR = '#anfrage';

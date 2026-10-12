@@ -298,7 +298,24 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   /* The emergency line shrinks to its icon */
   .hdr__phone { width: 44px; min-height: 44px; padding: 0; justify-content: center; }
   .hdr__phone span:last-child { display: none; }
+  /* Opening the menu: the white sheet rolls down from under the bar, its entries follow one after the other and
+     the burger turns into the cross. Closing, the entries fade before the sheet goes (where the browser can hold it). */
+  .hdr.is-open { animation: hdr-sheet .5s var(--ease); }
+  .hdr.is-open .hdr__burger svg { animation: hdr-cross .4s var(--ease); }
+  .hdr.is-open .hdr__panel :is(nav > *, .hdr__panel-actions) { animation: hdr-entry .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms + 90ms); }
+  .hdr__panel nav > :nth-child(2) { --i: 1; }
+  .hdr__panel nav > :nth-child(3) { --i: 2; }
+  .hdr__panel nav > :nth-child(4) { --i: 3; }
+  .hdr__panel nav > :nth-child(5) { --i: 4; }
+  .hdr__panel nav > :nth-child(6) { --i: 5; }
+  .hdr__panel-actions { --i: 6; }
+  .hdr__panel { transition: opacity .18s, display .18s allow-discrete; }
+  .hdr__panel[hidden] { opacity: 0; }
 }
+/* the sheet's lower edge starts at the bar; the last step leaves room for the header's shadow */
+@keyframes hdr-sheet { from { clip-path: inset(0 0 calc(100% - 70px) 0); } to { clip-path: inset(0 0 -60px 0); } }
+@keyframes hdr-entry { from { opacity: 0; transform: translateY(-10px); } }
+@keyframes hdr-cross { from { opacity: 0; transform: rotate(-90deg) scale(.6); } }
 @media (min-width: 1000px) {
   .hdr__panel { display: none; }
   /* logo | menu | actions with equal outer columns: the menu sits at the centre of the bar, not of the gap between its neighbours */
@@ -845,7 +862,7 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 
 /* ---------- Footer ---------- */
 .ftr { margin-bottom: var(--edge); color: #fff; background: var(--dark); }
-.ftr__bg { z-index: -1; object-fit: cover; opacity: .1; }
+.ftr__bg { z-index: -1; object-fit: cover; opacity: .1; filter: grayscale(1); }   /* black and white: the only colour on the panel is the logo's */
 /* the logo's symbol, large and faint, running off the lower right corner */
 .ftr__mark { position: absolute; right: -4%; bottom: -16%; z-index: -1; width: min(60%, 780px); height: auto; opacity: .1; pointer-events: none; }
 .ftr__inner { padding-block: clamp(40px, 5vw, 64px) 22px; }
@@ -867,6 +884,10 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 .ftr__hotline b { font: 700 .92rem/1.2 var(--font-display); white-space: nowrap; }
 .ftr__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin-top: clamp(36px, 5vw, 64px); padding-top: 20px; border-top: 1px solid rgb(255 255 255 / .14); font-size: .76rem; color: rgb(255 255 255 / .66); }
 .ftr__bottom ul { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+/* the agency credit: after the copyright line, set off by a hairline (the right end of the row lies under the
+   WhatsApp button), with the agency's name in bold white as the link to its site */
+.ftr__credit { display: inline-block; margin-left: 8px; padding-left: 12px; border-left: 1px solid rgb(255 255 255 / .24); white-space: nowrap; }
+.ftr__credit a { color: #fff; font-weight: 700; }
 @media (max-width: 960px) { .ftr__grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .ftr__grid { grid-template-columns: 1fr; } }
 
@@ -1106,6 +1127,8 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
   .ftr__contact svg { margin-top: 0; }
   .ftr__contact a { padding-block: 10px; }
   .ftr__bottom ul { gap: 0 22px; }
+  .ftr__credit { display: block; margin: 6px 0 0; padding: 0; border: 0; }   /* on a line of its own */
+  .ftr__bottom .ftr__credit a { display: inline; }   /* stays in its sentence; the padding still gives it a tall touch area */
   .ftr__bottom a, .ftr__bottom button { display: block; padding-block: 11px; }
   .inquiry__direct a { display: inline-block; padding-block: 5px; }
   .crumbs { gap: 0 8px; align-items: center; }

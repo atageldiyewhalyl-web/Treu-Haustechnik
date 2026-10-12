@@ -7,7 +7,7 @@ import { Icon } from '@/components/icons';
 import { fill } from '@/lib/i18n';
 import { getCopy } from '@/lib/i18n/server';
 import { SERVICES } from '@/lib/services';
-import { SITE } from '@/lib/site';
+import { CREDIT, SITE } from '@/lib/site';
 
 export async function SiteFooter() {
   const { footer, client } = await getCopy();
@@ -59,7 +59,7 @@ export async function SiteFooter() {
         </div>
 
         <div className="ftr__bottom">
-          <p>© {new Date().getFullYear()} {SITE.name}. {footer.rights}</p>
+          <p>© {new Date().getFullYear()} {SITE.name}. {footer.rights} <span className="ftr__credit" lang="en">{CREDIT.label} <a href={CREDIT.url} target="_blank" rel="noopener noreferrer">{CREDIT.name}</a></span></p>
           <ul>
             <li><Link href="/impressum">{footer.imprint}</Link></li>
             <li><Link href="/datenschutz">{footer.privacy}</Link></li>
