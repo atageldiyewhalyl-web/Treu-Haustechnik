@@ -105,8 +105,8 @@ export async function TrustStrip() {
   );
 }
 
-/* Review cards retain the older doubled-track loop. Service cards render once and are recycled in place
-   by components/carousel.tsx, so the service strip stays endless without a second visible set. */
+/* Automatic rows use a second, hidden-from-assistive-tech copy. This keeps touch scrolling native while
+   giving the automatic drift enough track to wrap without exposing repeated content to visitors. */
 const twice = <T,>(items: readonly T[]) => [...items, ...items].map((item, n) => ({ item, i: n % items.length, clone: n >= items.length }));
 const reveal = (i: number) => ({ 'data-reveal': true, style: idx(Math.min(i, 4)) });
 const CLONE = { 'data-clone': true, 'aria-hidden': true } as const;
@@ -122,8 +122,8 @@ export async function ServicesCarousel() {
           </SectionHead>
         </div>
         <CarouselTrack className="track--services">
-          {SERVICE_CARDS.map(({ image, group, anchor, icon }, i) => (
-            <li key={image} className="svc-card" {...reveal(i)}>
+          {twice(SERVICE_CARDS).map(({ item: { image, group, anchor, icon }, i, clone }) => (
+            <li key={`${image}-${clone ? 'clone' : 'original'}`} className="svc-card" {...(clone ? CLONE : reveal(i))}>
               <Image src={image} alt="" fill sizes="(max-width: 700px) 78vw, 384px" />
               <span className="chip">{client.names[group]}</span>
               <span className="svc-card__icon"><Icon name={icon} animated /></span>

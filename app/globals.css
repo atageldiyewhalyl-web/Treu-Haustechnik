@@ -462,6 +462,7 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 .track {
   display: flex; gap: var(--gap); padding: 6px max(var(--gutter), (100% - var(--maxw)) / 2) 20px; overflow-x: auto; overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory; scroll-padding-inline: max(var(--gutter), (100% - var(--maxw)) / 2); scrollbar-width: none;
+  -webkit-overflow-scrolling: touch; touch-action: pan-x pan-y;
 }
 .track::-webkit-scrollbar { display: none; }
 .track > li { flex: none; scroll-snap-align: start; }

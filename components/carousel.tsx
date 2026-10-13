@@ -32,7 +32,7 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
   const scroller = useRef<HTMLUListElement>(null);
   const [nav, setNav] = useState({ canPrev: false, canNext: true });
   // Endless-row measurements, plus the time until automatic movement may resume.
-  const loop = useRef({ span: 0, step: 0, circular: false, quietUntil: 0 });
+  const loop = useRef({ span: 0, step: 0, circular: false, quietUntil: 0, touching: false });
 
   useEffect(() => {
     const el = scroller.current;
@@ -64,17 +64,25 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
     let pos = -1;   // where the drift stands, to a fraction of a pixel; -1 while it waits
     let last = 0;
     let adjustingScroll = false;
+    let touchSettleTimer: ReturnType<typeof setTimeout> | undefined;
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
     observer.observe(el);
 
     const wait = (ms: number) => { state.quietUntil = performance.now() + ms; };
     const hold = () => wait(Infinity);
+    const onTouchStart = () => {
+      state.touching = true;
+      clearTimeout(touchSettleTimer);
+      hold();
+    };
     const onEnter = (event: PointerEvent) => { if (event.pointerType === 'mouse') hovered = true; };
     const onLeave = () => { hovered = false; };
-    const onRelease = () => wait(3500);   // a swipe coasts on for a moment
     const onWheel = () => wait(2500);
     const onBlur = () => wait(1500);
-    const onScroll = () => {
+
+    /* Moving DOM nodes while a finger is down cancels or fights native momentum scrolling on mobile Safari.
+       Let the browser finish the gesture first, then recycle cards without changing the visible pixels. */
+    const normalizeCircularRow = () => {
       if (!state.circular || !state.step || adjustingScroll) return;
       let next = el.scrollLeft;
       let changed = false;
@@ -98,6 +106,22 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
       el.scrollLeft = next;
       pos = next;
       requestAnimationFrame(() => { adjustingScroll = false; });
+    };
+    const finishTouch = () => {
+      state.touching = false;
+      normalizeCircularRow();
+      wait(3500);
+    };
+    const queueTouchFinish = () => {
+      clearTimeout(touchSettleTimer);
+      touchSettleTimer = setTimeout(finishTouch, 180);
+    };
+    const onScroll = () => {
+      if (state.touching) {
+        queueTouchFinish();
+        return;
+      }
+      normalizeCircularRow();
     };
 
     let frame = requestAnimationFrame(function tick(now) {
@@ -137,9 +161,9 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
 
     el.addEventListener('pointerenter', onEnter);
     el.addEventListener('pointerleave', onLeave);
-    el.addEventListener('touchstart', hold, { passive: true });
-    el.addEventListener('touchend', onRelease);
-    el.addEventListener('touchcancel', onRelease);
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchend', queueTouchFinish, { passive: true });
+    el.addEventListener('touchcancel', queueTouchFinish, { passive: true });
     el.addEventListener('wheel', onWheel, { passive: true });
     el.addEventListener('scroll', onScroll, { passive: true });
     el.addEventListener('focusin', hold);
@@ -148,12 +172,13 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
 
     return () => {
       cancelAnimationFrame(frame);
+      clearTimeout(touchSettleTimer);
       observer.disconnect();
       el.removeEventListener('pointerenter', onEnter);
       el.removeEventListener('pointerleave', onLeave);
-      el.removeEventListener('touchstart', hold);
-      el.removeEventListener('touchend', onRelease);
-      el.removeEventListener('touchcancel', onRelease);
+      el.removeEventListener('touchstart', onTouchStart);
+      el.removeEventListener('touchend', queueTouchFinish);
+      el.removeEventListener('touchcancel', queueTouchFinish);
       el.removeEventListener('wheel', onWheel);
       el.removeEventListener('scroll', onScroll);
       el.removeEventListener('focusin', hold);
@@ -166,6 +191,7 @@ export function Carousel({ auto, children }: { auto?: boolean; children: ReactNo
       state.span = 0;
       state.step = 0;
       state.circular = false;
+      state.touching = false;
     };
   }, [auto]);
 
