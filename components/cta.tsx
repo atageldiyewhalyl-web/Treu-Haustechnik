@@ -27,6 +27,6 @@ export function Cta({ href, children, variant = 'accent', icon = iconFor(href), 
   );
 }
 
-export function TextLink({ href, children, icon }: { href: string; children: ReactNode; icon?: IconName }) {
-  return <Cta href={href} variant="ghost" icon={icon}>{children}</Cta>;
+export function TextLink({ href, children, icon, className }: { href: string; children: ReactNode; icon?: IconName; className?: string }) {
+  return <Cta href={href} variant="ghost" icon={icon} className={className}>{children}</Cta>;
 }

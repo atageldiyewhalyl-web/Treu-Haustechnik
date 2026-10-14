@@ -8,7 +8,7 @@ export const SITE = {
   url: 'https://www.treu-haustechnik.de',
   owner: 'Emircan Kumru',
   ownerTitle: 'Installateur- und Heizungsbaumeister',
-  masterSince: 2022,
+  masterSince: 2023,
   street: 'Morgenröte 14',
   zip: '68305',
   city: 'Mannheim',

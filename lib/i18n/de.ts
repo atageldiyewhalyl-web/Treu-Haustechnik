@@ -28,12 +28,12 @@ export const de = {
   home: {
     hero: {
       // The page's one h1: the trade and the town people search for, then the trust word
-      title: ['Sanitär, Heizung und Klima in Mannheim', 'vom Meisterbetrieb'],
+      title: ['Ihr Meisterbetrieb aus Mannheim für', 'Sanitär, Heizung & Klimatechnik'],
       lead: 'Wärmepumpen, Heizungstausch, Badsanierung und Klimaanlagen aus einer Hand. Notdienst rund um die Uhr.',
       // One line under each service in the cards below the headline
       services: {
         heizung: 'Modernisierung, Wärmepumpe, Gas & Öl',
-        'sanitaer-bad': 'Badsanierung, barrierefrei, Wasser',
+        'sanitaer-bad': 'Badsanierung, Trinkwasser & Abwasser',
         klima: 'Split-Anlagen, Wartung, Reinigung',
         notdienst: 'Rund um die Uhr erreichbar',
       },
@@ -83,7 +83,7 @@ export const de = {
 
   carousel: {
     eyebrow: 'Unsere Leistungen',
-    title: ['Alles für Ihre', 'Haustechnik'],
+    title: ['Alles für Ihr', 'Wohlbefinden'],
     aside: 'Heizung, Bad, Klima und Notdienst aus einer Hand, ohne mehrere Betriebe koordinieren zu müssen.',
     label: 'Leistungen',
     // Same order as SERVICE_CARDS (lib/services.ts)
@@ -353,7 +353,7 @@ export const de = {
 
   /* What Client Components need at runtime (handed over by I18nProvider in app/layout.tsx) */
   client: {
-    names: { heizung: 'Heizung', 'sanitaer-bad': 'Sanitär & Bad', klima: 'Klima', notdienst: 'Notdienst' },
+    names: { heizung: 'Heizung', 'sanitaer-bad': 'Sanitär', klima: 'Klima', notdienst: 'Notdienst' },
     nav: {
       home: 'Start', services: 'Leistungen', guide: 'Ratgeber', about: 'Über uns', contact: 'Kontakt',
       hotline: 'Notdienst 24/7', inquiry: 'Anfrage stellen', emergency: 'Notdienst {phone}',

@@ -35,7 +35,7 @@ export const SERVICES: Service[] = [
       { id: 'heizungsmodernisierung', icon: 'radiator' },
       { id: 'waermepumpe', icon: 'fan' },
       { id: 'gasheizung', icon: 'flame' },
-      { id: 'oelheizung', icon: 'fuel' },
+      { id: 'oelheizung', icon: 'droplet' },
     ],
     bandImage: `${IMG}/svc-wartung.jpg`,
   },

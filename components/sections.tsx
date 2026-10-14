@@ -74,9 +74,10 @@ export function Hero({ image, alt = '', focus, focusSm, lift, chips, title, lead
 }
 
 /** The two actions most pages open with: the inquiry form and the phone. */
-export async function MainActions() {
+export async function MainActions({ large = false }: { large?: boolean }) {
   const { cta } = await getCopy();
-  return <><Cta href={INQUIRY_ANCHOR}>{cta.inquiry}</Cta><TextLink href={SITE.phoneHref}>{cta.call}</TextLink></>;
+  const className = large ? 'btn--hero' : undefined;
+  return <><Cta href={INQUIRY_ANCHOR} className={className}>{cta.inquiry}</Cta><TextLink href={SITE.phoneHref} className={className}>{cta.call}</TextLink></>;
 }
 
 // Same order as `trust` in the copy; the third is the Google rating
