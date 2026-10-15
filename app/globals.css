@@ -276,8 +276,8 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 
 .hdr.is-solid, body:has(.plain-page) .hdr {
   background: rgb(255 255 255 / .94); backdrop-filter: blur(14px); color: var(--ink); box-shadow: 0 1px 0 var(--line), 0 10px 30px rgb(31 26 22 / .06);
-  .hdr__bar { min-height: 68px; }
-  .hdr__logo img { height: 52px; }
+  .hdr__bar { min-height: 80px; }
+  .hdr__logo img { height: 60px; }
   .hdr__logo-light { display: none; }
   .hdr__logo-dark { display: block; }
   .hdr__link:hover { background: var(--bg-soft); }
