@@ -245,9 +245,9 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 /* Transparent with white type over the hero photo; a solid white bar once the page scrolls,
    while the mobile menu is open, and on pages that have no hero. */
 .hdr { position: fixed; inset: 0 0 auto; z-index: 60; color: #fff; transition: background .3s, color .3s, box-shadow .3s; }
-.hdr__bar { display: flex; align-items: center; gap: 16px; min-height: 80px; padding-block: 8px; transition: min-height .3s var(--ease); }
+.hdr__bar { display: flex; align-items: center; gap: 16px; min-height: 96px; padding-block: 8px; transition: min-height .3s var(--ease); }
 .hdr__logo { flex: none; }
-.hdr__logo img { width: auto; height: 60px; transition: height .3s var(--ease); }
+.hdr__logo img { width: auto; height: 80px; transition: height .3s var(--ease); }
 .hdr__logo-dark { display: none; }
 
 .hdr__nav { display: flex; align-items: center; gap: 2px; margin-inline: auto; }
@@ -276,8 +276,8 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
 
 .hdr.is-solid, body:has(.plain-page) .hdr {
   background: rgb(255 255 255 / .94); backdrop-filter: blur(14px); color: var(--ink); box-shadow: 0 1px 0 var(--line), 0 10px 30px rgb(31 26 22 / .06);
-  .hdr__bar { min-height: 80px; }
-  .hdr__logo img { height: 60px; }
+  .hdr__bar { min-height: 96px; }
+  .hdr__logo img { height: 80px; }
   .hdr__logo-light { display: none; }
   .hdr__logo-dark { display: block; }
   .hdr__link:hover { background: var(--bg-soft); }
@@ -296,10 +296,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .hdr__nav, .hdr__cta { display: none; }
   .hdr__actions { margin-left: auto; }
   .hdr__burger { display: grid; }
-  .hdr__bar { min-height: 80px; }
-  .hdr__logo img { height: 60px; }
-  .hdr.is-solid .hdr__bar, body:has(.plain-page) .hdr .hdr__bar { min-height: 80px; }
-  .hdr.is-solid .hdr__logo img, body:has(.plain-page) .hdr .hdr__logo img { height: 60px; }
+  .hdr__bar { min-height: 88px; }
+  .hdr__logo img { height: 72px; }
+  .hdr.is-solid .hdr__bar, body:has(.plain-page) .hdr .hdr__bar { min-height: 88px; }
+  .hdr.is-solid .hdr__logo img, body:has(.plain-page) .hdr .hdr__logo img { height: 72px; }
   /* The emergency line shrinks to its icon */
   .hdr__phone { width: 44px; min-height: 44px; padding: 0; justify-content: center; }
   .hdr__phone span:last-child { display: none; }
