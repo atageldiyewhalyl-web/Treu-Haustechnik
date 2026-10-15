@@ -1,7 +1,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2.49.8";
 
 const FROM_EMAIL = "Treu Haustechnik <anfrage@forms.xn--nll-hoa.com>";
-const TO_EMAIL = "halyl@xn--nll-hoa.com";
+const TO_EMAILS = ["info@treuhaustechnik.de", "halyl@xn--nll-hoa.com"];
 const MAX_PHOTOS = 6;
 const MAX_PHOTO_BYTES = Math.floor(3.8 * 1024 * 1024);
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -190,7 +190,7 @@ Deno.serve(async (request) => {
       headers: { Authorization: `Bearer ${resendApiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         from: FROM_EMAIL,
-        to: TO_EMAIL,
+        to: TO_EMAILS,
         reply_to: lead.email,
         subject: `Neue Anfrage: ${REASONS[lead.reason]} – ${lead.name}`,
         text: rows.map(([label, value]) => `${label}: ${value}`).join("\n"),
@@ -198,6 +198,7 @@ Deno.serve(async (request) => {
         attachments: await Promise.all(lead.photos.map(async (photo, index) => ({
           filename: safeFilename(photo.name, index),
           content: toBase64(await photo.arrayBuffer()),
+          content_type: photo.type || "application/octet-stream",
         }))),
       }),
     });
