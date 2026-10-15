@@ -296,8 +296,10 @@ html.js [data-reveal].is-in { opacity: 1; transform: none; }
   .hdr__nav, .hdr__cta { display: none; }
   .hdr__actions { margin-left: auto; }
   .hdr__burger { display: grid; }
-  .hdr__bar { min-height: 72px; }
-  .hdr__logo img { height: 50px; }
+  .hdr__bar { min-height: 80px; }
+  .hdr__logo img { height: 60px; }
+  .hdr.is-solid .hdr__bar, body:has(.plain-page) .hdr .hdr__bar { min-height: 80px; }
+  .hdr.is-solid .hdr__logo img, body:has(.plain-page) .hdr .hdr__logo img { height: 60px; }
   /* The emergency line shrinks to its icon */
   .hdr__phone { width: 44px; min-height: 44px; padding: 0; justify-content: center; }
   .hdr__phone span:last-child { display: none; }
