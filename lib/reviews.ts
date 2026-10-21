@@ -1,7 +1,7 @@
 /* The client's Google reviews, word for word (Google Business profile, read on 10 Oct 2026).
    Never edit or add a review here by hand: copy it from the profile. Surnames are shortened to an initial.
-   `photo` is the reviewer's own profile picture from the same profile (public/assets/reviews); reviewers
-   without one keep Google's default, a disc with their initial. */
+   Reviewers' Google profile pictures are deliberately not copied (they belong to the reviewers); every review
+   shows a disc with the initial. `photo` stays available for a picture a reviewer has agreed to. */
 
 export const REVIEW_SUMMARY = {
   rating: '4.8',   // written with a point at Raemer's request (German usage would be 4,8)
@@ -34,14 +34,12 @@ export const REVIEWS: Review[] = [
     name: 'Thomas V.',
     when: 'vor 2 Jahren',
     stars: 5,
-    photo: '/assets/reviews/thomas-v.jpg',
     text: 'Alles TOP!\nAuftrag war ein Bad und ein Gäste-WC zu sanieren, sowie alte Leitungen auf Notwendigkeit zu prüfen und deren Verlauf neu anzuordnen.\nDie Arbeiten wurden sehr zügig, zuverlässig und ordentlich ausgeführt. Sämtliche Schritte wurden erläutert, fachmännisch genau ausgeführt und dokumentiert. Hilfsbereit auch bei kleineren, nicht geplanten Nebenaufgaben. Wichtig für mich, dass die Absprachen stattfanden und eingehalten wurden. Auch als Mensch ein prima Kerl, danke nochmal.',
   },
   {
     name: 'Anna',
     when: 'vor 2 Jahren',
     stars: 5,
-    photo: '/assets/reviews/anna.jpg',
     text: 'Zuverlässig, hervorragender Kundenservice und top Qualität! Von der einfachen Kontaktaufnahme bis hin zur finalen Installation, war alles erstklassig. Im ersten Gespräch wurden mir verschiedene Optionen erklärt und auch alle meine Fragen beantwortet. Die Heizung wurde schnell und äußerst professionell getauscht. Es wurde sauber gearbeitet und abschließend wurde mir sogar die Wartung erklärt.\nVielen Dank für die großartige Arbeit!',
   },
   {
