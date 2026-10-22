@@ -2,6 +2,28 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'f-gase-verordnung-2027': {
+    title: 'EU F-Gas Regulation 2027: Heat Pumps & Air Conditioning',
+    description: 'From 2027 stricter refrigerant rules apply to heat pumps and air conditioners. What is new, what stays allowed and what it means for Mannheim.',
+    excerpt: 'On 1 January 2027 the EU F-Gas Regulation gets stricter again. Many new heat pumps will then only be sold with climate-friendly refrigerants such as propane. Systems already running are not affected. We explain what changes and what to look out for in Mannheim.',
+    alt: 'Outdoor unit of a modern heat pump in a garden in front of a house',
+    takeaways: [
+      'From 2027 new monoblock heat pumps up to 50 kW and new air-to-water split heat pumps up to 12 kW may only contain refrigerants with a GWP below 150, usually propane (R290).',
+      'Your existing heat pump or air conditioner may keep running and be serviced and repaired as usual, also with R32 or R410A.',
+      'For new split air conditioners up to 12 kW the limit only applies from 2029, so R32 units remain available until the end of 2028.',
+    ],
+    sections: [
+      { heading: 'What does the F-Gas Regulation cover?', text: ['[Regulation (EU) 2024/573](https://eur-lex.europa.eu/eli/reg/2024/573/oj) governs fluorinated greenhouse gases used as refrigerants. It applies directly in every EU state since 11 March 2024 and bans new equipment with high-GWP refrigerants step by step while capping the total quantity on the market.'] },
+      { heading: 'What changes on 1 January 2027?', text: ['New monoblock heat pumps and compact units up to 50 kW, air-to-water split heat pumps up to 12 kW and chillers up to 12 kW must use refrigerants below GWP 150; chillers above 12 kW below GWP 750.'] },
+      { heading: 'What is not banned in 2027', text: ['Only placing new equipment on the market is banned. Existing systems may keep running and be serviced; R410A and R32 may still be refilled. R32 split air conditioners remain allowed until the end of 2028.'] },
+      { heading: 'The timeline to 2035', text: ['Further steps follow in 2029, 2030, 2032, 2033 and 2035, ending with F-gas-free split units up to 12 kW.'] },
+      { heading: 'Why refrigerants are getting scarcer from 2027', text: ['The permitted quantity of HFCs drops from about 42.9 to about 21.7 million tonnes of CO2 equivalent in 2027 to 2029, so refills are likely to get more expensive.'] },
+      { heading: 'Leak checks: does this affect your system?', text: ['Checks are required from 5 tonnes of CO2 equivalent (10 tonnes for hermetically sealed units): about 7.4 kg of R32 or 2.4 kg of R410A.'] },
+      { heading: 'What this means for homeowners in Mannheim', text: ['Mannheim\'s heat plan relies on district heating and heat pumps, and MVV aims to shut down the gas grid by 2035, although the council has set no fixed date.'] },
+      { heading: 'Buy now or wait?', text: ['Do not buy an R32 split heat pump just to beat the deadline, start funding applications early, and keep existing systems serviced.'] },
+      { heading: 'Who may work on refrigerant systems?', text: ['Only certified technicians and companies may install, service, leak-check or recover refrigerants.'] },
+    ],
+  },
   'waermepumpe-im-altbau': {
     title: 'A Heat Pump in an Older House: When Is It Really Worth It?',
     description: 'Does a heat pump work in an older house? What matters about flow temperature, radiators and insulation, and how to test your own home.',

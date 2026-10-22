@@ -324,6 +324,8 @@ export const de = {
     minutes: '{n} Min. Lesezeit',
     by: 'Von {name}',
     takeaways: 'Das Wichtigste in Kürze',
+    faq: 'Häufige Fragen',
+    photo: 'Foto',
     related: ['Weitere', 'Beiträge'],
     service: 'Zur Leistung {name}',
     crumbs: 'Sie sind hier',

@@ -1041,6 +1041,48 @@ html.js .trust li[data-reveal].is-in svg { transform: none; }
 .article__cta p { max-width: 46ch; color: rgb(255 255 255 / .82); }
 .article__cta .actions { margin-top: 12px; }
 
+/* Article extras (components/article.tsx): links in the text, a comparison table, photos, a call to
+   action between sections and the closing questions */
+.article__link { color: var(--orange-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .2s; }
+.article__link:hover { color: var(--ink); }
+.article__table { margin: 8px 0 22px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-card); background: #fff; }
+.article__table table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
+.article__table thead th { padding: 14px 16px; background: var(--dark); color: #fff; font: 600 .84rem/1.3 var(--font-display); text-align: left; letter-spacing: -.005em; }
+.article__table tbody th, .article__table td { padding: 14px 16px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.article__table tbody th { font-weight: 600; color: var(--ink); width: 42%; }
+.article__table td { color: #3f3933; }
+.article__table td:nth-child(2) { white-space: nowrap; font-weight: 600; color: var(--orange-ink); }
+.article__table tbody tr:nth-child(even) { background: var(--bg-soft); }
+.article__figure { margin: 26px 0 30px; }
+.article__figure > div { position: relative; aspect-ratio: 3 / 2; border-radius: var(--r-card); overflow: hidden; background: var(--bg-soft); }
+.article__figure img { object-fit: cover; }
+.article__figure figcaption { margin-top: 10px; font-size: .84rem; line-height: 1.5; color: var(--ink-2); }
+.article__figure figcaption span { display: block; margin-top: 2px; font-size: .76rem; color: var(--ink-3); }
+.article__aside { display: grid; grid-template-columns: auto 1fr; gap: 18px; margin: 30px 0 8px; padding: clamp(20px, 2.8vw, 30px); border: 1px solid rgb(var(--orange-rgb) / .22); border-radius: var(--r-card); background: linear-gradient(135deg, var(--orange-soft), #fff 78%); }
+.article__aside-icon { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; background: var(--dark); color: var(--orange); font-size: 1.35rem; }
+.article__body section .article__aside p { margin-bottom: 0; }
+.article__body section .article__aside p + p { margin-top: 6px; font-size: .98rem; line-height: 1.6; }
+.article__aside-title { font: 600 clamp(1.08rem, 1.6vw, 1.22rem)/1.25 var(--font-display); letter-spacing: -.015em; color: var(--ink) !important; }
+.article__aside .actions { margin-top: 16px; }
+.article__faq .faq { margin-top: 18px; }
+@media (max-width: 620px) {
+  /* The table becomes one card per row: the device type as its title, the other columns labelled */
+  .article__table { overflow: visible; border: 0; background: none; }
+  .article__table table { min-width: 0; }
+  .article__table thead { display: none; }
+  .article__table tbody, .article__table tr, .article__table tbody th, .article__table td { display: block; width: auto; }
+  .article__table tr { margin-bottom: 12px; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--r-card); background: #fff !important; }
+  .article__table tbody th, .article__table td { padding: 0; border: 0; }
+  .article__table tbody th { margin-bottom: 10px; }
+  .article__table td { white-space: normal !important; }
+  .article__table td + td { margin-top: 8px; }
+  .article__table td::before { content: attr(data-label); display: block; font-size: .74rem; font-weight: 500; color: var(--ink-3); }
+}
+@media (max-width: 560px) {
+  .article__aside { grid-template-columns: 1fr; }
+  .article__aside-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+}
+
 /* ---------- Consent banner (components/consent.tsx) ---------- */
 .cookie {
   --gap: clamp(12px, 2vw, 22px); position: fixed; left: var(--gap); bottom: var(--gap); z-index: 80; display: grid; gap: 12px; width: min(100% - 2 * var(--gap), 460px); padding: clamp(18px, 2.2vw, 24px);

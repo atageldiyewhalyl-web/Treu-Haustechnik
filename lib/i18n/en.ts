@@ -321,6 +321,8 @@ export const en: Copy = {
     minutes: '{n} min read',
     by: 'By {name}',
     takeaways: 'The essentials in brief',
+    faq: 'Frequently asked questions',
+    photo: 'Photo',
     related: ['More', 'articles'],
     service: 'To the service: {name}',
     crumbs: 'You are here',

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { ArticleCta, ArticleFigure, ArticleTable, Rich, plain } from '@/components/article';
 import { PostCard } from '@/components/blog';
 import { Cta, Link, TextLink } from '@/components/cta';
+import { Faq } from '@/components/faq';
 import { Icon } from '@/components/icons';
 import { Accent, Inquiry } from '@/components/sections';
 import { POSTS, formatDate, getPost, postsFor } from '@/lib/blog';
@@ -51,6 +53,10 @@ export default async function PostPage(props: PageProps<'/ratgeber/[slug]'>) {
       '@context': 'https://schema.org', '@type': 'BreadcrumbList',
       itemListElement: [[blog.home, SITE.url], [blog.eyebrow, `${SITE.url}/ratgeber`], [post.title, url]].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
     },
+    ...(post.faq ? [{
+      '@context': 'https://schema.org', '@type': 'FAQPage',
+      mainEntity: post.faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: plain(a) } })),
+    }] : []),
   ];
 
   return (
@@ -81,14 +87,24 @@ export default async function PostPage(props: PageProps<'/ratgeber/[slug]'>) {
             <ul>{post.takeaways.map((item) => <li key={item}><Icon name="check" /><span>{item}</span></li>)}</ul>
           </aside>
 
-          {post.sections.map(({ heading, text, list, more }) => (
+          {post.sections.map(({ heading, text, list, more, table, image, cta: aside }) => (
             <section key={heading}>
               <h2>{heading}</h2>
-              {text?.map((paragraph) => <p key={paragraph}>{facts(paragraph)}</p>)}
-              {list && <ul>{list.map((item) => <li key={item}>{item}</li>)}</ul>}
-              {more?.map((paragraph) => <p key={paragraph}>{facts(paragraph)}</p>)}
+              {text?.map((paragraph) => <p key={paragraph}><Rich text={facts(paragraph)} /></p>)}
+              {list && <ul>{list.map((item) => <li key={item}><Rich text={facts(item)} /></li>)}</ul>}
+              {table && <ArticleTable table={table} />}
+              {more?.map((paragraph) => <p key={paragraph}><Rich text={facts(paragraph)} /></p>)}
+              {image && <ArticleFigure image={image} label={blog.photo} />}
+              {aside && <ArticleCta cta={aside} call={cta.call} />}
             </section>
           ))}
+
+          {post.faq && (
+            <section className="article__faq">
+              <h2>{blog.faq}</h2>
+              <Faq items={post.faq.map(({ q, a }) => ({ q, a: plain(a) }))} open={-1} />
+            </section>
+          )}
 
           <div className="article__cta">
             <h2>{blog.ctaTitle}</h2>

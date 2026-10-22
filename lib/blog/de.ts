@@ -1,9 +1,142 @@
 /* Ratgeber articles, German (the public wording). Rules: no prices, no subsidy figures, no promises the
-   business has not made elsewhere on the site; {phone} is filled in from lib/site.ts.
+   business has not made elsewhere on the site; {phone} is filled in from lib/site.ts; links are written
+   as [label](/path or https://…) inside paragraphs and list items.
    Before launch the owner should read each article once: they speak in his name. */
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'f-gase-verordnung-2027': {
+    title: 'F-Gase-Verordnung 2027: Wärmepumpe & Klima',
+    description: 'Ab 2027 gelten strengere Regeln für Kältemittel in Wärmepumpen und Klimaanlagen. Was neu ist, was erlaubt bleibt und was das für Mannheim heißt.',
+    excerpt: 'Zum 1. Januar 2027 wird die EU-F-Gase-Verordnung wieder strenger. Viele neue Wärmepumpen kommen dann nur noch mit klimafreundlichen Kältemitteln wie Propan in den Handel. Ihre vorhandene Anlage betrifft das nicht. Wir erklären, was sich ändert und worauf Sie in Mannheim achten sollten.',
+    alt: 'Außengerät einer modernen Wärmepumpe im Garten vor einem Wohnhaus',
+    takeaways: [
+      'Neue Monoblock-Wärmepumpen bis 50 kW und neue Split-Wärmepumpen (Luft/Wasser) bis 12 kW dürfen ab 2027 nur noch Kältemittel mit einem GWP unter 150 enthalten. Meist ist das Propan (R290).',
+      'Ihre vorhandene Wärmepumpe oder Klimaanlage darf weiterlaufen und wie gewohnt gewartet und repariert werden, auch mit R32 oder R410A.',
+      'Für neue Split-Klimaanlagen bis 12 kW gilt die Grenze erst ab 2029. Geräte mit R32 bekommen Sie also noch bis Ende 2028.',
+    ],
+    sections: [
+      {
+        heading: 'Was regelt die F-Gase-Verordnung?',
+        text: [
+          'Die [Verordnung (EU) 2024/573](https://eur-lex.europa.eu/eli/reg/2024/573/oj) regelt fluorierte Treibhausgase, kurz F-Gase. Diese Gase stecken als Kältemittel in fast jeder Klimaanlage und in vielen Wärmepumpen. Die Verordnung gilt seit dem 11. März 2024 direkt in allen EU-Staaten, Deutschland muss dafür kein eigenes Gesetz erlassen. Sie ersetzt die Vorgängerregelung von 2014 und ist deutlich strenger.',
+          'Wie klimaschädlich ein Kältemittel ist, zeigt der GWP-Wert (Global Warming Potential, auf Deutsch Treibhauspotenzial). Er gibt an, wie stark ein Kilogramm des Gases zur Erderwärmung beiträgt, verglichen mit einem Kilogramm CO₂. Diese drei Kältemittel begegnen uns in der Praxis am häufigsten:',
+        ],
+        list: [
+          'R410A hat einen GWP von 2.088 und steckt in vielen älteren Klimaanlagen und Wärmepumpen.',
+          'R32 hat einen GWP von 675 und ist heute Standard in Split-Klimaanlagen und vielen Split-Wärmepumpen.',
+          'R290, also Propan, hat einen GWP von 3. Es ist ein natürliches Kältemittel und steckt schon in den meisten neuen Monoblock-Wärmepumpen.',
+        ],
+        more: ['Die Verordnung setzt an zwei Stellen an: Sie verbietet Schritt für Schritt den Verkauf neuer Geräte mit klimaschädlichen Kältemitteln und begrenzt, wie viel F-Gas überhaupt noch auf den Markt kommen darf.'],
+      },
+      {
+        heading: 'Was ändert sich am 1. Januar 2027?',
+        text: ['Ab diesem Tag dürfen die folgenden Geräte nur noch neu auf den Markt kommen, wenn ihr Kältemittel unter der jeweiligen GWP-Grenze liegt:'],
+        table: {
+          head: ['Gerät', 'Grenze ab 1. Januar 2027', 'Was das bedeutet'],
+          rows: [
+            ['Monoblock-Wärmepumpen und andere kompakte Klimageräte bis 50 kW, auch mobile Geräte für die Steckdose', 'GWP unter 150', 'Kein R32 mehr, meist kommt Propan zum Einsatz'],
+            ['Split-Wärmepumpen (Luft/Wasser) bis 12 kW', 'GWP unter 150', 'Neue Split-Wärmepumpen mit R32 für das Einfamilienhaus gibt es nicht mehr'],
+            ['Kaltwassersätze bis 12 kW', 'GWP unter 150', 'Betrifft vor allem Gewerbe'],
+            ['Kaltwassersätze über 12 kW', 'GWP unter 750', 'R32 ist hier weiter möglich'],
+          ],
+        },
+        more: [
+          'Für kompakte Geräte und Split-Wärmepumpen gibt es eine Ausnahme, wenn ein Kältemittel mit niedrigem GWP die Sicherheitsvorgaben am Aufstellort nicht erfüllen kann. Bei kompakten Geräten gilt dann eine Grenze von 750. Die Ausnahme muss im Einzelfall begründet werden. Für den normalen Einbau im Einfamilienhaus spielt sie kaum eine Rolle.',
+          'Wer ab 2027 eine neue Wärmepumpe für sein Einfamilienhaus kauft, bekommt also fast immer ein Gerät mit Propan oder einem anderen Kältemittel mit sehr niedrigem GWP. Bei Monoblock-Geräten ist das heute schon üblich. Am meisten ändert sich bei Split-Wärmepumpen, bei denen Kältemittelleitungen ins Haus führen. Viele davon arbeiten bisher mit R32.',
+        ],
+        image: { src: '/assets/img/blog-f-gase-monoblock.jpg', alt: 'Monoblock-Wärmepumpe auf dem Rasen vor einem modernen Gebäude', caption: 'Monoblock-Wärmepumpe: Ab 2027 kommen solche Geräte meist mit Propan.', credit: 'alpha innotec / Pexels' },
+      },
+      {
+        heading: 'Was 2027 nicht verboten wird',
+        text: ['Verboten wird das Inverkehrbringen, also der erste Verkauf neuer Geräte in der EU. Der Betrieb vorhandener Anlagen bleibt erlaubt. Für Sie bedeutet das:'],
+        list: [
+          'Ihre Anlage darf weiterlaufen. Niemand muss 2027 eine funktionierende Klimaanlage oder Wärmepumpe austauschen.',
+          'Wartung und Reparatur bleiben erlaubt. Seit dem 1. Januar 2026 darf bei der Wartung von Klimaanlagen und Wärmepumpen zwar kein frisches Kältemittel mit einem GWP ab 2.500 mehr eingefüllt werden. R410A (2.088) und R32 (675) liegen aber darunter und dürfen weiter nachgefüllt werden. Auch Ersatzteile sind erlaubt, solange die Reparatur die Leistung oder die Kältemittelmenge der Anlage nicht erhöht.',
+          'Split-Klimaanlagen mit R32 bekommen Sie weiterhin. Für Split-Klimaanlagen (Luft/Luft) bis 12 kW, also die typische Klimaanlage für Schlafzimmer, Büro oder Dachgeschoss, gilt die Grenze von 150 erst ab dem 1. Januar 2029. Wer 2027 oder 2028 eine Klimaanlage nachrüstet, kann also noch ein Gerät mit R32 wählen.',
+        ],
+        more: ['Geräte, die schon vor dem Stichtag in der EU auf den Markt gekommen sind, dürfen nach gängiger Auslegung auch danach noch verkauft und eingebaut werden. Lagerware ist also erlaubt.'],
+        image: { src: '/assets/img/blog-f-gase-split-innengeraet.jpg', alt: 'Innengerät einer Split-Klimaanlage an der Wand', caption: 'Innengerät einer Split-Klimaanlage: Geräte mit R32 gibt es noch bis Ende 2028.', credit: 'NEOSiAM 18+ / Pexels' },
+        cta: {
+          icon: 'wrench',
+          title: 'Ihre Anlage läuft mit R32 oder R410A?',
+          text: 'Dann darf sie weiterlaufen. Damit das lange so bleibt, sollte sie regelmäßig gewartet werden. Wir warten Klimaanlagen und Wärmepumpen in Mannheim und Umgebung. Schicken Sie uns am besten ein Foto vom Typenschild mit.',
+          inquiry: 'Wartung anfragen',
+          more: { label: 'Mehr zu Klimaanlagen', href: '/klima' },
+        },
+      },
+      {
+        heading: 'Der Fahrplan bis 2035',
+        text: ['Auf 2027 folgen weitere Stufen. Für Klimaanlagen und Wärmepumpen sieht der Zeitplan so aus:'],
+        list: [
+          '**Seit 2025:** Keine neuen Klimaanlagen mit nur einem Innengerät (Mono-Split), wenn sie weniger als 3 kg eines Kältemittels mit GWP ab 750 enthalten, zum Beispiel R410A.',
+          '**Seit 2026:** Bei der Wartung von Klimaanlagen und Wärmepumpen darf kein frisches Kältemittel mit GWP ab 2.500 mehr eingefüllt werden.',
+          '**2027:** Grenze von 150 für Monoblock-Geräte bis 50 kW und Split-Wärmepumpen (Luft/Wasser) bis 12 kW.',
+          '**2029:** Grenze von 150 für Split-Klimaanlagen (Luft/Luft) bis 12 kW und Grenze von 750 für Split-Anlagen über 12 kW.',
+          '**2030:** Grenze von 150 auch für kompakte Anlagen über 50 kW.',
+          '**2032:** Mobile Klimageräte sowie Monoblock-Klimaanlagen und Monoblock-Wärmepumpen bis 12 kW nur noch ganz ohne F-Gase. Bei der Wartung ist dann auch aufbereitetes Kältemittel mit GWP ab 2.500 nicht mehr erlaubt.',
+          '**2033:** Grenze von 150 für Split-Anlagen über 12 kW.',
+          '**2035:** Neue Split-Klimaanlagen und Split-Wärmepumpen bis 12 kW nur noch ganz ohne F-Gase.',
+        ],
+        more: ['Bis 2030 überprüft die EU-Kommission, wie die Verbote wirken, und kann Änderungen vorschlagen. Einzelne Termine nach 2030 können sich also noch verschieben. Dass klimaschädliche Kältemittel nach und nach verschwinden, steht aber fest.'],
+      },
+      {
+        heading: 'Warum Kältemittel ab 2027 knapper werden',
+        text: [
+          'Neben den Verboten legt die Verordnung fest, wie viel teilfluorierte Kältemittel (HFKW) insgesamt in der EU verkauft werden dürfen. In den Jahren 2025 und 2026 sind das rund 42,9 Millionen Tonnen CO₂-Äquivalent. Von 2027 bis 2029 sind es nur noch rund 21,7 Millionen Tonnen, also fast die Hälfte weniger. Bis 2050 sinkt die Menge auf null.',
+          'Wenn Sie eine Anlage mit R32 oder R410A betreiben, dürfen Sie diese Kältemittel weiter nachfüllen lassen. Sie werden aber knapper, und die Branchenverbände rechnen mit steigenden Preisen. Eine dichte und regelmäßig gewartete Anlage, die kein Kältemittel verliert, spart deshalb ab 2027 bares Geld.',
+        ],
+        image: { src: '/assets/img/blog-f-gase-kaeltemittel.jpg', alt: 'Fachkraft befüllt eine Anlage mit Kältemittel aus einer Kältemittelflasche', caption: 'Kältemittel wird knapper und damit teurer.', credit: 'Bulat843 / Pexels' },
+      },
+      {
+        heading: 'Dichtheitsprüfung: Betrifft das Ihre Anlage?',
+        text: ['Eine regelmäßige Dichtheitsprüfung ist Pflicht, sobald eine Anlage Kältemittel im Umfang von mindestens 5 Tonnen CO₂-Äquivalent enthält. Bei hermetisch geschlossenen Geräten mit entsprechender Kennzeichnung liegt die Schwelle bei 10 Tonnen. Ab 5 Tonnen muss alle 12 Monate geprüft werden, mit einem fest eingebauten System zur Lecksuche alle 24 Monate. Ob Ihre Anlage betroffen ist, können Sie selbst ausrechnen. Multiplizieren Sie dazu die Füllmenge in Kilogramm vom Typenschild mit dem GWP-Wert des Kältemittels.'],
+        list: [
+          'Bei R32 liegt die Grenze bei rund 7,4 kg Füllmenge. Eine normale Split-Klimaanlage im Wohnhaus enthält deutlich weniger und muss deshalb nicht geprüft werden.',
+          'Bei R410A ist die Grenze schon bei rund 2,4 kg erreicht. Ältere Anlagen mit mehreren Innengeräten (Multi-Split) können darüber liegen.',
+        ],
+        more: ['Wenn Sie unsicher sind, schauen Sie auf das Typenschild am Außengerät oder in die [Erläuterungen des Umweltbundesamts zu Dichtheitskontrollen](https://www.umweltbundesamt.de/themen/klima-energie/fluorierte-treibhausgase-fckw/rechtliche-regelungen/haeufig-gestellte-fragen-zur-f-gas-verordnung/abschnitt-2-dichtheitskontrollen). Wir empfehlen die regelmäßige Wartung auch dann, wenn sie nicht vorgeschrieben ist. Mit sauberen Filtern und einem dichten Kältekreis bleiben Leistung und Stromverbrauch so, wie sie sein sollen.'],
+        image: { src: '/assets/img/blog-f-gase-dichtheit.jpg', alt: 'Monteur prüft den Kältekreis mit einer Manometer-Messbrücke', caption: 'Prüfung des Kältekreises mit der Manometer-Messbrücke.', credit: 'José Andrés Pacheco Cortes / Pexels' },
+      },
+      {
+        heading: 'Was das für Hausbesitzer in Mannheim bedeutet',
+        text: [
+          'Viele Mannheimer Haushalte beschäftigen sich gerade ohnehin mit ihrer Heizung. Der [kommunale Wärmeplan](https://www.mannheim.de/de/service-bieten/mannheim-auf-klimakurs/waermeplanung), den der Gemeinderat im März 2024 beschlossen hat, setzt auf Fernwärme und Wärmepumpen. Der Energieversorger MVV will das Gasnetz bis 2035 stilllegen. Einen festen Termin dafür hat der Gemeinderat allerdings [nicht beschlossen](https://www.mannheim.de/de/nachrichten/gemeinderat-kein-fester-termin-fuer-gasausstieg). Wo keine Fernwärme anliegt, wird es für viele Ein- und Zweifamilienhäuser auf eine Wärmepumpe hinauslaufen. Mit welchem Kältemittel sie arbeitet, bestimmen die neuen Regeln ab 2027.',
+          'Für ältere Häuser hat das einen Vorteil. Wärmepumpen mit Propan schaffen höhere Vorlauftemperaturen als viele ältere Geräte mit R32. Das hilft in Häusern mit klassischen Heizkörpern. Wie Sie selbst testen können, ob Ihr Haus für eine Wärmepumpe geeignet ist, lesen Sie in unserem Beitrag [Wärmepumpe im Altbau](/ratgeber/waermepumpe-im-altbau).',
+          'Auch Klimaanlagen werden in der Rhein-Neckar-Region mit ihren heißen Sommern immer öfter nachgerüstet. Für sie ändert sich 2027 wenig, denn Split-Geräte mit R32 bleiben bis Ende 2028 erlaubt. Worauf Sie beim Nachrüsten achten sollten, lesen Sie in unserem Beitrag [Klimaanlage nachrüsten](/ratgeber/klimaanlage-nachruesten-split-anlage).',
+        ],
+        image: { src: '/assets/img/blog-f-gase-aufstellort.jpg', alt: 'Wärmepumpe neben dem Hauseingang zwischen Sträuchern', caption: 'Wo keine Fernwärme anliegt, ist die Wärmepumpe für viele Häuser in Mannheim die naheliegende Lösung.', credit: 'alpha innotec / Pexels' },
+      },
+      {
+        heading: 'Jetzt kaufen oder warten?',
+        text: ['Das hängt davon ab, was Sie vorhaben.'],
+        list: [
+          'Sie planen eine neue Wärmepumpe. Kaufen Sie kein Split-Gerät mit R32, nur um dem Stichtag zuvorzukommen. Mit einem Kältemittel unter GWP 150 sind Sie auch bei späteren Wartungen auf der sicheren Seite, wenn die alten Kältemittel knapper werden. Denken Sie außerdem an die Förderung. Die [KfW-Heizungsförderung (Programm 458)](https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Heizungsf%C3%B6rderung-f%C3%BCr-Privatpersonen-Wohngeb%C3%A4ude-(458)/) hat ihre Bedingungen im Juli 2026 geändert, und einzelne Bausteine werden ab dem 1. Februar 2027 schrittweise weniger. Wenn Sie ohnehin planen, fangen Sie deshalb lieber früh an. Den Antrag müssen Sie stellen, bevor die Arbeiten beginnen.',
+          'Sie möchten eine Klimaanlage nachrüsten. Ein Split-Gerät mit R32 ist auch 2027 und 2028 eine gute Wahl. Fragen Sie trotzdem nach Geräten mit natürlichem Kältemittel, denn davon kommen immer mehr auf den Markt.',
+          'Sie haben schon eine Anlage. Lassen Sie sie weiterlaufen und regelmäßig warten. Ist eine Anlage mit R410A 15 Jahre oder älter, planen Sie den Austausch besser in Ruhe als erst beim nächsten Ausfall. Reparaturen werden teurer, je knapper das Kältemittel wird.',
+        ],
+        cta: {
+          icon: 'thermometer',
+          title: 'Neue Wärmepumpe oder Klimaanlage geplant?',
+          text: 'Wir beraten Sie, welches Gerät und welches Kältemittel zu Ihrem Haus passen, und erstellen Ihnen ein Angebot vom Meisterbetrieb. Ein paar Fotos vom geplanten Aufstellort helfen uns bei der ersten Einschätzung.',
+          inquiry: 'Beratung anfragen',
+          more: { label: 'Mehr zur Wärmepumpe', href: '/heizung#waermepumpe' },
+        },
+      },
+      {
+        heading: 'Wer darf an Kältemittelanlagen arbeiten?',
+        text: ['Einbau, Wartung, Dichtheitsprüfung und das Absaugen von Kältemittel dürfen nur zertifizierte Fachkräfte und Betriebe übernehmen. Mit der neuen Verordnung gehören auch natürliche Kältemittel wie Propan und CO₂ ausdrücklich zur Ausbildung, weil für sie andere Sicherheitsregeln gelten. Händler dürfen Split-Geräte, die vor Ort befüllt oder angeschlossen werden müssen, an Privatkunden grundsätzlich nur verkaufen, wenn ein zertifizierter Betrieb den Einbau übernimmt und das nachgewiesen wird. Das gilt auch für Geräte mit vorbefüllten Leitungen, die im Internet angeboten werden.'],
+      },
+    ],
+    faq: [
+      { q: 'Ist R32 ab 2027 verboten?', a: 'Nein, nicht grundsätzlich. Ab 2027 dürfen neue Monoblock-Wärmepumpen bis 50 kW und neue Split-Wärmepumpen (Luft/Wasser) bis 12 kW kein R32 mehr enthalten. Split-Klimaanlagen mit R32 sind noch bis Ende 2028 erlaubt. Vorhandene Anlagen mit R32 dürfen ohne zeitliche Grenze weiterlaufen, gewartet und nachgefüllt werden.' },
+      { q: 'Muss ich meine Klimaanlage oder Wärmepumpe 2027 austauschen?', a: 'Nein. Die F-Gase-Verordnung regelt den Verkauf neuer Geräte, nicht den Betrieb vorhandener Anlagen. Ihre Anlage darf weiterlaufen, gewartet und repariert werden. Ein Austausch lohnt sich erst, wenn das Gerät alt ist, oft ausfällt oder Reparaturen wegen teurer werdender Kältemittel unwirtschaftlich werden.' },
+      { q: 'Darf meine R410A-Anlage noch nachgefüllt werden?', a: 'Ja. Seit 2026 ist bei der Wartung von Klimaanlagen und Wärmepumpen nur frisches Kältemittel mit einem GWP ab 2.500 verboten. R410A liegt mit 2.088 darunter. Weil die erlaubte Menge an F-Gasen ab 2027 fast halbiert wird, wird das Nachfüllen aber voraussichtlich teurer.' },
+      { q: 'Welches Kältemittel ist zukunftssicher?', a: 'Natürliche Kältemittel wie Propan (R290, GWP 3) und CO₂ (R744, GWP 1). Sie fallen weder unter die Mengenbegrenzung noch unter die Verbote. Bei Monoblock-Wärmepumpen ist Propan schon heute üblich. Weil es brennbar ist, braucht es einen passenden Aufstellort und einen geschulten Fachbetrieb.' },
+      { q: 'Gilt das auch für mobile Klimageräte?', a: 'Ja. Mobile Klimageräte für die Steckdose zählen zu den kompakten Geräten. Neue Geräte dürfen ab 2027 nur noch Kältemittel mit einem GWP unter 150 enthalten und ab 2032 gar keine F-Gase mehr. Die meisten mobilen Geräte im Handel arbeiten aber schon heute mit Propan.' },
+      { q: 'Ist eine Wärmepumpe mit Propan gefährlich?', a: 'Nicht, wenn sie fachgerecht aufgestellt ist. Der Kältekreis ist geschlossen, und bei Monoblock-Geräten bleibt das Propan im Außengerät. Die Hersteller schreiben einen Schutzbereich vor, in dem keine Zündquellen, Kellerfenster oder Abläufe liegen dürfen. Deshalb legen wir den Aufstellort gemeinsam mit Ihnen fest, bevor das Gerät bestellt wird.' },
+    ],
+  },
   'waermepumpe-im-altbau': {
     title: 'Wärmepumpe im Altbau: Wann lohnt sie sich wirklich?',
     description: 'Funktioniert eine Wärmepumpe im Altbau? Worauf es bei Vorlauftemperatur, Heizkörpern und Dämmung ankommt und wie Sie Ihr Haus selbst testen.',
@@ -37,7 +170,7 @@ export const de: Record<PostSlug, PostText> = {
       },
       {
         heading: 'Planung: Heizlast, Aufstellort und Schall',
-        text: ['Vor jedem Angebot steht eine Heizlastberechnung. Sie zeigt, wie viel Wärme Ihr Haus tatsächlich braucht. Eine zu große Wärmepumpe schaltet ständig ein und aus und verschleißt schneller, eine zu kleine muss an Frosttagen elektrisch nachheizen. Bei Reihen- und Doppelhäusern kommt der Aufstellort des Außengeräts dazu: Die Abstände zum Nachbarn müssen passen, und unter dem Schlafzimmerfenster steht es besser nicht.'],
+        text: ['Vor jedem Angebot steht eine Heizlastberechnung. Sie zeigt, wie viel Wärme Ihr Haus tatsächlich braucht. Eine zu große Wärmepumpe schaltet ständig ein und aus und verschleißt schneller, eine zu kleine muss an Frosttagen elektrisch nachheizen. Bei Reihen- und Doppelhäusern kommt der Aufstellort des Außengeräts dazu: Die Abstände zum Nachbarn müssen passen, und unter dem Schlafzimmerfenster steht es besser nicht.', 'Warum neue Wärmepumpen ab 2027 meist mit Propan arbeiten, erklären wir im Beitrag zur [F-Gase-Verordnung 2027](/ratgeber/f-gase-verordnung-2027).'],
       },
       {
         heading: 'Und die Förderung?',
@@ -210,7 +343,7 @@ export const de: Record<PostSlug, PostText> = {
       },
       {
         heading: 'Einbau und Wartung',
-        text: ['Kälteanlagen dürfen nur von zertifizierten Fachbetrieben installiert und in Betrieb genommen werden. Nach dem Einbau reicht es, die Filter des Innengeräts regelmäßig zu reinigen und die Anlage in festen Abständen warten zu lassen. So bleibt die Luft hygienisch und die Leistung erhalten.'],
+        text: ['Kälteanlagen dürfen nur von zertifizierten Fachbetrieben installiert und in Betrieb genommen werden. Nach dem Einbau reicht es, die Filter des Innengeräts regelmäßig zu reinigen und die Anlage in festen Abständen warten zu lassen. So bleibt die Luft hygienisch und die Leistung erhalten.', 'Welche Kältemittel ab 2027 noch erlaubt sind, lesen Sie in unserem Beitrag zur [F-Gase-Verordnung 2027](/ratgeber/f-gase-verordnung-2027).'],
       },
     ],
   },
