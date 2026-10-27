@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-/* Based on the client's eRecht24 imprint, completed on 2026-10-21: registered company name (HRA entry),
-   chamber and trade-law details for a Handwerksbetrieb (§ 5 Abs. 1 Nr. 3 and 5 DDG), the EU online dispute
-   platform removed (shut down on 20 July 2025). Before going live, check the company name against the
-   Handelsregister extract and the title against the Meisterbrief. */
+/* Based on the client's eRecht24 imprint. Company, trade and chamber details checked on 2026-10-27 against
+   the Handelsregister extract (HRA 711406, retrieved 26.10.2026), the Handwerkskarte (Betriebs-Nr. 74602,
+   issued 06.06.2023) and the Gewerbeanmeldung (14.06.2023). § 5 Abs. 1 Nr. 3 and 5 DDG. The EU online
+   dispute platform is not listed (shut down on 20 July 2025). */
 export default function ImprintPage() {
   return (
     <main id="main" className="plain-page">
@@ -40,13 +40,18 @@ export default function ImprintPage() {
 
         <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
         <p>
-          Berufsbezeichnung: Installateur- und Heizungsbauermeister<br />
-          Verliehen in: Deutschland
+          Berufsbezeichnung: Installateur und Heizungsbauer<br />
+          Verliehen in: Deutschland<br />
+          Betriebsleiter: {SITE.owner}
         </p>
         <p>
-          Eingetragen in die Handwerksrolle der zuständigen Kammer:<br />
+          Eingetragen in die Handwerksrolle der Handwerkskammer Mannheim Rhein-Neckar-Odenwald seit dem 5. Juni 2023,
+          Betriebsnummer 74602.
+        </p>
+        <p>
+          Zuständige Kammer:<br />
           Handwerkskammer Mannheim Rhein-Neckar-Odenwald<br />
-          B 1, 1–2<br />
+          B 1, 1-2<br />
           68159 Mannheim
         </p>
         <p>
