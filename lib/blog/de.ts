@@ -5,6 +5,86 @@
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'heizung-winterfit-machen': {
+    title: 'Heizung winterfit machen: Die Checkliste',
+    description: 'Heizung winterfit machen in 8 Schritten: entlüften, Druck prüfen, Thermostate testen. Die Checkliste vom Mannheimer Meisterbetrieb mit Spartipps.',
+    excerpt: 'Bevor es richtig kalt wird, lohnt sich ein kurzer Check der Heizung. Vieles prüfen Sie in einer halben Stunde selbst. Unsere Checkliste zeigt, worauf es ankommt und wann Sie besser uns anrufen.',
+    alt: 'Hand stellt das Thermostat an einem Heizkörper ein',
+    takeaways: [
+      'Testen Sie die Heizung an einem milden Herbsttag: alle Thermostate auf, eine Stunde laufen lassen, dann durch alle Räume gehen.',
+      'Erst entlüften, dann den Druck prüfen. In vielen Einfamilienhäusern liegt er zwischen 1,5 und 2 bar, maßgeblich ist der Wert des Herstellers.',
+      'Arbeiten am Brenner, an Gasleitungen oder am Kältekreis einer Wärmepumpe gehören in Fachhände.',
+    ],
+    sections: [
+      {
+        heading: 'Warum sich der Heizungscheck im Herbst lohnt',
+        text: [
+          'Über den Sommer steht die Heizung still oder macht nur Warmwasser. In dieser Zeit setzen sich Ventile fest, Luft sammelt sich in den Leitungen, und der Druck sinkt langsam ab. Das merken Sie oft erst am ersten kalten Abend, wenn ein Heizkörper kalt bleibt.',
+          'Mit einem kurzen Check im Oktober oder November finden Sie solche Kleinigkeiten, bevor sie lästig werden. Für die meisten Punkte brauchen Sie kein Werkzeug außer einem Entlüftungsschlüssel und einem Tuch.',
+        ],
+      },
+      {
+        heading: 'Heizung winterfit machen: die Checkliste in 8 Schritten',
+        list: [
+          'Testen Sie die Heizung an einem milden Tag. Drehen Sie alle Thermostate auf, lassen Sie die Heizung etwa eine Stunde laufen und gehen Sie dann durch alle Räume. So sehen Sie sofort, welcher Heizkörper nicht richtig warm wird.',
+          'Drehen Sie jeden Thermostatkopf einmal ganz auf und wieder zu. Nach dem Sommer klemmt der Ventilstift darunter manchmal, und der Heizkörper bleibt trotz aufgedrehtem Thermostat kalt.',
+          'Entlüften Sie Heizkörper, die gluckern oder oben kalt bleiben. Schalten Sie die Heizung dafür etwa eine halbe Stunde vorher aus, damit sich die Luft oben sammelt. Öffnen Sie dann mit dem Entlüftungsschlüssel das kleine Ventil oben an der Seite, halten Sie ein Tuch darunter und schließen Sie es, sobald Wasser statt Luft austritt. Vorsicht, das Wasser kann heiß sein.',
+          'Prüfen Sie erst danach den Anlagendruck am Manometer. In vielen Einfamilienhäusern liegt er im Betrieb zwischen 1,5 und 2 bar, maßgeblich ist aber der Wert, den Hersteller oder Installateur vorgeben. Liegt er deutlich darunter, fehlt Wasser im System. Behalten Sie den Druck auch in den Tagen danach im Blick.',
+          'Machen Sie die Heizkörper frei und wischen Sie den Staub zwischen den Lamellen ab. Lange Vorhänge, Sofas oder Wäscheständer direkt davor halten die Wärme zurück.',
+          'Schauen Sie aufs Display der Heizung. Steht dort eine Störungs- oder Wartungsmeldung, notieren Sie den Code. Damit können wir am Telefon oft schon einschätzen, worum es geht.',
+          'Prüfen Sie die Zeitprogramme. Nach der Zeitumstellung Ende Oktober stimmt die Uhr der Heizung nicht immer. Passt die Nachtabsenkung noch zu Ihrem Alltag, und ist die Sommerabschaltung aufgehoben?',
+          'Kontrollieren Sie bei einer Wärmepumpe das Außengerät, und werfen Sie einen Blick unter Heizung, Speicher und Ventile. Laub darf die Luftansaugung nicht verdecken, und feuchte Stellen oder Tropfen deuten auf eine Undichtigkeit hin.',
+        ],
+        image: { src: '/assets/img/blog-heizungscheck-heizkoerper.jpg', alt: 'Weißer Heizkörper mit Thermostatkopf an einer hellen Wand', caption: 'Nach dem Sommer klemmt der Ventilstift unter dem Thermostatkopf manchmal. Einmal ganz auf- und zudrehen hilft oft.', credit: 'Patrycja Grobelny / Pexels' },
+      },
+      {
+        heading: 'Heizung Wasser nachfüllen: so geht es richtig',
+        text: [
+          'Fehlt Druck, wird Wasser über den Füll- und Entleerhahn nachgefüllt, meist mit einem Schlauch vom Wasserhahn. Füllen Sie den Schlauch vorher mit Wasser, damit keine Luft ins System gelangt, und füllen Sie nur so lange nach, bis der Sollwert erreicht ist.',
+          'Viele neuere Heizungen brauchen aufbereitetes Heizungswasser, weil Kalk und Sauerstoff dem Wärmetauscher schaden. Bei hartem Wasser wie in Mannheim ist das besonders wichtig. Mehr dazu lesen Sie in unserem Beitrag [Hartes Wasser in Mannheim](/ratgeber/hartes-wasser-mannheim-kalk). Wenn Sie unsicher sind, lassen Sie das Nachfüllen bei der Wartung erledigen.',
+          'Müssen Sie häufig nachfüllen, zum Beispiel mehrmals im Jahr, verliert die Anlage irgendwo Wasser oder das Ausdehnungsgefäß arbeitet nicht mehr richtig. Das sollte sich eine Fachkraft ansehen.',
+        ],
+      },
+      {
+        heading: 'Einstellungen, die Heizkosten sparen',
+        text: [
+          'Eine Heizung arbeitet am sparsamsten, wenn sie das Wasser nur so warm macht wie nötig. Ob die Heizkurve passt, merken Sie daran, ob alle Räume mit aufgedrehtem Thermostat angenehm warm werden, ohne dass die Heizung ständig auf Hochtouren läuft.',
+          'Werden einzelne Räume nie richtig warm, während andere überheizen, steckt oft ein fehlender hydraulischer Abgleich dahinter. Dann nützt es wenig, die Heizkurve einfach höher zu stellen.',
+          'Bei Wärmepumpen und Fußbodenheizungen sind gleichmäßige Temperaturen oft sparsamer als eine starke Nachtabsenkung.',
+          'Beim Warmwasser sollten Sie dagegen nicht zu viel sparen. Bei einer zentralen Warmwasserbereitung sollte das Wasser am Speicher mindestens 60 °C erreichen, damit sich keine Legionellen vermehren.',
+        ],
+      },
+      {
+        heading: 'Was in Fachhände gehört',
+        text: ['Einige Arbeiten sollten Sie nicht selbst übernehmen, auch wenn es verlockend ist:'],
+        list: [
+          'alles am Brenner, an der Gasleitung und an der Abgasführung',
+          'der Kältekreis einer Wärmepumpe',
+          'ein tropfendes Sicherheitsventil oder ein Druck, der immer wieder abfällt',
+          'Störungen, die nach einem Neustart sofort wiederkommen',
+        ],
+        more: [
+          'Bei Gasgeruch gilt: keine Lichtschalter und keine Klingel betätigen, Fenster öffnen, das Haus verlassen und von draußen den Störungsdienst Ihres Gasnetzbetreibers anrufen.',
+          'Der Check ersetzt keine Wartung, er zeigt Ihnen nur, ob alles normal läuft. Fällt die Heizung trotz allem aus, hilft Ihnen unser Beitrag [Heizung fällt aus](/ratgeber/heizung-faellt-aus-was-tun) weiter.',
+        ],
+        cta: {
+          icon: 'wrench',
+          title: 'Heizung läuft nicht rund?',
+          text: 'Wir warten Gas- und Ölheizungen in Mannheim und Umgebung und kümmern uns um Störungen. Nennen Sie uns kurz den Fehlercode oder schicken Sie ein Foto vom Display, dann melden wir uns mit einer Einschätzung.',
+          inquiry: 'Termin anfragen',
+          more: { label: 'Zum Notdienst', href: '/notdienst' },
+        },
+      },
+    ],
+    faq: [
+      { q: 'Wann sollte ich die Heizung winterfit machen?', a: 'Am besten im September oder Oktober, bevor es dauerhaft kalt wird. Dann bleibt Zeit, kleine Probleme in Ruhe zu beheben, und Fachbetriebe haben eher freie Termine als mitten im Winter.' },
+      { q: 'Wie oft sollte ich Heizkörper entlüften?', a: 'In der Regel einmal zu Beginn der Heizperiode und immer dann, wenn ein Heizkörper gluckert oder oben kalt bleibt. Müssen Sie sehr häufig entlüften, gelangt laufend Luft ins System. Dann sollte eine Fachkraft nach der Ursache suchen.' },
+      { q: 'Muss die Heizung zum Entlüften ausgeschaltet sein?', a: 'Am besten schalten Sie die Heizung etwa eine halbe Stunde vorher aus. Dann sammelt sich die Luft oben im Heizkörper, und es tritt weniger heißes Wasser aus. Danach schalten Sie die Heizung wieder ein und prüfen den Druck.' },
+      { q: 'Welcher Druck ist bei der Heizung normal?', a: 'Bei vielen Einfamilienhäusern liegt der Betriebsdruck zwischen 1,5 und 2 bar. Der richtige Wert hängt aber von der Anlage und der Gebäudehöhe ab und ist oft am Manometer markiert oder in den Unterlagen vermerkt. Fällt der Druck immer wieder ab, sollte die Anlage geprüft werden.' },
+      { q: 'Was tun, wenn ein Heizkörper trotz Entlüften kalt bleibt?', a: 'Prüfen Sie zuerst, ob der Ventilstift unter dem Thermostatkopf klemmt. Bleibt der Heizkörper trotzdem kalt, kann ein fehlender hydraulischer Abgleich, eine falsch eingestellte Pumpe oder ein defektes Ventil dahinterstecken. Das finden wir bei einem Termin vor Ort heraus.' },
+      { q: 'Ersetzt der Heizungscheck die Wartung?', a: 'Nein. Der Check zeigt Ihnen, ob alles normal läuft. Bei der Wartung werden Brenner, Wärmetauscher und Sicherheitseinrichtungen gereinigt und geprüft und die Verbrennungswerte eingestellt. Das sollte eine Fachkraft übernehmen.' },
+    ],
+  },
   'f-gase-verordnung-2027': {
     title: 'F-Gase-Verordnung 2027: Wärmepumpe & Klima',
     description: 'Ab 2027 gelten strengere Regeln für Kältemittel in Wärmepumpen und Klimaanlagen. Was neu ist, was erlaubt bleibt und was das für Mannheim heißt.',
@@ -218,7 +298,7 @@ export const de: Record<PostSlug, PostText> = {
           'Der Wasserdruck fällt immer wieder ab.',
           'Die Heizung geht nach dem Entstören erneut auf Störung.',
         ],
-        more: ['Bei Gasgeruch gilt: keine Lichtschalter und keine Klingel betätigen, Fenster öffnen, das Haus verlassen und von draußen den Störungsdienst Ihres Gasnetzbetreibers anrufen. In allen anderen Fällen erreichen Sie unseren Notdienst rund um die Uhr unter {phone}.'],
+        more: ['Bei Gasgeruch gilt: keine Lichtschalter und keine Klingel betätigen, Fenster öffnen, das Haus verlassen und von draußen den Störungsdienst Ihres Gasnetzbetreibers anrufen. In allen anderen Fällen erreichen Sie unseren Notdienst rund um die Uhr unter {phone}.', 'Damit es gar nicht erst so weit kommt, hilft ein kurzer Check im Herbst. Wie das geht, lesen Sie in unserem Beitrag [Heizung winterfit machen](/ratgeber/heizung-winterfit-machen).'],
       },
     ],
   },

@@ -2,6 +2,24 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'heizung-winterfit-machen': {
+    title: 'Getting your heating ready for winter: the checklist',
+    description: 'Get your heating ready for winter in 8 steps: bleed radiators, check the pressure, test the thermostats. A checklist from a Mannheim master business.',
+    excerpt: 'Before it gets properly cold, a quick check of the heating pays off. Much of it you can do yourself in half an hour. Our checklist shows what matters and when to call us instead.',
+    alt: 'Hand adjusting the thermostat on a radiator',
+    takeaways: [
+      'Test the heating on a mild autumn day: all thermostats up, run it for an hour, then walk through every room.',
+      'Bleed first, then check the pressure. In many family homes it is between 1.5 and 2 bar; the manufacturer value is what counts.',
+      'Work on the burner, gas pipes or a heat pump refrigerant circuit belongs in professional hands.',
+    ],
+    sections: [
+      { heading: 'Why an autumn heating check pays off', text: ['Over the summer valves stick, air collects and the pressure drops. A short check in October or November finds these small issues before they become a nuisance.'] },
+      { heading: 'Getting the heating ready: the checklist in 8 steps', text: ['Test run, thermostats, bleeding, pressure, free radiators, display, time programmes after the clock change, outdoor unit and leaks.'] },
+      { heading: 'Topping up heating water correctly', text: ['Fill the hose with water first and only top up to the target value. Frequent topping up points to a leak or a faulty expansion vessel.'] },
+      { heading: 'Settings that save heating costs', text: ['Keep the flow temperature as low as possible, consider hydraulic balancing, and keep stored hot water at 60 °C or more.'] },
+      { heading: 'What belongs in professional hands', text: ['Burner, gas pipes, flue, refrigerant circuit, a dripping safety valve and faults that keep returning.'] },
+    ],
+  },
   'f-gase-verordnung-2027': {
     title: 'EU F-Gas Regulation 2027: Heat Pumps & Air Conditioning',
     description: 'From 2027 stricter refrigerant rules apply to heat pumps and air conditioners. What is new, what stays allowed and what it means for Mannheim.',

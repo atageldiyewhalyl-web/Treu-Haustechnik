@@ -50,6 +50,7 @@ const IMG = '/assets/img';
 /** Newest first. `service` is the group the article belongs to, `href` where its "more about this" link goes,
     `reason` the inquiry category the form under the article starts with. */
 export const POSTS = [
+  { slug: 'heizung-winterfit-machen', image: `${IMG}/blog-heizungscheck.jpg`, service: 'heizung', href: '/heizung', reason: 'service', date: '2026-10-29' },
   { slug: 'f-gase-verordnung-2027', image: `${IMG}/blog-f-gase-2027.jpg`, service: 'klima', href: '/klima', reason: 'klima', date: '2026-10-22' },
   { slug: 'waermepumpe-im-altbau', image: `${IMG}/hero-service.jpg`, service: 'heizung', href: '/heizung#waermepumpe', reason: 'waermepumpe', date: '2026-10-10' },
   { slug: 'heizung-faellt-aus-was-tun', image: `${IMG}/blog-heizung-ausfall.jpg`, service: 'notdienst', href: '/notdienst', reason: 'service', date: '2026-10-10' },
