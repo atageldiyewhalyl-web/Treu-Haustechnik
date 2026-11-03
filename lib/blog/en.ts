@@ -2,6 +2,24 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'trinkwasserhygiene': {
+    title: 'Drinking water hygiene: Legionella, limescale and treatment',
+    description: 'Preventing Legionella, the right hot water temperature, duties for landlords and hard Mannheim water: when filters and softeners make sense.',
+    excerpt: 'Whether the water at the tap is as good as at the waterworks is decided in the house installation. How to prevent Legionella, what limescale does and which treatment pays off in Mannheim.',
+    alt: 'Clear drinking water running from a modern tap into a glass',
+    takeaways: [
+      'Legionella multiply above all in lukewarm water between 25 and 45 °C that stands in the pipes for a long time.',
+      'Hot water should leave the cylinder at 60 °C or more, and rarely used outlets should be flushed regularly.',
+      'Mannheim water is hard. A house water filter and a softener protect the installation from particles and limescale.',
+    ],
+    sections: [
+      { heading: 'What drinking water hygiene means in the house', text: ['From the water meter on, owners and landlords are responsible. Temperature, regular flow and the state of the installation decide the quality at the tap.'] },
+      { heading: 'Legionella, temperatures and flow', text: ['60 °C at the cylinder, 55 °C in the circulation return, cold water below 25 °C, and no stagnant pipes.'] },
+      { heading: 'Duties for landlords', text: ['Under the Drinking Water Ordinance, larger systems in rented buildings with showers are tested at least every three years; 100 CFU per 100 ml triggers action.'] },
+      { heading: 'Hard water, filters and softeners', text: ['Around 20 °dH in Mannheim. A filter behind the meter, a softener behind the filter, both maintained regularly.'] },
+    ],
+  },
+
   'heizung-winterfit-machen': {
     title: 'Getting your heating ready for winter: the checklist',
     description: 'Get your heating ready for winter in 8 steps: bleed radiators, check the pressure, test the thermostats. A checklist from a Mannheim master business.',

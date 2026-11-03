@@ -5,6 +5,112 @@
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'trinkwasserhygiene': {
+    title: 'Trinkwasserhygiene: Legionellen, Kalk und Aufbereitung',
+    description: 'Legionellen vorbeugen, die richtige Warmwassertemperatur, Pflichten für Vermieter und hartes Mannheimer Wasser: wann Filter und Enthärtung sinnvoll sind.',
+    excerpt: 'Ob das Wasser am Hahn so gut ist wie im Wasserwerk, entscheidet sich in der Hausinstallation. Wir erklären, wie Sie Legionellen vorbeugen, was Kalk anrichtet und welche Aufbereitung sich in Mannheim lohnt.',
+    alt: 'Klares Trinkwasser läuft aus einem modernen Wasserhahn in ein Glas',
+    takeaways: [
+      'Legionellen vermehren sich vor allem in lauwarmem Wasser zwischen 25 und 45 °C, das lange in den Leitungen steht.',
+      'Warmwasser sollte am Speicher mindestens 60 °C haben, und selten genutzte Zapfstellen sollten regelmäßig gespült werden.',
+      'Mannheimer Wasser ist hart. Ein Hauswasserfilter und eine Enthärtungsanlage schützen die Installation vor Partikeln und Kalk.',
+    ],
+    sections: [
+      {
+        heading: 'Was Trinkwasserhygiene im Haus bedeutet',
+        text: [
+          'Bis zum Wasserzähler ist der Versorger für die Qualität des Trinkwassers verantwortlich. Ab dort beginnt die Hausinstallation, und für sie sind Eigentümer und Vermieter zuständig. Wie gut das Wasser am Hahn ist, hängt deshalb vor allem von drei Dingen ab: der Temperatur in den Leitungen, davon, ob das Wasser regelmäßig fließt, und vom Zustand der Installation.',
+          'In Mannheim kommt der Kalk dazu. Wir gehen beides der Reihe nach durch und zeigen am Ende, welche Aufbereitung sich für Ihr Haus lohnen kann.',
+        ],
+      },
+      {
+        heading: 'Legionellen: wie sie entstehen',
+        text: [
+          'Legionellen sind Bakterien, die in geringer Zahl natürlich im Wasser vorkommen. Zum Problem werden sie, wenn sie sich in der Trinkwasserinstallation stark vermehren. Gefährlich ist vor allem das Einatmen feiner Wassertröpfchen, zum Beispiel beim Duschen. Dann können sie eine schwere Lungenentzündung auslösen. Beim Trinken ist das Risiko in der Regel gering.',
+          'Nach Angaben des [Robert Koch-Instituts](https://www.rki.de/DE/Aktuelles/Publikationen/RKI-Ratgeber/Ratgeber/Ratgeber_Legionellose.html) finden Legionellen zwischen 25 und 45 °C ideale Bedingungen. Oberhalb von 55 °C wird ihr Wachstum gehemmt, oberhalb von 60 °C sterben sie ab. Kritisch sind deshalb alle Stellen, an denen Wasser lauwarm wird oder lange steht: ein zu kühl eingestellter Warmwasserspeicher, schlecht gedämmte Leitungen, selten genutzte Zapfstellen und tote Leitungsstücke.',
+        ],
+      },
+      {
+        heading: 'Die richtige Temperatur',
+        text: ['Die technischen Regeln, an denen sich Fachbetriebe orientieren, geben für die zentrale Warmwasserbereitung klare Werte vor:'],
+        table: {
+          head: ['Stelle', 'Temperatur', 'Warum'],
+          rows: [
+            ['Austritt des Warmwasserspeichers', 'mindestens 60 °C', 'Legionellen sterben ab'],
+            ['Rücklauf der Zirkulation', 'mindestens 55 °C', 'Kein lauwarmer Bereich in den Leitungen'],
+            ['Kaltwasserleitung', 'möglichst unter 25 °C', 'Kaltes Wasser darf sich nicht erwärmen'],
+          ],
+        },
+        more: [
+          'Drehen Sie die Temperatur am Speicher deshalb nicht einfach herunter, um Energie zu sparen. Viele Wärmepumpen haben eine Legionellenschaltung, die den Speicher regelmäßig stärker aufheizt. Ob und wie oft sie laufen sollte, hängt von Ihrer Anlage ab. Sprechen Sie uns an, bevor Sie diese Funktion abschalten.',
+          'Kleine Durchlauferhitzer direkt am Waschbecken oder an der Dusche sind weniger kritisch, weil dort kaum Wasser steht.',
+        ],
+      },
+      {
+        heading: 'Wasser muss fließen',
+        text: ['Stehendes Wasser ist der zweite große Risikofaktor. Mit ein paar Gewohnheiten halten Sie es in Bewegung:'],
+        list: [
+          'Nutzen Sie selten gebrauchte Zapfstellen, etwa im Gästebad oder im Keller, mindestens alle drei Tage kurz.',
+          'Lassen Sie nach dem Urlaub an allen Zapfstellen kaltes und warmes Wasser laufen, bis es wieder die gewohnte Temperatur hat. Halten Sie den Duschkopf dabei so, dass Sie den Dampf nicht einatmen, und lüften Sie das Bad.',
+          'Leitungen, die nicht mehr gebraucht werden, zum Beispiel zu einer abgebauten Spüle, sollten direkt an der Abzweigung abgetrennt werden. Sonst steht das Wasser darin dauerhaft.',
+          'Reinigen und entkalken Sie Duschköpfe und Strahlregler regelmäßig.',
+        ],
+        image: { src: '/assets/img/blog-trinkwasser-dusche.jpg', alt: 'Wasser strömt aus einem Duschkopf in einem hellen Bad', caption: 'Beim Duschen entstehen feine Tröpfchen. Deshalb kommt es auf die richtige Warmwassertemperatur an.', credit: 'Kaboompics / Pexels' },
+      },
+      {
+        heading: 'Pflichten für Vermieter und Eigentümergemeinschaften',
+        text: ['Für Mehrfamilienhäuser schreibt die [Trinkwasserverordnung](https://www.gesetze-im-internet.de/trinkwv_2023/__31.html) feste Untersuchungen vor. Das Warmwasser muss auf Legionellen untersucht werden, wenn alle drei Bedingungen zutreffen:'],
+        list: [
+          'Es gibt einen Warmwasserspeicher oder zentralen Durchlauferhitzer mit mehr als 400 Litern Inhalt oder mindestens eine Leitung zwischen Erwärmer und Zapfstelle mit mehr als 3 Litern Inhalt.',
+          'Im Gebäude gibt es Duschen oder andere Stellen, an denen Wasser vernebelt wird.',
+          'Es handelt sich nicht um ein Ein- oder Zweifamilienhaus.',
+        ],
+        more: [
+          'Wird das Wasser im Rahmen einer gewerblichen Tätigkeit abgegeben, wozu nach gängiger Auslegung auch die Vermietung von Wohnungen zählt, ist die Untersuchung mindestens alle drei Jahre fällig. Die Proben nimmt eine zugelassene Untersuchungsstelle.',
+          'Werden 100 Legionellen pro 100 Milliliter erreicht, ist der technische Maßnahmenwert erreicht. Dann muss der Betreiber das Gesundheitsamt informieren, die Ursache untersuchen lassen und die nötigen Maßnahmen ergreifen ([§ 51 Trinkwasserverordnung](https://www.gesetze-im-internet.de/trinkwv_2023/__51.html)). Für Ein- und Zweifamilienhäuser gibt es keine Untersuchungspflicht. Die Regeln zu Temperatur und Wasserwechsel gelten dort aus gesundheitlicher Sicht aber genauso.',
+        ],
+        cta: {
+          icon: 'glass',
+          title: 'Auffälliger Befund oder einfach unsicher?',
+          text: 'Wir prüfen Ihre Trinkwasserinstallation: Temperaturen, Zirkulation, Speicher und Leitungen. Danach wissen Sie, was geändert werden sollte. Schicken Sie uns gern den Laborbefund oder ein Foto von Speicher und Heizung mit.',
+          inquiry: 'Prüfung anfragen',
+          more: { label: 'Mehr zu Trinkwasser', href: '/sanitaer-bad#trinkwasser' },
+        },
+      },
+      {
+        heading: 'Hartes Wasser: was Kalk im Haus anrichtet',
+        text: [
+          'Das Mannheimer Trinkwasser hat nach [Angaben der MVV](https://www.mvv.de/fileadmin/user_upload_pk_gewk/pdf/Wasser/Bekanntmachung-trinkwasser_01.pdf) eine Gesamthärte von rund 20 °dH und liegt damit im Härtebereich „hart“. Gesundheitlich ist das unbedenklich. Für die Hausinstallation heißt es aber, dass sich überall dort Kalk ablagert, wo Wasser erwärmt wird: im Warmwasserspeicher, an Heizstäben, in Durchlauferhitzern und an Duschköpfen.',
+          'Verkalkte Speicher und Heizstäbe brauchen mehr Energie, Armaturen werden schwergängig, Geräte verschleißen schneller. Ablagerungen in Speichern und Armaturen erschweren außerdem die Reinigung. Mehr dazu lesen Sie in unserem Beitrag [Hartes Wasser in Mannheim](/ratgeber/hartes-wasser-mannheim-kalk).',
+        ],
+      },
+      {
+        heading: 'Trinkwasseraufbereitung: Filter und Enthärtung',
+        text: [
+          'Ein Hauswasserfilter sitzt direkt hinter dem Wasserzähler. Er hält Sand, Rostpartikel und andere Schwebstoffe zurück, bevor sie in Leitungen, Armaturen und Geräte gelangen. Bei Leitungen aus Metall sehen die Normen einen solchen Filter vor, bei Kunststoffleitungen ist er empfehlenswert. Wichtig ist die Pflege: Ein Rückspülfilter sollte mindestens alle sechs Monate rückgespült werden, bei einem Filter mit Filterkerze wird die Kerze spätestens nach sechs Monaten getauscht. Sonst wird der Filter selbst zum Hygieneproblem.',
+          'Eine Enthärtungsanlage wird hinter dem Filter eingebaut. Sie tauscht Calcium und Magnesium gegen Natrium aus und stellt das Wasser auf eine mittlere Härte ein. So schützt sie Warmwasserspeicher, Leitungen und alle angeschlossenen Geräte vor Kalk. Sie braucht Regeneriersalz und eine regelmäßige Wartung nach Herstellerangabe.',
+          'Welche Kombination zu Ihrem Haus passt, hängt von der Wasserhärte, dem Rohrmaterial, der Größe des Haushalts und dem Platz im Hausanschlussraum ab. Das klären wir bei einem Termin vor Ort.',
+        ],
+        image: { src: '/assets/img/blog-trinkwasser-filter.jpg', alt: 'Installateur arbeitet an Wasserleitungen im Hausanschlussraum', caption: 'Filter und Enthärtung sitzen direkt hinter dem Wasserzähler im Hausanschlussraum.', credit: 'Anıl Karakaya / Pexels' },
+        cta: {
+          icon: 'filter',
+          title: 'Filter oder Enthärtungsanlage für Ihr Haus?',
+          text: 'Wir beraten Sie zu Hauswasserfiltern und Enthärtungsanlagen, bauen sie ein und warten sie. Schicken Sie uns ein Foto von Ihrem Hausanschluss mit Wasserzähler, dann können wir Ihnen schon eine erste Einschätzung geben.',
+          inquiry: 'Beratung anfragen',
+          more: { label: 'Mehr zur Wasseraufbereitung', href: '/sanitaer-bad#wasseraufbereitung' },
+        },
+      },
+    ],
+    faq: [
+      { q: 'Wie heiß muss das Warmwasser sein, um Legionellen zu vermeiden?', a: 'Bei einer zentralen Warmwasserbereitung sollte das Wasser am Speicheraustritt mindestens 60 °C haben und im Rücklauf der Zirkulation nicht unter 55 °C fallen. Kaltes Wasser sollte möglichst unter 25 °C bleiben, damit sich dort keine Keime vermehren.' },
+      { q: 'Muss ich mein Einfamilienhaus auf Legionellen untersuchen lassen?', a: 'Nein, für Ein- und Zweifamilienhäuser gibt es keine Untersuchungspflicht. Achten Sie trotzdem auf eine ausreichende Warmwassertemperatur und darauf, dass das Wasser in selten genutzten Leitungen regelmäßig ausgetauscht wird.' },
+      { q: 'Wie oft muss ein Vermieter auf Legionellen untersuchen lassen?', a: 'Wenn die Voraussetzungen der Trinkwasserverordnung erfüllt sind, also unter anderem eine größere Warmwasseranlage und Duschen vorhanden sind, mindestens alle drei Jahre. Die Proben nimmt eine zugelassene Untersuchungsstelle.' },
+      { q: 'Was sollte ich nach dem Urlaub tun?', a: 'Lassen Sie an allen Zapfstellen kaltes und warmes Wasser laufen, bis es wieder die gewohnte Temperatur hat. An der Dusche halten Sie den Duschkopf so, dass Sie den Dampf nicht einatmen, und lüften danach das Bad.' },
+      { q: 'Brauche ich in Mannheim eine Enthärtungsanlage?', a: 'Vorgeschrieben ist sie nicht. Bei hartem Wasser wie in Mannheim schützt sie aber Warmwasserspeicher, Leitungen und Geräte vor Kalk. Sinnvoll ist sie vor allem bei neuen Leitungen, einer neuen Heizung mit Warmwasserspeicher oder einem frisch sanierten Bad.' },
+      { q: 'Kann ich Legionellen am Geschmack oder Geruch erkennen?', a: 'Nein. Legionellen verändern weder Aussehen noch Geschmack oder Geruch des Wassers. Ob sie in Ihrer Installation vorkommen, zeigt nur eine Laboruntersuchung durch eine zugelassene Untersuchungsstelle.' },
+    ],
+  },
+
   'heizung-winterfit-machen': {
     title: 'Heizung winterfit machen: Die Checkliste',
     description: 'Heizung winterfit machen in 8 Schritten: entlüften, Druck prüfen, Thermostate testen. Die Checkliste vom Mannheimer Meisterbetrieb mit Spartipps.',
@@ -389,6 +495,7 @@ export const de: Record<PostSlug, PostText> = {
         text: [
           'Eine Enthärtungsanlage wird hinter dem Hauswasserfilter eingebaut und tauscht Calcium und Magnesium gegen Natrium aus. Sie schützt die gesamte Installation und alle angeschlossenen Geräte. Sinnvoll ist sie vor allem bei hartem Wasser in Verbindung mit neuen Leitungen, einer neuen Heizung mit Warmwasserspeicher oder einem frisch sanierten Bad.',
           'Wichtig zu wissen: Die Anlage braucht Regeneriersalz und eine regelmäßige Wartung. Das Wasser wird dabei nicht auf null enthärtet, sondern auf einen mittleren Wert eingestellt. Welche Größe und welches Verfahren zu Ihrem Haushalt passen, klären wir bei einem Termin vor Ort.',
+          'Wie Filter und Enthärtung zusammenspielen und worauf es bei der Hygiene im Warmwasser ankommt, lesen Sie in unserem Beitrag [Trinkwasserhygiene](/ratgeber/trinkwasserhygiene).',
         ],
       },
     ],
