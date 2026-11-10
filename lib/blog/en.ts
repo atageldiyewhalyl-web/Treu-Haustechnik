@@ -2,6 +2,23 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'richtig-lueften-und-heizen': {
+    title: 'Ventilating and heating properly in winter: how to avoid mould',
+    description: 'Ventilating and heating in winter: how often to air rooms, which temperature, which humidity? Tips against mould from a Mannheim heating business.',
+    excerpt: 'In winter, warm moist room air meets cold walls. A few habits when airing and heating prevent mould and save energy.',
+    alt: 'Fogged-up window pane with condensation',
+    takeaways: [
+      'In winter, air rooms two to three times a day for about five minutes with the window wide open, not tilted.',
+      'Relative humidity should be between 40 and 60 percent. A simple hygrometer shows the value.',
+      'According to the Federal Environment Agency, 20 °C is enough in the living room and 17 °C in the bedroom. No room should cool down strongly.',
+    ],
+    sections: [
+      { heading: 'Why mould appears in winter', text: ['Moist warm air condenses on cold walls, window reveals and corners behind furniture.'] },
+      { heading: 'Airing and heating', text: ['Short, wide-open airing several times a day, moderate temperatures, doors to cooler rooms closed.'] },
+      { heading: 'Humidity, furniture and recurring mould', text: ['Keep humidity at 40 to 60 percent, furniture 10 cm from outer walls; recurring mould may point to a leak.'] },
+    ],
+  },
+
   'trinkwasserhygiene': {
     title: 'Drinking water hygiene: Legionella, limescale and treatment',
     description: 'Preventing Legionella, the right hot water temperature, duties for landlords and hard Mannheim water: when filters and softeners make sense.',

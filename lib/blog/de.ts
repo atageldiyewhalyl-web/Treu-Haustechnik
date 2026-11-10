@@ -5,6 +5,99 @@
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'richtig-lueften-und-heizen': {
+    title: 'Richtig lüften und heizen im Winter: So vermeiden Sie Schimmel',
+    description: 'Richtig lüften und heizen im Winter: wie oft lüften, welche Raumtemperatur, welche Luftfeuchte? Tipps gegen Schimmel vom Heizungsbauer aus Mannheim.',
+    excerpt: 'Im Winter treffen warme, feuchte Raumluft und kalte Wände aufeinander. Mit ein paar Gewohnheiten beim Lüften und Heizen beugen Sie Schimmel vor und verschwenden keine Energie.',
+    alt: 'Beschlagene Fensterscheibe mit Kondenswasser',
+    takeaways: [
+      'Lüften Sie im Winter zwei- bis dreimal am Tag für etwa fünf Minuten mit weit geöffnetem Fenster statt mit Kippfenster.',
+      'Die relative Luftfeuchte sollte zwischen 40 und 60 Prozent liegen. Ein einfaches Hygrometer zeigt Ihnen den Wert.',
+      'Im Wohnzimmer reichen laut Umweltbundesamt 20 °C, im Schlafzimmer 17 °C. Wichtig ist, dass kein Raum stark auskühlt.',
+    ],
+    sections: [
+      {
+        heading: 'Warum Schimmel im Winter entsteht',
+        text: [
+          'Beim Duschen, Kochen, Wäschetrocknen und sogar beim Schlafen geben wir Feuchtigkeit an die Raumluft ab. Warme Luft kann viel davon aufnehmen. Trifft sie auf eine kalte Oberfläche, etwa eine Außenwand, eine Fensterlaibung oder eine Ecke hinter dem Schrank, kühlt sie ab und gibt das Wasser wieder ab. Bleibt diese Stelle über Tage feucht, hat Schimmel leichtes Spiel.',
+          'Im Winter ist der Unterschied zwischen warmer Raumluft und kalten Wänden am größten. Deshalb tauchen die ersten Flecken meist zwischen November und Februar auf, oft im Schlafzimmer und im Bad.',
+        ],
+      },
+      {
+        heading: 'So lüften Sie richtig',
+        list: [
+          'Lüften Sie jeden Raum zwei- bis dreimal am Tag für etwa fünf Minuten. Bei kaltem Wetter reicht das meist aus. Öffnen Sie dabei das Fenster ganz.',
+          'Wenn möglich, öffnen Sie gegenüberliegende Fenster gleichzeitig. Mit Durchzug tauscht sich die Luft noch schneller aus.',
+          'Lüften Sie direkt nach dem Duschen, nach dem Kochen und nach dem Aufstehen. Dann ist die Feuchtigkeit am höchsten.',
+          'Verzichten Sie auf dauerhaft gekippte Fenster. Sie tauschen kaum Luft aus, kühlen aber die Wand rund ums Fenster aus, und genau dort bildet sich dann Schimmel.',
+        ],
+        more: ['Ausführliche Hinweise gibt das Umweltbundesamt auf seiner Seite [Wie lüfte ich richtig?](https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel/wie-luefte-ich-richtig-tipps-tricks-zur)'],
+        image: { src: '/assets/img/blog-lueften-fenster.jpg', alt: 'Weit geöffnetes Fenster mit Blick ins Grüne', caption: 'Kurz und weit öffnen: Stoßlüften tauscht die Luft aus, ohne die Wände auszukühlen.', credit: 'Ravi Sharma / Pexels' },
+      },
+      {
+        heading: 'Richtig heizen: nicht zu kalt, nicht zu warm',
+        text: ['Wer Heizkosten sparen will, dreht gern überall herunter. Das ist grundsätzlich richtig, solange die Räume nicht stark auskühlen. Das [Umweltbundesamt](https://www.umweltbundesamt.de/umwelttipps-fuer-den-alltag/richtig-heizen-spart-geld-schuetzt-die-umwelt) nennt diese Werte als ausreichend:'],
+        table: {
+          head: ['Raum', 'Temperatur', 'Hinweis'],
+          rows: [
+            ['Wohnzimmer', '20 °C', 'Mehr ist meist nicht nötig'],
+            ['Küche', '18 °C', 'Herd und Geräte wärmen mit'],
+            ['Schlafzimmer', '17 °C', 'Tür zu wärmeren Räumen geschlossen halten'],
+          ],
+        },
+        more: [
+          'Halten Sie die Türen zu kühleren Räumen geschlossen. Sonst zieht warme, feuchte Luft zum Beispiel ins kühle Schlafzimmer und schlägt sich dort an den Wänden nieder.',
+          'Wenn Sie tagsüber unterwegs sind, genügt eine niedrigere Temperatur. Schalten Sie die Heizung aber nicht ganz ab, denn ausgekühlte Wände nehmen Feuchtigkeit besonders leicht auf.',
+          'Damit die Heizung überhaupt gleichmäßig warm wird, lohnt sich vor dem Winter ein kurzer Check. Wie das geht, zeigt unsere Checkliste [Heizung winterfit machen](/ratgeber/heizung-winterfit-machen).',
+        ],
+        cta: {
+          icon: 'thermometer',
+          title: 'Räume werden nicht richtig warm?',
+          text: 'Dann liegt es selten am Thermostat allein. Oft hilft eine besser eingestellte Heizkurve oder ein hydraulischer Abgleich. Schreiben Sie uns kurz, welche Räume betroffen sind, dann sehen wir uns Ihre Heizung an.',
+          inquiry: 'Heizung prüfen lassen',
+          more: { label: 'Mehr zur Heizung', href: '/heizung' },
+        },
+      },
+      {
+        heading: 'Luftfeuchte im Blick behalten',
+        text: [
+          'Ein Hygrometer zeigt Ihnen, wie feucht die Luft in einem Raum ist. Eine relative Luftfeuchte zwischen 40 und 60 Prozent gilt als gut. Liegt der Wert über Tage deutlich darüber, sollten Sie häufiger lüften.',
+          'Typische Feuchtequellen sind Wäsche, die in der Wohnung trocknet, viele Pflanzen und lange Duschen. Wenn Sie Wäsche drinnen trocknen müssen, dann am besten in einem gut gelüfteten Raum bei geschlossener Tür.',
+        ],
+      },
+      {
+        heading: 'Möbel, Ecken und Außenwände',
+        list: [
+          'Stellen Sie Schränke und Betten mit etwa zehn Zentimetern Abstand zur Außenwand auf, damit die Luft dahinter zirkulieren kann.',
+          'Stellen Sie keine Möbel direkt vor die Heizkörper.',
+          'Schauen Sie im Herbst hinter große Möbel und in Raumecken. Dort zeigen sich erste Flecken oft zuerst.',
+        ],
+      },
+      {
+        heading: 'Wenn der Schimmel immer wiederkommt',
+        text: [
+          'Taucht Schimmel immer wieder an derselben Stelle auf, obwohl Sie richtig lüften und heizen, steckt oft eine andere Ursache dahinter: eine kalte Stelle in der Wand, eine undichte Leitung oder ein Wasserschaden. Dann hilft auch das beste Lüften nicht dauerhaft.',
+          'Wer zur Miete wohnt, sollte Schimmel dem Vermieter melden. Weitere Hinweise zum Umgang mit Schimmel finden Sie in den [Fragen und Antworten des Umweltbundesamts](https://www.umweltbundesamt.de/themen/gesundheit/umwelteinfluesse-auf-den-menschen/schimmel/haeufige-fragen-bei-schimmelbefall).',
+        ],
+        cta: {
+          icon: 'droplets',
+          title: 'Feuchte Wand oder Wasserfleck?',
+          text: 'Wenn die Feuchtigkeit nicht vom Lüften kommt, kann eine undichte Leitung dahinterstecken. Schicken Sie uns ein Foto der Stelle, wir melden uns mit einer Einschätzung. Bei einem akuten Wasserschaden erreichen Sie unseren Notdienst rund um die Uhr.',
+          inquiry: 'Anfrage mit Foto stellen',
+          more: { label: 'Zum Notdienst', href: '/notdienst' },
+        },
+      },
+    ],
+    faq: [
+      { q: 'Wie lange sollte ich im Winter lüften?', a: 'Bei kaltem Wetter reichen meist etwa fünf Minuten mit weit geöffnetem Fenster, zwei- bis dreimal am Tag. Die kalte Außenluft ist trocken und nimmt viel Feuchtigkeit auf, wenn sie sich im Raum erwärmt. In der Übergangszeit darf es etwas länger sein.' },
+      { q: 'Ist ein gekipptes Fenster schlecht?', a: 'Dauerhaft gekippte Fenster tauschen im Winter wenig Luft aus, kühlen aber die Wand rund um das Fenster stark ab. Dort schlägt sich dann Feuchtigkeit nieder. Besser ist kurzes Stoßlüften mit ganz geöffnetem Fenster.' },
+      { q: 'Welche Luftfeuchtigkeit ist in der Wohnung ideal?', a: 'Eine relative Luftfeuchte zwischen 40 und 60 Prozent gilt als gut. Liegt sie über längere Zeit deutlich höher, steigt das Schimmelrisiko. Ein einfaches Hygrometer zeigt Ihnen den Wert in jedem Raum.' },
+      { q: 'Soll ich nachts die Heizung ausschalten?', a: 'Eine Absenkung in der Nacht spart Energie, die Räume sollten aber nicht stark auskühlen. Stellen Sie lieber eine niedrigere Temperatur ein, statt die Heizung ganz abzuschalten. Bei Wärmepumpen bringt eine starke Absenkung oft wenig. Fragen Sie uns, was bei Ihrer Anlage sinnvoll ist.' },
+      { q: 'Warum bildet sich Schimmel hinter dem Schrank?', a: 'Hinter großen Möbeln an Außenwänden zirkuliert kaum warme Luft. Die Wand bleibt dort kälter, und Feuchtigkeit schlägt sich nieder. Stellen Sie Schränke und Betten deshalb mit etwa zehn Zentimetern Abstand zur Außenwand auf.' },
+      { q: 'Was tun, wenn die Fenster morgens beschlagen sind?', a: 'Wischen Sie das Wasser ab und lüften Sie gleich nach dem Aufstehen kurz mit weit geöffnetem Fenster. Beschlagen die Scheiben jeden Morgen stark, ist die Luftfeuchte im Raum zu hoch. Dann sollten Sie häufiger lüften und die Tür zu wärmeren Räumen geschlossen halten.' },
+    ],
+  },
+
   'trinkwasserhygiene': {
     title: 'Trinkwasserhygiene: Legionellen, Kalk und Aufbereitung',
     description: 'Legionellen vorbeugen, die richtige Warmwassertemperatur, Pflichten für Vermieter und hartes Mannheimer Wasser: wann Filter und Enthärtung sinnvoll sind.',
@@ -156,8 +249,8 @@ export const de: Record<PostSlug, PostText> = {
         text: [
           'Eine Heizung arbeitet am sparsamsten, wenn sie das Wasser nur so warm macht wie nötig. Ob die Heizkurve passt, merken Sie daran, ob alle Räume mit aufgedrehtem Thermostat angenehm warm werden, ohne dass die Heizung ständig auf Hochtouren läuft.',
           'Werden einzelne Räume nie richtig warm, während andere überheizen, steckt oft ein fehlender hydraulischer Abgleich dahinter. Dann nützt es wenig, die Heizkurve einfach höher zu stellen.',
-          'Bei Wärmepumpen und Fußbodenheizungen sind gleichmäßige Temperaturen oft sparsamer als eine starke Nachtabsenkung.',
-          'Beim Warmwasser sollten Sie dagegen nicht zu viel sparen. Bei einer zentralen Warmwasserbereitung sollte das Wasser am Speicher mindestens 60 °C erreichen, damit sich keine Legionellen vermehren.',
+          'Bei Wärmepumpen und Fußbodenheizungen sind gleichmäßige Temperaturen oft sparsamer als eine starke Nachtabsenkung. Welche Raumtemperaturen genügen und wie Sie dabei Schimmel vermeiden, lesen Sie in unserem Beitrag [Richtig lüften und heizen](/ratgeber/richtig-lueften-und-heizen).',
+          'Beim Warmwasser sollten Sie dagegen nicht zu viel sparen. Bei einer zentralen Warmwasserbereitung sollte das Wasser am Speicher mindestens 60 °C erreichen, damit sich keine Legionellen vermehren. Mehr dazu in unserem Beitrag [Trinkwasserhygiene](/ratgeber/trinkwasserhygiene).',
         ],
       },
       {
