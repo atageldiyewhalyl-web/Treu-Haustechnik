@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter } from 'next/font/google';
 import { ConsentProvider } from '@/components/consent';
+import { ClickCounter } from '@/components/click-counter';
 import { DevBar } from '@/components/dev-bar';
 import { I18nProvider } from '@/components/i18n';
 import { Icon } from '@/components/icons';
@@ -70,6 +71,7 @@ export default async function RootLayout({ children }: LayoutProps<'/'>) {
             {process.env.NODE_ENV === 'development' && <DevBar />}
             <Motion />
             <SmoothScroll />
+            <ClickCounter />
           </ConsentProvider>
         </I18nProvider>
       </body>

@@ -9,3 +9,6 @@ schema_paths = []
 
 [functions.treu-anfrage]
 verify_jwt = false
+
+[functions.treu-klick]
+verify_jwt = false
