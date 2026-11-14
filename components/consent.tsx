@@ -1,7 +1,8 @@
 'use client';
-/* Consent for external content. The site sets no analytics or advertising cookies of its own; the one
-   thing that needs a yes is the Google Maps frame (components/map-embed.tsx). The choice is kept in the
-   browser's localStorage, asked for again after a year, and can be changed through the footer link. */
+/* Consent for external content and statistics: the Google Maps frame (components/map-embed.tsx) and
+   Google Analytics (components/analytics.tsx) load only after a yes. The choice is kept in the browser's
+   localStorage, asked for again after a year or when the choice format changes (VERSION), and can be
+   changed through the footer link. */
 import { createContext, use, useCallback, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { Link } from '@/components/cta';
 import { useCopy } from '@/components/i18n';
@@ -9,6 +10,8 @@ import { useCopy } from '@/components/i18n';
 const KEY = 'treu-consent';
 const CHANGE = 'treu-consent-change';
 const MAX_AGE = 365 * 24 * 60 * 60 * 1000;
+/** Raised when the banner asks for something new, so earlier answers are asked again (2: Google Analytics added). */
+const VERSION = 2;
 
 /** The choice when storage is blocked (private mode): it then lasts for the visit. */
 let memory: string | null = null;
@@ -19,14 +22,14 @@ function read(): string | null {
   try { raw = localStorage.getItem(KEY) ?? memory; } catch { /* storage blocked */ }
   if (!raw) return null;
   try {
-    const { at } = JSON.parse(raw) as { at?: string };
-    if (!at || Date.now() - Date.parse(at) > MAX_AGE) return null;
+    const { at, v } = JSON.parse(raw) as { at?: string; v?: number };
+    if (!at || v !== VERSION || Date.now() - Date.parse(at) > MAX_AGE) return null;
   } catch { return null; }
   return raw;
 }
 
-function write(maps: boolean) {
-  memory = JSON.stringify({ maps, at: new Date().toISOString() });
+function write(maps: boolean, stats: boolean) {
+  memory = JSON.stringify({ maps, stats, v: VERSION, at: new Date().toISOString() });
   try { localStorage.setItem(KEY, memory); } catch { /* storage blocked */ }
   window.dispatchEvent(new Event(CHANGE));
 }
@@ -40,7 +43,7 @@ function subscribe(onChange: () => void) {
   };
 }
 
-const ConsentContext = createContext<{ maps: boolean; allowMaps: () => void; open: () => void } | null>(null);
+const ConsentContext = createContext<{ maps: boolean; stats: boolean; allowMaps: () => void; open: () => void } | null>(null);
 
 export function useConsent() {
   const context = use(ConsentContext);
@@ -52,13 +55,19 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
   // undefined on the server and while hydrating: nothing is known yet, so no banner and no map
   const raw = useSyncExternalStore<string | null | undefined>(subscribe, read, () => undefined);
   const [reopened, setReopened] = useState(false);
-  const maps = useMemo(() => Boolean(raw) && (JSON.parse(raw as string) as { maps?: boolean }).maps === true, [raw]);
+  const { maps, stats } = useMemo(() => {
+    const choice = raw ? JSON.parse(raw) as { maps?: boolean; stats?: boolean } : {};
+    return { maps: choice.maps === true, stats: choice.stats === true };
+  }, [raw]);
 
+  // The banner's two buttons answer both questions at once: everything or nothing
   const decide = useCallback((value: boolean) => {
-    write(value);
+    write(value, value);
     setReopened(false);
   }, []);
-  const value = useMemo(() => ({ maps, allowMaps: () => decide(true), open: () => setReopened(true) }), [maps, decide]);
+  // The map's own button allows only the map and keeps the statistics choice as it was
+  const allowMaps = useCallback(() => write(true, stats), [stats]);
+  const value = useMemo(() => ({ maps, stats, allowMaps, open: () => setReopened(true) }), [maps, stats, allowMaps]);
 
   return (
     <ConsentContext value={value}>

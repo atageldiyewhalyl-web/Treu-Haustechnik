@@ -368,7 +368,7 @@ export const de = {
     },
     consent: {
       title: 'Cookies & externe Inhalte',
-      text: 'Diese Website verwendet keine Analyse- oder Werbe-Cookies. Nur für die Karte von Google Maps bitten wir um Ihre Einwilligung: Beim Laden werden Daten wie Ihre IP-Adresse an Google übertragen, und Google kann Cookies setzen. Ihre Auswahl können Sie jederzeit unten auf der Seite unter „Cookie-Einstellungen“ ändern.',
+      text: 'Mit „Akzeptieren“ erlauben Sie zwei Dienste von Google: die Karte von Google Maps und Google Analytics, mit dem wir auswerten, wie Besucher unsere Website nutzen. Dabei werden Daten wie Ihre IP-Adresse an Google übertragen, und Google setzt Cookies. Werbe-Cookies verwenden wir nicht. Ihre Auswahl können Sie jederzeit unten auf der Seite unter „Cookie-Einstellungen“ ändern.',
       accept: 'Akzeptieren', decline: 'Ablehnen', privacy: 'Datenschutzerklärung', imprint: 'Impressum', settings: 'Cookie-Einstellungen',
     },
     form: {

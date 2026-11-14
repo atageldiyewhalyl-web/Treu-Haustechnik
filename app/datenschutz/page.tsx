@@ -14,7 +14,8 @@ export const metadata: Metadata = {
      table `treu_anfragen` (Supabase project in us-east-1; there is NO automatic deletion: the agency deletes
      rows older than 90 days by hand, at the latest with each monthly report) and emails it via Resend to
      the client and to the agency (copy used for the monthly report);
-   - Google Maps only after consent, self-hosted fonts, no analytics.
+   - Google Maps and Google Analytics 4 (G-GLT65Z7QTG) only after consent (components/consent.tsx, analytics.tsx), self-hosted fonts;
+   - clicks on phone/WhatsApp/email links counted without cookies (table `treu_klicks`: link kind + page path only), since 2026-11-14.
    If any of this changes (Supabase moved to an EU region, agency copy dropped, retention changed), update
    sections 2, 3 and 4 in the same commit. Have the final text checked by a lawyer or eRecht24. */
 
@@ -121,8 +122,26 @@ export default function PrivacyPage() {
 
         <h2>6. Schriftarten, Cookies und Analyse</h2>
         <p>
-          Die verwendeten Schriftarten sind lokal eingebunden; eine Verbindung zu Servern von Google findet dabei nicht statt. Diese Website
-          setzt keine Cookies zu Analyse- oder Werbezwecken und verwendet keine Tracking-Tools.
+          Die verwendeten Schriftarten sind lokal eingebunden; eine Verbindung zu Servern von Google findet dabei nicht statt. Cookies zu
+          Werbezwecken setzen wir nicht.
+        </p>
+        <p>
+          <strong>Google Analytics.</strong> Wenn Sie im Einwilligungsfenster „Akzeptieren“ wählen, nutzen wir Google Analytics 4 der Google
+          Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland), um auszuwerten, wie Besucher unsere Website nutzen: zum Beispiel
+          welche Seiten aufgerufen werden, über welchen Weg Besucher kommen (etwa Google-Suche oder Instagram) und ob ein Anruf, eine
+          WhatsApp-Nachricht, eine E-Mail oder eine Anfrage über das Formular gestartet wird. Dabei setzt Google Cookies (Namen beginnen mit
+          „_ga“), und es werden Angaben zu Ihrem Gerät und Browser sowie Ihre IP-Adresse an Google übertragen; Google Analytics 4 speichert keine
+          vollständigen IP-Adressen. Daten können an Google LLC in den USA übermittelt werden, die nach dem EU-US Data Privacy Framework
+          zertifiziert ist. Google-Signale und personalisierte Werbung sind ausgeschaltet. Die Daten werden nach 14 Monaten gelöscht.
+          Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Ohne Ihre Einwilligung wird Google
+          Analytics nicht geladen. Sie können die Einwilligung jederzeit über „Cookie-Einstellungen“ am Ende jeder Seite widerrufen; die
+          Google-Analytics-Cookies werden dann gelöscht.
+        </p>
+        <p>
+          <strong>Zählung von Kontakt-Klicks ohne Cookies.</strong> Klicken Sie auf unsere Telefonnummer, unseren WhatsApp-Link oder unsere
+          E-Mail-Adresse, speichern wir nur, welche Art von Link geklickt wurde und auf welcher Seite. Wir setzen dafür keine Cookies und
+          speichern keine IP-Adresse und keine Angaben, die Sie identifizieren. So sehen wir, wie viele Kontaktaufnahmen über die Website
+          entstehen (Art. 6 Abs. 1 lit. f DSGVO).
         </p>
         <p>
           Ihre Auswahl im Einwilligungsfenster speichern wir im lokalen Speicher Ihres Browsers (Eintrag „treu-consent“), damit wir Sie nicht

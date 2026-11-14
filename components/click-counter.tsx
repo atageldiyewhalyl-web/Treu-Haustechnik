@@ -1,7 +1,9 @@
 'use client';
 /* Counts clicks on phone, WhatsApp and email links anywhere on the site, for the monthly report.
-   Sends only the link kind and the page path; nothing is stored in the browser, so no consent is needed. */
+   Sends only the link kind and the page path; nothing is stored in the browser, so no consent is needed.
+   The same click also goes to Google Analytics as a key event, but only when the visitor has allowed it. */
 import { useEffect } from 'react';
+import { track } from '@/components/analytics';
 
 function kindOf(href: string) {
   if (href.startsWith('tel:')) return 'phone';
@@ -17,6 +19,7 @@ export function ClickCounter() {
       const kind = link && kindOf(link.getAttribute('href') ?? '');
       if (!kind) return;
       const body = JSON.stringify({ kind, path: location.pathname });
+      track(`${kind}_click`, { link_page: location.pathname });
       // sendBeacon survives the page switching to the phone, WhatsApp or mail app
       if (!navigator.sendBeacon?.('/api/klick', new Blob([body], { type: 'application/json' }))) {
         fetch('/api/klick', { method: 'POST', body, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(() => {});

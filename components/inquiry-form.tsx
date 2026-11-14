@@ -4,6 +4,7 @@
    Resend workflow. A service page starts it with its own category already chosen (`preselect`). */
 import Image from 'next/image';
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type InputHTMLAttributes, type ReactNode } from 'react';
+import { track } from '@/components/analytics';
 import { Mark } from '@/components/brand';
 import { useCopy } from '@/components/i18n';
 import { Icon } from '@/components/icons';
@@ -153,6 +154,7 @@ export function InquiryForm({ preselect }: { preselect?: ReasonKey }) {
         setErrors({ ...named, form: t.errors.failed });
         return setStatus('idle');
       }
+      if (!result.preview) track('anfrage_submit', { reason });
       setPreview(!!result.preview);
       moved.current = true;
       setStatus('done');

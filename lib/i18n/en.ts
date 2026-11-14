@@ -364,7 +364,7 @@ export const en: Copy = {
     },
     consent: {
       title: 'Cookies & external content',
-      text: 'This website uses no analytics or advertising cookies. We only ask for your consent for the Google Maps map: loading it sends data such as your IP address to Google, and Google may set cookies. You can change your choice at any time under "Cookie settings" at the bottom of the page.',
+      text: 'By choosing "Accept" you allow two Google services: the Google Maps map, and Google Analytics, which we use to see how visitors use our website. Data such as your IP address is sent to Google, and Google sets cookies. We do not use advertising cookies. You can change your choice at any time under "Cookie settings" at the bottom of the page.',
       accept: 'Accept', decline: 'Decline', privacy: 'Privacy policy', imprint: 'Legal notice', settings: 'Cookie settings',
     },
     form: {
