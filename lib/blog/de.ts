@@ -49,6 +49,7 @@ export const de: Record<PostSlug, PostText> = {
           'Halten Sie die Türen zu kühleren Räumen geschlossen. Sonst zieht warme, feuchte Luft zum Beispiel ins kühle Schlafzimmer und schlägt sich dort an den Wänden nieder.',
           'Wenn Sie tagsüber unterwegs sind, genügt eine niedrigere Temperatur. Schalten Sie die Heizung aber nicht ganz ab, denn ausgekühlte Wände nehmen Feuchtigkeit besonders leicht auf.',
           'Damit die Heizung überhaupt gleichmäßig warm wird, lohnt sich vor dem Winter ein kurzer Check. Wie das geht, zeigt unsere Checkliste [Heizung winterfit machen](/ratgeber/heizung-winterfit-machen).',
+          'Bleiben die Heizkörper trotzdem kalt, finden Sie in unserem Beitrag [Heizung fällt aus](/ratgeber/heizung-faellt-aus-was-tun) sieben Punkte, die Sie selbst prüfen können.',
         ],
         cta: {
           icon: 'thermometer',
