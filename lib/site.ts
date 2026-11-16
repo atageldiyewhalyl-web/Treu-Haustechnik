@@ -26,7 +26,7 @@ export const SITE = {
 export const CREDIT = {
   label: 'Site made by',
   name: 'nüll.',
-  url: 'https://xn--nll-hoa.com/',
+  url: 'https://nuell-agentur.com/',
 } as const;
 
 /** The site-wide "Anfrage stellen" target: the inquiry form at the end of the current page. */
