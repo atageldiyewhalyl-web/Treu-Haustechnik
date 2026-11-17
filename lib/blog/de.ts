@@ -5,6 +5,87 @@
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'hydraulischer-abgleich': {
+    title: 'Hydraulischer Abgleich: Wann er sich lohnt und wann er Pflicht ist',
+    description: 'Hydraulischer Abgleich erklärt: woran Sie merken, dass er fehlt, wie er abläuft und wann er nach dem Gebäudemodernisierungsgesetz vorgeschrieben ist.',
+    excerpt: 'Ein Heizkörper wird glühend heiß, der im Nachbarzimmer bleibt lauwarm, und in den Leitungen rauscht es. Oft fehlt dann der hydraulische Abgleich. Wir erklären, was dahintersteckt und wann er vorgeschrieben ist.',
+    alt: 'Heizkörper unter einem Sprossenfenster in einem Altbau',
+    takeaways: [
+      'Beim hydraulischen Abgleich wird jeder Heizkörper so eingestellt, dass er genau die Wassermenge bekommt, die sein Raum braucht.',
+      'Ungleich warme Räume, Fließgeräusche und eine Heizung, die ständig mit hohen Temperaturen läuft, sind typische Anzeichen dafür, dass er fehlt.',
+      'In Gebäuden mit mindestens sechs Wohnungen ist er beim Einbau einer neuen Heizung vorgeschrieben. Für eine Wärmepumpe ist er in jedem Haus die Grundlage.',
+    ],
+    sections: [
+      {
+        heading: 'Was beim hydraulischen Abgleich passiert',
+        text: [
+          'Das Heizungswasser nimmt immer den Weg des geringsten Widerstands. Heizkörper nah an der Pumpe bekommen deshalb viel warmes Wasser ab, weit entfernte oder große Heizkörper zu wenig. Viele Anlagen gleichen das aus, indem die Pumpe stärker läuft und die Vorlauftemperatur höher eingestellt wird. Das funktioniert, kostet aber unnötig Energie.',
+          'Beim hydraulischen Abgleich wird zuerst berechnet, wie viel Wärme jeder Raum tatsächlich braucht. Danach wird an jedem Heizkörperventil die passende Durchflussmenge eingestellt, und Pumpe und Vorlauftemperatur werden angepasst. Am Ende bekommt jeder Raum so viel Wärme wie nötig, und die Heizung kommt mit niedrigeren Temperaturen aus.',
+        ],
+      },
+      {
+        heading: 'Woran Sie merken, dass er fehlt',
+        list: [
+          'Einige Räume werden schnell zu warm, andere kaum warm, obwohl alle Thermostate gleich stehen.',
+          'Die Heizkörper rauschen, pfeifen oder gluckern, auch nach dem Entlüften.',
+          'Heizkörper weit weg von der Heizung, etwa im Dachgeschoss, werden als letzte warm.',
+          'Die Heizung läuft mit hoher Vorlauftemperatur, damit auch der kälteste Raum warm wird.',
+          'Nach einem Heizungstausch passt das neue Gerät nicht richtig zu den alten Heizkörpern.',
+        ],
+        image: { src: '/assets/img/blog-abgleich-ventil.jpg', alt: 'Installateur schließt einen Heizkörper an', caption: 'Beim Abgleich werden die Heizkörperventile neu eingestellt und alte Ventile bei Bedarf getauscht.', credit: 'Sergei Starostin / Pexels' },
+      },
+      {
+        heading: 'So läuft der Abgleich ab',
+        list: [
+          'Das Haus wird aufgenommen: Raumgrößen, Fenster, Dämmung und alle Heizkörper mit ihrer Größe.',
+          'Für jeden Raum wird die Heizlast berechnet, also die Wärme, die er an kalten Tagen braucht.',
+          'Daraus ergibt sich für jeden Heizkörper die nötige Wassermenge. Dabei zeigt sich auch, ob die vorhandenen Heizkörper bei niedriger Vorlauftemperatur ausreichen.',
+          'Die Thermostatventile werden voreingestellt. Alte Ventile ohne Einstellmöglichkeit werden gegen voreinstellbare getauscht.',
+          'Zum Schluss werden Pumpe, Heizkurve und Vorlauftemperatur angepasst und alle Werte dokumentiert.',
+        ],
+        more: ['Die Fachregeln unterscheiden zwei Verfahren. Beim vereinfachten Verfahren A wird die Heizlast abgeschätzt, beim genaueren Verfahren B wird sie für jeden Raum berechnet. Wo der Abgleich gesetzlich vorgeschrieben ist, gilt Verfahren B oder ein gleichwertiges Verfahren.'],
+        cta: {
+          icon: 'radiator',
+          title: 'Ungleich warme Räume?',
+          text: 'Wir prüfen, ob bei Ihrer Heizung ein hydraulischer Abgleich fehlt, und stellen die Anlage so ein, dass jeder Raum warm wird. Schreiben Sie uns kurz, welche Räume betroffen sind.',
+          inquiry: 'Abgleich anfragen',
+          more: { label: 'Mehr zur Heizung', href: '/heizung' },
+        },
+      },
+      {
+        heading: 'Wann der Abgleich Pflicht ist',
+        text: [
+          'Die Regeln stehen im Gebäudemodernisierungsgesetz, das früher Gebäudeenergiegesetz hieß. Wer in einem Gebäude mit mindestens sechs Wohnungen oder anderen selbständigen Nutzungseinheiten eine neue Heizung mit Wasser als Wärmeträger einbaut, muss das Heizungssystem danach hydraulisch abgleichen lassen ([§ 60c](https://www.gesetze-im-internet.de/geg/__60c.html)). Dazu gehören eine raumweise Heizlastberechnung, die Prüfung der Heizflächen im Hinblick auf eine möglichst niedrige Vorlauftemperatur und die Anpassung der Regelung. Das Ergebnis wird schriftlich festgehalten, Mieter können es auf Verlangen einsehen.',
+          'Ältere Heizungen in solchen Gebäuden müssen einmal geprüft und optimiert werden ([§ 60b](https://www.gesetze-im-internet.de/geg/__60b.html)). Für Anlagen, die vor dem 1. Oktober 2009 eingebaut wurden, läuft die Frist bis zum 30. September 2027. Jüngere Anlagen sind innerhalb eines Jahres nach ihrem 15. Betriebsjahr an der Reihe.',
+        ],
+        table: {
+          head: ['Situation', 'Pflicht', 'Was zu tun ist'],
+          rows: [
+            ['Neue Heizung, Gebäude mit mindestens sechs Wohnungen', 'Ja', 'Hydraulischer Abgleich nach dem Einbau (§ 60c)'],
+            ['Bestehende Gas- oder Ölheizung, mindestens sechs Wohnungen', 'Ja', 'Einmalige Heizungsprüfung und Optimierung (§ 60b)'],
+            ['Neue Wärmepumpe seit 2024, mindestens sechs Wohnungen', 'Ja', 'Betriebsprüfung nach der ersten Heizperiode, dabei wird auch der Abgleich kontrolliert (§ 60a)'],
+            ['Einfamilienhaus oder weniger als sechs Wohnungen', 'Nein', 'Keine allgemeine Pflicht, aber sinnvoll'],
+          ],
+        },
+        more: ['Für Einfamilienhäuser und kleinere Mehrfamilienhäuser gibt es keine allgemeine Pflicht. In den Förderprogrammen für den Heizungstausch gehört der Abgleich aber in der Regel zu den Voraussetzungen.'],
+      },
+      {
+        heading: 'Warum er für Wärmepumpen besonders wichtig ist',
+        text: [
+          'Eine Wärmepumpe arbeitet umso effizienter, je niedriger die Vorlauftemperatur ist. Fehlt der hydraulische Abgleich, muss sie höher heizen, als das Haus eigentlich braucht, und verbraucht mehr Strom. Deshalb sollte er bei jeder Wärmepumpe von Anfang an eingeplant werden.',
+          'Ob Ihr Haus für eine Wärmepumpe geeignet ist, können Sie mit einem einfachen Test selbst prüfen. Wie das geht, lesen Sie im Beitrag [Wärmepumpe im Altbau](/ratgeber/waermepumpe-im-altbau).',
+        ],
+      },
+    ],
+    faq: [
+      { q: 'Muss ich im Einfamilienhaus einen hydraulischen Abgleich machen?', a: 'Eine allgemeine gesetzliche Pflicht gibt es für Einfamilienhäuser nicht. Sinnvoll ist er trotzdem, wenn Räume ungleich warm werden oder eine neue Heizung eingebaut wird, besonders eine Wärmepumpe. In den Förderprogrammen für den Heizungstausch ist er in der Regel Voraussetzung.' },
+      { q: 'Reicht es, die Thermostate richtig einzustellen?', a: 'Nein. Der Thermostatkopf regelt nur die Raumtemperatur. Wie viel Wasser durch den Heizkörper fließen kann, legt die Voreinstellung im Ventil darunter fest. Genau diese Werte werden beim Abgleich berechnet und eingestellt.' },
+      { q: 'Was ist der Unterschied zwischen Verfahren A und B?', a: 'Bei Verfahren A wird die Heizlast der Räume vereinfacht abgeschätzt. Bei Verfahren B wird sie für jeden Raum berechnet. Verfahren B ist genauer und wird verlangt, wo der Abgleich gesetzlich vorgeschrieben ist.' },
+      { q: 'Wovon hängt der Aufwand ab?', a: 'Vor allem von der Zahl der Heizkörper und davon, ob alte Ventile getauscht werden müssen. Nach einem Blick auf Ihre Anlage können wir Ihnen sagen, was zu tun ist, und Ihnen ein Angebot machen.' },
+      { q: 'Muss der Abgleich später wiederholt werden?', a: 'Wenn sich am Haus etwas ändert, etwa durch neue Fenster, eine Dämmung oder neue Heizkörper, sollte er angepasst werden. Sonst bleiben die eingestellten Werte gültig.' },
+    ],
+  },
+
   'richtig-lueften-und-heizen': {
     title: 'Richtig lüften und heizen im Winter: So vermeiden Sie Schimmel',
     description: 'Richtig lüften und heizen im Winter: wie oft lüften, welche Raumtemperatur, welche Luftfeuchte? Tipps gegen Schimmel vom Heizungsbauer aus Mannheim.',
@@ -54,7 +135,7 @@ export const de: Record<PostSlug, PostText> = {
         cta: {
           icon: 'thermometer',
           title: 'Räume werden nicht richtig warm?',
-          text: 'Dann liegt es selten am Thermostat allein. Oft hilft eine besser eingestellte Heizkurve oder ein hydraulischer Abgleich. Schreiben Sie uns kurz, welche Räume betroffen sind, dann sehen wir uns Ihre Heizung an.',
+          text: 'Dann liegt es selten am Thermostat allein. Oft hilft eine besser eingestellte Heizkurve oder ein [hydraulischer Abgleich](/ratgeber/hydraulischer-abgleich). Schreiben Sie uns kurz, welche Räume betroffen sind, dann sehen wir uns Ihre Heizung an.',
           inquiry: 'Heizung prüfen lassen',
           more: { label: 'Mehr zur Heizung', href: '/heizung' },
         },
@@ -249,7 +330,7 @@ export const de: Record<PostSlug, PostText> = {
         heading: 'Einstellungen, die Heizkosten sparen',
         text: [
           'Eine Heizung arbeitet am sparsamsten, wenn sie das Wasser nur so warm macht wie nötig. Ob die Heizkurve passt, merken Sie daran, ob alle Räume mit aufgedrehtem Thermostat angenehm warm werden, ohne dass die Heizung ständig auf Hochtouren läuft.',
-          'Werden einzelne Räume nie richtig warm, während andere überheizen, steckt oft ein fehlender hydraulischer Abgleich dahinter. Dann nützt es wenig, die Heizkurve einfach höher zu stellen.',
+          'Werden einzelne Räume nie richtig warm, während andere überheizen, steckt oft ein fehlender [hydraulischer Abgleich](/ratgeber/hydraulischer-abgleich) dahinter. Dann nützt es wenig, die Heizkurve einfach höher zu stellen.',
           'Bei Wärmepumpen und Fußbodenheizungen sind gleichmäßige Temperaturen oft sparsamer als eine starke Nachtabsenkung. Welche Raumtemperaturen genügen und wie Sie dabei Schimmel vermeiden, lesen Sie in unserem Beitrag [Richtig lüften und heizen](/ratgeber/richtig-lueften-und-heizen).',
           'Beim Warmwasser sollten Sie dagegen nicht zu viel sparen. Bei einer zentralen Warmwasserbereitung sollte das Wasser am Speicher mindestens 60 °C erreichen, damit sich keine Legionellen vermehren. Mehr dazu in unserem Beitrag [Trinkwasserhygiene](/ratgeber/trinkwasserhygiene).',
         ],

@@ -2,6 +2,22 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'hydraulischer-abgleich': {
+    title: 'Hydraulic balancing: when it pays off and when it is mandatory',
+    description: 'Hydraulic balancing explained: signs it is missing, how it works and when the German building law requires it.',
+    excerpt: 'One radiator gets scalding hot, the one next door stays lukewarm and the pipes rush. Often hydraulic balancing is missing.',
+    alt: 'Radiator under a mullioned window in an old building',
+    takeaways: [
+      'Hydraulic balancing sets every radiator to the water flow its room needs.',
+      'Unevenly warm rooms, flow noise and high flow temperatures are typical signs it is missing.',
+      'Mandatory with a new heating system in buildings with six or more units; the basis for any heat pump.',
+    ],
+    sections: [
+      { heading: 'What happens', text: ['Heat load per room is calculated, valves are preset, pump and flow temperature adjusted.'] },
+      { heading: 'When it is mandatory', text: ['GModG §§ 60a to 60c for buildings with at least six units; no general duty for single-family homes.'] },
+    ],
+  },
+
   'richtig-lueften-und-heizen': {
     title: 'Ventilating and heating properly in winter: how to avoid mould',
     description: 'Ventilating and heating in winter: how often to air rooms, which temperature, which humidity? Tips against mould from a Mannheim heating business.',
