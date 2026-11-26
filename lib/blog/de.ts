@@ -5,6 +5,86 @@
 import type { PostSlug, PostText } from '.';
 
 export const de: Record<PostSlug, PostText> = {
+  'heizungswartung': {
+    title: 'Heizungswartung: Warum sich der jährliche Termin lohnt',
+    description: 'Jährliche Heizungswartung: was dabei gemacht wird, warum sie Ausfällen vorbeugt, was der Schornsteinfeger prüft und welche Pflichten es gibt.',
+    excerpt: 'Die Heizung läuft, also wird schon alles in Ordnung sein? Eine regelmäßige Wartung hält die Anlage sicher und sparsam und verhindert, dass sie ausgerechnet an einem kalten Wochenende ausfällt.',
+    alt: 'Heizungsbauer bei der Wartung einer Gastherme',
+    takeaways: [
+      'Hersteller empfehlen in der Regel eine jährliche Wartung, und für die Garantie ist sie oft Voraussetzung.',
+      'Bei der Wartung werden Brenner, Wärmetauscher und Sicherheitseinrichtungen gereinigt, geprüft und richtig eingestellt.',
+      'Der Schornsteinfeger prüft im gesetzlichen Auftrag vor allem die Abgasführung. Eine Wartung ersetzt er nicht.',
+    ],
+    sections: [
+      {
+        heading: 'Warum eine Heizung regelmäßig gewartet werden sollte',
+        text: [
+          'In der kalten Jahreszeit läuft eine Heizung fast jeden Tag viele Stunden. Dabei lagern sich Verbrennungsrückstände ab, Dichtungen altern und Einstellungen verschieben sich langsam. Das merken Sie nicht sofort, aber die Anlage verbraucht mehr Energie und wird anfälliger für Störungen.',
+          'Bei der Wartung fallen Verschleißteile auf, bevor sie kaputtgehen. So können Sie den Austausch in Ruhe planen und stehen nicht an einem frostigen Januarabend ohne Heizung da.',
+          'Dazu kommt die Garantie. Viele Hersteller setzen in ihren Bedingungen eine regelmäßige, fachgerechte Wartung voraus. Bewahren Sie die Wartungsprotokolle deshalb gut auf.',
+        ],
+      },
+      {
+        heading: 'Was bei der Wartung gemacht wird',
+        text: ['Der genaue Umfang hängt von der Heizung ab. Bei einer Gas-Brennwertheizung gehören in der Regel dazu:'],
+        list: [
+          'Reinigung von Brenner und Wärmetauscher',
+          'Prüfung von Zündung und Flammenüberwachung',
+          'Kontrolle des Gasanschlussdrucks und der Dichtheit am Gerät',
+          'Messung der Abgaswerte und Einstellung der Verbrennung',
+          'Reinigung von Kondensatablauf und Siphon',
+          'Prüfung von Ausdehnungsgefäß, Sicherheitsventil und Anlagendruck',
+          'Kontrolle von Pumpe, Regelung und Fehlerspeicher',
+        ],
+        more: ['Bei einer Ölheizung kommen unter anderem Düse und Ölfilter hinzu. Bei einer Wärmepumpe werden vor allem das Außengerät, der Kondensatablauf, die Einstellungen, das Ausdehnungsgefäß und die elektrischen Anschlüsse geprüft. Alle Werte werden in einem Protokoll festgehalten.'],
+        image: { src: '/assets/img/blog-wartung-therme.jpg', alt: 'Fachkraft prüft eine geöffnete Gastherme', caption: 'Bei der Wartung werden Brenner und Wärmetauscher gereinigt und die Verbrennung neu eingestellt.', credit: 'МОБО / Pexels' },
+      },
+      {
+        heading: 'Wartung und Schornsteinfeger: der Unterschied',
+        text: ['Viele verwechseln die beiden Termine. Der bevollmächtigte Bezirksschornsteinfeger kommt im gesetzlichen Auftrag. Er prüft unter anderem, ob die Abgase sicher abgeführt werden, und misst bei bestimmten Anlagen die Emissionen. Wie oft er kommt, hängt von der Art der Heizung ab. Die Wartung durch den Fachbetrieb geht darüber hinaus:'],
+        table: {
+          head: ['Aufgabe', 'Schornsteinfeger', 'Wartung durch den Fachbetrieb'],
+          rows: [
+            ['Abgasführung und Sicherheit prüfen', 'Ja', 'Ja, im Rahmen der Wartung'],
+            ['Emissionen messen', 'Bei bestimmten Anlagen', 'Abgaswerte zur Einstellung'],
+            ['Brenner und Wärmetauscher reinigen', 'Nein', 'Ja'],
+            ['Verschleißteile tauschen', 'Nein', 'Ja'],
+            ['Einstellungen optimieren', 'Nein', 'Ja'],
+          ],
+        },
+      },
+      {
+        heading: 'Gesetzliche Pflichten für größere Gebäude',
+        text: [
+          'Für Gebäude mit mindestens sechs Wohnungen schreibt das Gebäudemodernisierungsgesetz zusätzliche Prüfungen vor. Gas- und Ölheizungen und andere wassergeführte Heizungen, die keine Wärmepumpen sind, müssen einmal geprüft und optimiert werden. Bei Anlagen, die vor dem 1. Oktober 2009 eingebaut wurden, läuft die Frist bis zum 30. September 2027 ([§ 60b](https://www.gesetze-im-internet.de/geg/__60b.html)).',
+          'Wärmepumpen, die seit 2024 in solchen Gebäuden eingebaut wurden, brauchen nach der ersten vollständigen Heizperiode, spätestens zwei Jahre nach der Inbetriebnahme, eine Betriebsprüfung ([§ 60a](https://www.gesetze-im-internet.de/geg/__60a.html)). Für Eigentümergemeinschaften und Vermieter lohnt es sich, diese Prüfungen mit der regulären Wartung zu verbinden.',
+          'Für Einfamilienhäuser gibt es keine gesetzliche Wartungspflicht. Die Gründe für eine regelmäßige Wartung gelten dort aber genauso.',
+        ],
+      },
+      {
+        heading: 'Der beste Zeitpunkt',
+        text: [
+          'Ideal ist das späte Frühjahr oder der Sommer, wenn die Heizung wenig zu tun hat und Termine leichter zu bekommen sind. Wer den Termin verpasst hat, sollte ihn so früh wie möglich in der Heizperiode nachholen.',
+          'Bis dahin können Sie mit unserem [Heizungscheck](/ratgeber/heizung-winterfit-machen) selbst prüfen, ob alles normal läuft. Werden einzelne Räume nicht richtig warm, lesen Sie unseren Beitrag zum [hydraulischen Abgleich](/ratgeber/hydraulischer-abgleich).',
+        ],
+        cta: {
+          icon: 'wrench',
+          title: 'Wartungstermin vereinbaren',
+          text: 'Wir warten Gas- und Ölheizungen in Mannheim und Umgebung. Schreiben Sie uns kurz, welche Heizung Sie haben und wann die letzte Wartung war, dann melden wir uns mit einem Terminvorschlag.',
+          inquiry: 'Wartung anfragen',
+          more: { label: 'Mehr zu Gas- und Ölheizungen', href: '/heizung#gasheizung' },
+        },
+      },
+    ],
+    faq: [
+      { q: 'Wie oft muss eine Heizung gewartet werden?', a: 'Die meisten Hersteller empfehlen eine Wartung einmal im Jahr. Eine allgemeine gesetzliche Pflicht für Einfamilienhäuser gibt es nicht, für die Garantie ist die regelmäßige Wartung aber oft Voraussetzung. In größeren Gebäuden schreibt das Gesetz zusätzliche Prüfungen vor.' },
+      { q: 'Ist die Wartung bei einer neuen Heizung schon nötig?', a: 'Ja. Gerade in den ersten Jahren ist sie wichtig, weil viele Hersteller sie für die Garantie voraussetzen. Bei der ersten Wartung lassen sich außerdem die Einstellungen an das Haus und Ihr Heizverhalten anpassen.' },
+      { q: 'Ersetzt der Schornsteinfeger die Wartung?', a: 'Nein. Der Schornsteinfeger prüft im gesetzlichen Auftrag vor allem die sichere Abgasführung und bei bestimmten Anlagen die Emissionen. Gereinigt, eingestellt und repariert wird bei der Wartung durch den Fachbetrieb.' },
+      { q: 'Brauchen Wärmepumpen auch eine Wartung?', a: 'Ja, auch wenn sie weniger Pflege brauchen als eine Gas- oder Ölheizung. Geprüft werden vor allem das Außengerät, der Kondensatablauf, die Einstellungen und das Ausdehnungsgefäß. In Gebäuden mit mindestens sechs Wohnungen ist für neue Wärmepumpen zusätzlich eine Betriebsprüfung vorgeschrieben.' },
+      { q: 'Was kann ich zwischen zwei Wartungen selbst tun?', a: 'Prüfen Sie zu Beginn der Heizperiode den Anlagendruck, entlüften Sie gluckernde Heizkörper und achten Sie auf Störungsmeldungen im Display. Eine ausführliche Checkliste finden Sie in unserem Beitrag zum Heizungscheck vor dem Winter.' },
+    ],
+  },
+
   'hydraulischer-abgleich': {
     title: 'Hydraulischer Abgleich: Wann er sich lohnt und wann er Pflicht ist',
     description: 'Hydraulischer Abgleich erklärt: woran Sie merken, dass er fehlt, wie er abläuft und wann er nach dem Gebäudemodernisierungsgesetz vorgeschrieben ist.',

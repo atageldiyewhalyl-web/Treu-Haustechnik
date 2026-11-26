@@ -2,6 +2,22 @@
 import type { PostSlug, PostText } from '.';
 
 export const en: Record<PostSlug, PostText> = {
+  'heizungswartung': {
+    title: 'Heating maintenance: why the annual service pays off',
+    description: 'Annual heating maintenance: what is done, why it prevents breakdowns, what the chimney sweep checks and which duties apply.',
+    excerpt: 'Regular maintenance keeps the system safe and efficient and prevents it from failing on a cold weekend.',
+    alt: 'Heating engineer servicing a gas boiler',
+    takeaways: [
+      'Manufacturers usually recommend annual maintenance, and it is often required for the warranty.',
+      'Burner, heat exchanger and safety devices are cleaned, checked and adjusted.',
+      'The chimney sweep mainly checks the flue on a statutory basis and does not replace maintenance.',
+    ],
+    sections: [
+      { heading: 'What maintenance covers', text: ['Cleaning, checks of ignition, gas pressure, flue values, condensate drain, expansion vessel and controls.'] },
+      { heading: 'Duties for larger buildings', text: ['GModG §§ 60a and 60b for buildings with at least six units; no general duty for single-family homes.'] },
+    ],
+  },
+
   'hydraulischer-abgleich': {
     title: 'Hydraulic balancing: when it pays off and when it is mandatory',
     description: 'Hydraulic balancing explained: signs it is missing, how it works and when the German building law requires it.',
